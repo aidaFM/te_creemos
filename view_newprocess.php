@@ -12,6 +12,7 @@ while ($row = $result->fetch_assoc()) {
 }
 	
 show_header('Proceso nuevo');
+show_navbar();
 ?>
 	<div class="container">
 		<div class="row">

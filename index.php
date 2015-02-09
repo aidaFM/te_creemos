@@ -3,6 +3,7 @@
 require_once('basic_files.php');
 
 show_header('Home');
+show_navbar();
 ?>
 	<div class="container">
 		<div class="row">
