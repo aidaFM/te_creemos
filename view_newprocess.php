@@ -10,6 +10,13 @@ $criticality_level= "";
 while ($row = $result->fetch_assoc()) {
 	$criticality_level .= "<option value='$row[clave_criticidad_proceso]'>$row[descripcion_criticidad_proceso]</option>";
 }
+
+$leaders = "select * from cat_lider_proyecto";
+$result = $conn->query($leaders);
+$leader_name= "";
+while ($row = $result->fetch_assoc()) {
+	$leader_name .= "<option value='$row[clave_lider_proyecto]'>$row[nombre_lider_proyecto]</option>";
+}
 	
 show_header('Proceso nuevo');
 show_navbar();
@@ -32,7 +39,7 @@ show_navbar();
 								</div>
 								<div class="form-group">
 									<label for="leader_name">Lider del proceso:</label>
-									<input class="form-control" type="text" name="leader_name" id="leader_name" maxlength="100" size="50" />														
+									<select class="form-control" name="leader_name"><?php echo $leader_name; ?></select>														
 								</div>
 								<div class="form-group">
 									<label for="process_target">Objetivo del proceso:</label>

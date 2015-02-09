@@ -34,6 +34,9 @@ show_header('Proceso nuevo');
 							<div class="col-md-12">	
 								<form action="validate_recoveryobjetives.php" method="post">
 								<div class="form-group">
+									<input type="hidden" name="id" value="<?= $id; ?>">
+								</div>
+								<div class="form-group">
 									<label for="critycality">Objetivo tiempo de recuperación:</label>
 									<select class="form-control" name="rto"><?php echo $rto_option; ?></select>
 								</div>
