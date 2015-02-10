@@ -11,6 +11,7 @@ try{
 	}else{
 		show_header('Guardar jefe');
 		save_boss($var,$var1);
+		header('Location:view_boss.php');
 		show_footer();
 	}
 }catch(Exception $e){

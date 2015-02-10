@@ -10,6 +10,7 @@ try{
 	}else{
 		show_header('Guardar medio de respaldo');
 		save_backupsource($var);
+		header('Location:view_backupsource.php');
 		show_footer();
 	}
 }catch(Exception $e){

@@ -10,6 +10,7 @@ try{
 	}else{
 		show_header('Guardar leader');
 		save_backuptype($var);
+		header('Location:view_backuptype.php');
 		show_footer();
 	}
 }catch(Exception $e){

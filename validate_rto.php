@@ -11,6 +11,7 @@ try{
 	}else{
 		show_header('RTO');
 		save_rto($var,$var1);
+		header('Location:view_rto.php');
 		show_footer();
 	}
 }catch(Exception $e){

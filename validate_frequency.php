@@ -10,6 +10,7 @@ try{
 	}else{
 		show_header('Frecuencias');
 		save_frequency($var);
+		header('Location:view_frequency.php');
 		show_footer();
 	}
 }catch(Exception $e){

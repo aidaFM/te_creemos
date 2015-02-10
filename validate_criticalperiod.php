@@ -10,6 +10,7 @@ try{
 	}else{
 		show_header('Guardar objetivos de recuperación');
 		save_criticalperiod($var);
+		header('Location:view_criticalperiod.php');
 		show_footer();
 	}
 }catch(Exception $e){

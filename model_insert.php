@@ -68,7 +68,7 @@ function save_backuptype($var)
 function save_backupsource($var)
 {
 	$conn = home_connection();
-	$savedata = $conn->query("INSERT INTO cat_medio_resplados VALUES(null,'".$var."')");
+	$savedata = $conn->query("INSERT INTO cat_medio_respaldos VALUES(null,'".$var."')");
 }
 
 function save_process($var,$var1,$var2,$var3,$var4,$var5,$var6,$var7,$var8,$var9)

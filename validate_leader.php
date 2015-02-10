@@ -10,6 +10,7 @@ try{
 	}else{
 		show_header('Guardar leader');
 		save_leader($var);
+		header('Location:view_leader.php');
 		show_footer();
 	}
 }catch(Exception $e){

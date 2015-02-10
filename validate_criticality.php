@@ -10,6 +10,7 @@ try{
 	}else{
 		show_header('Niveles de criticidad');
 		save_criticality($var);
+		header('Location:view_criticality.php');
 		show_footer();
 	}
 }catch(Exception $e){

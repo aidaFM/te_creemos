@@ -11,6 +11,7 @@ try{
 	}else{
 		show_header('RPO');
 		save_rpo($var,$var1);
+		header('Location:view_rpo.php');
 		show_footer();
 	}
 }catch(Exception $e){

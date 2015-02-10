@@ -10,6 +10,7 @@ try{
 	}else{
 		show_header('Guardar jefe');
 		save_outofservice($var);
+		header('Location:view_outofservice.php');
 		show_footer();
 	}
 }catch(Exception $e){

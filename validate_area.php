@@ -10,6 +10,7 @@ try{
 	}else{
 		show_header('Guardar objetivos de recuperación');
 		save_area($var);
+		header('Location:view_area.php');
 		show_footer();
 	}
 }catch(Exception $e){
