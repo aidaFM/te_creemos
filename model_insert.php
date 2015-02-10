@@ -7,6 +7,12 @@ function save_leader($var)
 	$conn = home_connection();
 	$savedata = $conn->query("INSERT INTO cat_lider_proyecto VALUES(null,'".$var."')");
 }
+function save_boss($var,$var1)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("INSERT INTO cat_jefes_inmediatos VALUES(null,'".$var."','".$var1."')");
+}
+
 
 function save_criticality($var)
 {

@@ -3,10 +3,10 @@
 require_once('basic_files.php');
 
 @$var = $_POST['process_name'];
-@$var1 = $_POST['process_leader'];
+@$var1 = $_POST['leader_name'];
 @$var2 = $_POST['process_target'];
 @$var3 = $_POST['process_description'];
-@$var4 = $_POST['process_boss'];
+@$var4 = $_POST['boss_name'];
 @$var5 = $_POST['criticality'];
 @$var6 = $_POST['out_of_service'];
 @$var7 = $_POST['normal_operators'];

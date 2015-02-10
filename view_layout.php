@@ -59,6 +59,7 @@ function show_navbar()
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Catálogos <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
+              <li><a href="view_boss.php">Jefes Inmediatos</a></li>
               <li><a href="view_leader.php">Lideres de proyecto</a></li>
               <li><a href="view_criticality.php">Criticidad</a></li>
               <li><a href="view_rto.php">Objetivos Tiempo de Recuperación</a></li>

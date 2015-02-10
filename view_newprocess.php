@@ -17,6 +17,14 @@ $leader_name= "";
 while ($row = $result->fetch_assoc()) {
 	$leader_name .= "<option value='$row[clave_lider_proyecto]'>$row[nombre_lider_proyecto]</option>";
 }
+
+$bosses = "select * from cat_jefes_inmediatos";
+$result = $conn->query($bosses);
+$boss_name= "";
+while ($row = $result->fetch_assoc()) {
+	$boss_name .= "<option value='$row[clave_jefes_inmediatos]'>$row[nombre_jefes_inmediatos], $row[puesto_jefes_inmediatos]</option>";
+}
+
 	
 show_header('Proceso nuevo');
 show_navbar();
@@ -51,7 +59,7 @@ show_navbar();
 								</div>
 								<div class="form-group">
 									<label for="boss_name">Nombre y puesto del Jefe inmediato:</label>
-									<input class="form-control" type="text" name="boss_name" id="boss_name" maxlength="100" />															
+									<select class="form-control" name="boss_name"><?php echo $boss_name; ?></select>															
 								</div>
 								<div class="form-group">
 									<label for="critycality">Nivel de criticidad:</label>
