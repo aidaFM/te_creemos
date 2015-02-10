@@ -40,6 +40,13 @@ function save_frequency($var)
 	$savedata = $conn->query("INSERT INTO cat_frecuencia_proceso VALUES(null,'".$var."')");
 }
 
+function save_criticalperiod($var)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("INSERT INTO cat_periodos_criticos VALUES(null,'".$var."')");
+}
+
+
 function save_rto($var,$var1)
 {
 	$conn = home_connection();
@@ -50,6 +57,18 @@ function save_rpo($var,$var1)
 {
 	$conn = home_connection();
 	$savedata = $conn->query("INSERT INTO cat_objetivo_punto_recuperacion VALUES(null,'".$var."','".$var1."')");
+}
+
+function save_backuptype($var)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("INSERT INTO cat_tipo_respaldos VALUES(null,'".$var."')");
+}
+
+function save_backupsource($var)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("INSERT INTO cat_medio_resplados VALUES(null,'".$var."')");
 }
 
 function save_process($var,$var1,$var2,$var3,$var4,$var5,$var6,$var7,$var8,$var9)
@@ -69,3 +88,10 @@ function save_recoveryobjetives($id,$var,$var1)
 	$conn = home_connection();
 	$savedata = $conn->query("UPDATE inventario_procesos SET clave_rto='".$var."', clave_rpo='".$var1."' WHERE clave_proceso='".$id."'");
 }
+
+function save_processfrequency($id,$var,$var1)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("UPDATE inventario_procesos SET clave_frecuencia_proceso='".$var."', clave_periodos_criticos='".$var1."' WHERE clave_proceso='".$id."'");
+}
+

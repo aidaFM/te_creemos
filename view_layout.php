@@ -48,12 +48,10 @@ function show_navbar()
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Archivo<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="view_newprocess.php">Nuevo</a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li class="divider"></li>
+              <!--<li class="divider"></li>
               <li><a href="#">Separated link</a></li>
               <li class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
+              <li><a href="#">One more separated link</a></li>-->
             </ul>
           </li>
           <li class="dropdown">
@@ -64,13 +62,14 @@ function show_navbar()
               <li><a href="view_leader.php">Lideres de proyecto</a></li>
               <li><a href="view_criticality.php">Criticidad</a></li>
               <li><a href="view_frequency.php">Frecuencias</a></li>
+              <li><a href="view_criticalperiod.php">Periodos criticos</a></li>
               <li><a href="view_outofservice.php">Tiempos tolerables fuera de servicio</a></li>
+              <li class="divider"></li>
               <li><a href="view_rto.php">Objetivos Tiempo de Recuperación</a></li>
               <li><a href="view_rpo.php">Objetivos Punto de Recuperación</a></li>
               <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
+              <li><a href="view_backuptype.php">Tipos de respaldo</a></li>
+              <li><a href="view_backupsource.php">Medios de respaldo</a></li>
             </ul>
           </li>
         </ul>
