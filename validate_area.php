@@ -2,17 +2,14 @@
 
 require_once('basic_files.php');
 
-@$id = $_POST['id'];
-@$var = $_POST['rto'];
-@$var1 = $_POST['rpo'];
+@$var = $_POST['area'];
 
 try{
 	if(!empty_fields($_POST)){
 		throw new Exception('El formulario cuenta con campos vacios.');
 	}else{
 		show_header('Guardar objetivos de recuperación');
-		save_recoveryobjetives($id,$var,$var1);
-		header("refresh:0; url=\"view_processfrequency.php?id=$id\"");
+		save_area($var);
 		show_footer();
 	}
 }catch(Exception $e){

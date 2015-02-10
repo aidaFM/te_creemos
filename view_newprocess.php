@@ -4,6 +4,13 @@ require_once('basic_files.php');
 
 $conn = home_connection();
 
+$areas = "select * from cat_areas";
+$result = $conn->query($areas);
+$area= "";
+while ($row = $result->fetch_assoc()) {
+	$area .= "<option value='$row[clave_area]'>$row[descripcion_area]</option>";
+}
+
 $criticality_levels = "select * from cat_criticidad_procesos";
 $result = $conn->query($criticality_levels);
 $criticality_level= "";
@@ -25,7 +32,13 @@ while ($row = $result->fetch_assoc()) {
 	$boss_name .= "<option value='$row[clave_jefes_inmediatos]'>$row[nombre_jefes_inmediatos], $row[puesto_jefes_inmediatos]</option>";
 }
 
-	
+$times = "select * from cat_tiempo_maximo_fs";
+$result = $conn->query($times);
+$out_of_service= "";
+while ($row = $result->fetch_assoc()) {
+	$out_of_service .= "<option value='$row[clave_tiempo_maximo_fs]'>$row[descripcion_tiempo_maximo_fs]</option>";
+}
+
 show_header('Proceso nuevo');
 show_navbar();
 ?>
@@ -46,7 +59,11 @@ show_navbar();
 									<input class="form-control" type="text" name="process_name" id="process_name" maxlength="100" size="50"/>						
 								</div>
 								<div class="form-group">
-									<label for="leader_name">Lider del proceso:</label>
+									<label for="area">Área del proceso:</label>
+									<select class="form-control" name="area"><?php echo $area; ?></select>						
+								</div>
+								<div class="form-group">
+									<label for="leader_name">Lider del proyecto:</label>
 									<select class="form-control" name="leader_name"><?php echo $leader_name; ?></select>														
 								</div>
 								<div class="form-group">
@@ -55,19 +72,19 @@ show_navbar();
 								</div>
 								<div class="form-group">
 									<label for="process_description">Descripción del proceso</label>
-									<textarea class="form-control" type="text" name="process_description" id="process_description" maxlength="250" rows="8" ></textarea>														
+									<textarea class="form-control" name="process_description" id="process_description" rows="8" ></textarea>														
 								</div>
 								<div class="form-group">
 									<label for="boss_name">Nombre y puesto del Jefe inmediato:</label>
 									<select class="form-control" name="boss_name"><?php echo $boss_name; ?></select>															
 								</div>
 								<div class="form-group">
-									<label for="critycality">Nivel de criticidad:</label>
+									<label for="critycality_level">Nivel de criticidad:</label>
 									<select class="form-control" name="criticality_level"><?php echo $criticality_level; ?></select>
 								</div>
 								<div class="form-group">
 									<label for="out_of_service">Tiempo máximo tolerable fuera de servicio:</label>
-									<input class="form-control" type="text" name="out_of_service" id="out_of_service" maxlength="100" size="50" />						
+									<select class="form-control" name="out_of_service"><?php echo $out_of_service; ?></select>						
 								</div>
 								<div class="form-group">
 									<label for="normal_operators">Numero de operadores en operación normal</label>

@@ -20,6 +20,7 @@ while ($row = $result->fetch_assoc()) {
 }
 	
 show_header('Proceso nuevo');
+show_navbar();
 ?>
 	<div class="container">
 		<div class="row">
@@ -34,7 +35,8 @@ show_header('Proceso nuevo');
 							<div class="col-md-12">	
 								<form action="validate_recoveryobjetives.php" method="post">
 								<div class="form-group">
-									<input type="hidden" name="id" value="<?= $id; ?>">
+									<label for="id">Clave del proceso:</label>
+									<input class="form-control" type="text" name="id" id="id" value="<?= $id ?>" maxlength="10" size="50"/>	
 								</div>
 								<div class="form-group">
 									<label for="critycality">Objetivo tiempo de recuperación:</label>
