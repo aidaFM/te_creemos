@@ -13,7 +13,7 @@ show_navbar();
 						<h3>Catalogo</h3>
 					</div>
 					<div class="panel-body">
-						<p class="lead">Ingresa los<strong>tiempos tolerables fuera de servicio</strong>.</p>
+						<p class="lead">Cual es el <strong>tiempo máximo tolerable fuera de servicio</strong>.</p>
 						<div class="row">
 							<div class="col-md-12">	
 								<form action="validate_outofservice.php" method="post">

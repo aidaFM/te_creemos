@@ -53,7 +53,7 @@ show_navbar();
 						<p class="lead">Ingresa la información del <strong>processo</strong>.</p>
 						<div class="row">
 							<div class="col-md-12">	
-								<form action="validate_process.php" method="post">
+								<form id="new" action="validate_process.php" method="post">
 								<div class="form-group">
 									<label for="process_name">Nombre del proceso:</label>
 									<input class="form-control" type="text" name="process_name" id="process_name" maxlength="100" size="50"/>						

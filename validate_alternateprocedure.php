@@ -3,16 +3,15 @@
 require_once('basic_files.php');
 
 @$id = $_POST['id'];
-@$var = $_POST['frequency'];
-@$var1 = $_POST['critical_period'];
+@$var = $_POST['procedure'];
 
 try{
 	if(!empty_fields($_POST)){
 		throw new Exception('El formulario para crear el proceso cuenta con campos vacios.');
 	}else{
-		show_header('Guardar leader');
-		save_processfrequency($id,$var,$var1);
-		header("refresh:0; url=\"view_system.php?id=$id\"");
+		show_header('Guardar procedimiento alterno');
+		save_alternateprocedure($id,$var);
+		header('Location:view_outofservice.php');
 		show_footer();
 	}
 }catch(Exception $e){

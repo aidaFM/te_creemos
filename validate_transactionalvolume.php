@@ -3,15 +3,14 @@
 require_once('basic_files.php');
 
 @$id = $_POST['id'];
-@$var = $_POST['frequency'];
-@$var1 = $_POST['critical_period'];
+@$var = $_POST['average'];
 
 try{
 	if(!empty_fields($_POST)){
 		throw new Exception('El formulario para crear el proceso cuenta con campos vacios.');
 	}else{
-		show_header('Guardar leader');
-		save_processfrequency($id,$var,$var1);
+		show_header('Guardar volumen transaccional');
+		save_transactionalvolume($id,$var);
 		header("refresh:0; url=\"view_system.php?id=$id\"");
 		show_footer();
 	}

@@ -95,3 +95,28 @@ function save_processfrequency($id,$var,$var1)
 	$savedata = $conn->query("UPDATE inventario_procesos SET clave_frecuencia_proceso='".$var."', clave_periodos_criticos='".$var1."' WHERE clave_proceso='".$id."'");
 }
 
+function save_sytem($var)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("INSERT INTO cat_sistemas VALUES(null,'".$var."')");
+}
+
+function save_systemprocess($id,$system_id)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("INSERT INTO proceso_sistemas VALUES('".$id."',null,'".$system_id."')");
+}
+
+function save_alternateprocedure($id,$var)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("UPDATE inventario_procesos SET procedimiento_alterno='".$var."' WHERE clave_proceso='".$id."'");
+}
+
+
+function save_transactionalvolume($id,$var)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("UPDATE inventario_procesos SET promedio_transacciones_mensuales='".$var."' WHERE clave_proceso='".$id."'");
+}
+
