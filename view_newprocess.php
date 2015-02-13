@@ -60,7 +60,7 @@ show_navbar();
 								</div>
 								<div class="form-group">
 									<label for="area">Área del proceso:</label>
-									<select class="form-control" name="area"><?php echo $area; ?></select>						
+									<select class="form-control" name="area"><?php echo $area; ?></select>
 								</div>
 								<div class="form-group">
 									<label for="leader_name">Lider del proyecto:</label>
