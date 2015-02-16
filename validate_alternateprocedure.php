@@ -11,7 +11,7 @@ try{
 	}else{
 		show_header('Guardar procedimiento alterno');
 		save_alternateprocedure($id,$var);
-		header('Location:view_outofservice.php');
+		header("refresh:0; url=\"view_transactionalvolume.php?id=$id\"");
 		show_footer();
 	}
 }catch(Exception $e){

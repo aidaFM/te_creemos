@@ -66,3 +66,17 @@ function getNumberOfSystems($var)
 	$searchdata->free();
 	$searchdata->close();
 }
+function getTimeAffectation($var)
+{
+	$conn = home_connection();
+	$searchdata = $conn->query("SELECT descripcion_tiempo_afectacion FROM cat_tiempo_afectacion WHERE clave_tiempo_afectacion = '".$var."'");
+	if(!$searchdata){
+		throw new Exception('Error en la consulta getSystemId.');
+	}else{
+		while($data = $searchdata->fetch_array()){
+			return $data['descripcion_tiempo_afectacion'];
+		}
+	}
+	$searchdata->free();
+	$searchdata->close();
+}

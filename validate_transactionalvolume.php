@@ -11,7 +11,7 @@ try{
 	}else{
 		show_header('Guardar volumen transaccional');
 		save_transactionalvolume($id,$var);
-		header("refresh:0; url=\"view_system.php?id=$id\"");
+		header("refresh:0; url=\"view_windowoperation.php?id=$id\"");
 		show_footer();
 	}
 }catch(Exception $e){
