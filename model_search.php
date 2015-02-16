@@ -85,12 +85,12 @@ function getTimeAffectation($var)
 function getTypeFinancialImpact($var)
 {
 	$conn = home_connection();
-	$searchdata = $conn->query("SELECT descripcion_tiempo_afectacion FROM cat_tiempo_afectacion WHERE clave_tiempo_afectacion = '".$var."'");
+	$searchdata = $conn->query("SELECT descripcion_impacto_financiero FROM cat_tipos_impactos_financieros WHERE clave_impacto_financiero = '".$var."'");
 	if(!$searchdata){
-		throw new Exception('Error en la consulta getSystemId.');
+		throw new Exception('Error en la consulta getTypeFinancialImpact.');
 	}else{
 		while($data = $searchdata->fetch_array()){
-			return $data['descripcion_tiempo_afectacion'];
+			return $data['descripcion_impacto_financiero'];
 		}
 	}
 	$searchdata->free();
