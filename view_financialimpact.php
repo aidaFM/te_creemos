@@ -2,15 +2,6 @@
 
 require_once('basic_files.php');
 
-$conn = home_connection();
-
-$time_affectation_options = "select * from cat_tiempo_afectacion";
-$result = $conn->query($time_affectation_options);
-$time_affectation= "";
-while ($row = $result->fetch_assoc()) {
-	$time_affectation .= "<option value='$row[clave_tiempo_afectacion]'>$row[descripcion_tiempo_afectacion]</option>";
-}
-
 show_header('Impacto financiero');
 show_navbar();
 ?>
@@ -27,36 +18,66 @@ show_navbar();
 							<div class="col-md-12">	
 								<form action="validate_financialimpact.php" method="post">
 								<div class="form-group">
-									<label for="backup_type"><?= getTimeAffectation('1')?></label>
-									<select id= class="form-control" name="boss_name" disabled><?php echo $time_affectation; ?></select>
-								</div>
-								<div class="form-group">
-									<label for="backup_type"><?= getTimeAffectation('2')?></label>
-									<input class="form-control" type="text" name="backup_type" id="backup_type" maxlength="100" size="50"/>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type"><?= getTimeAffectation('3')?></label>
-									<input class="form-control" type="text" name="backup_type" id="backup_type" maxlength="100" size="50"/>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type"><?= getTimeAffectation('4')?></label>
-									<input class="form-control" type="text" name="backup_type" id="backup_type" maxlength="100" size="50"/>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type"><?= getTimeAffectation('5')?></label>
-									<input class="form-control" type="text" name="backup_type" id="backup_type" maxlength="100" size="50"/>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type"><?= getTimeAffectation('6')?></label>
-									<input class="form-control" type="text" name="backup_type" id="backup_type" maxlength="100" size="50"/>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type"><?= getTimeAffectation('7')?></label>
-									<input class="form-control" type="text" name="backup_type" id="backup_type" maxlength="100" size="50"/>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type"><?= getTimeAffectation('8')?></label>
-									<input class="form-control" type="text" name="backup_type" id="backup_type" maxlength="100" size="50"/>	
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th></th>
+									        	<th>First Name</th>
+									        	<th>Last Name</th>
+									        	<th>Username</th>
+								        	</tr>
+								      	</thead>
+								    	<tbody>
+								    		<tr>
+								        		<th scope="row"><?= getTimeAffectation('1') ?></th>
+								          		<td>Mark</td>
+								          		<td>Otto</td>
+								          		<td>@mdo</td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('2') ?></th>
+								          		<td>Mark</td>
+								          		<td>Otto</td>
+								          		<td>@mdo</td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('3') ?></th>
+								          		<td>Mark</td>
+								          		<td>Otto</td>
+								          		<td>@mdo</td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('4') ?></th>
+								          		<td>Mark</td>
+								          		<td>Otto</td>
+								          		<td>@mdo</td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('5') ?></th>
+								          		<td>Mark</td>
+								          		<td>Otto</td>
+								          		<td>@mdo</td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('6') ?></th>
+								          		<td>Mark</td>
+								          		<td>Otto</td>
+								          		<td>@mdo</td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('7') ?></th>
+								          		<td>Mark</td>
+								          		<td>Otto</td>
+								          		<td>@mdo</td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('8') ?></th>
+								          		<td>Mark</td>
+								          		<td>Otto</td>
+								          		<td>@mdo</td>
+								        	</tr>
+								      	</tbody>
+								    </table>
 								</div>
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary pull-right">Guardar</button>
