@@ -120,3 +120,16 @@ function save_transactionalvolume($id,$var)
 	$savedata = $conn->query("UPDATE inventario_procesos SET promedio_transacciones_mensuales='".$var."' WHERE clave_proceso='".$id."'");
 }
 
+function save_financialimpact($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var7)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("INSERT INTO impactos_financiero VALUES('".$id."',null,1,'".$var0."')");
+	$savedata = $conn->query("INSERT INTO impactos_financiero VALUES('".$id."',null,1,'".$var1."')");
+	$savedata = $conn->query("INSERT INTO impactos_financiero VALUES('".$id."',null,2,'".$var2."')");
+	$savedata = $conn->query("INSERT INTO impactos_financiero VALUES('".$id."',null,3,'".$var3."')");
+	$savedata = $conn->query("INSERT INTO impactos_financiero VALUES('".$id."',null,4,'".$var4."')");
+	$savedata = $conn->query("INSERT INTO impactos_financiero VALUES('".$id."',null,5,'".$var5."')");
+	$savedata = $conn->query("INSERT INTO impactos_financiero VALUES('".$id."',null,6,'".$var6."')");
+	$savedata = $conn->query("INSERT INTO impactos_financiero VALUES('".$id."',null,7,'".$var7."')");
+
+}

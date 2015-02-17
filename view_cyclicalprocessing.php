@@ -2,6 +2,8 @@
 
 require_once('basic_files.php');
 
+$id = $_GET['id'];
+
 show_header('Procesamiento ciclico');
 show_navbar();
 ?>
@@ -16,7 +18,11 @@ show_navbar();
 						<p class="lead">Indica las cargas de tabajo del proceso durante el año</p>
 						<div class="row">
 							<div class="col-md-12">	
-								<form action="validate_backuptype.php" method="post">
+								<form action="validate_cyclicalprocessing.php" method="post">
+								<div class="form-group">
+									<label for="id">Clave del proceso:</label>
+									<input class="form-control" type="text" name="id" id="id" value="<?= $id ?>" maxlength="10" size="50" readonly/>	
+								</div>
 								<div class="form-group">
 									<label for="backup_type">Enero:</label>
 									<input class="form-control" type="text" name="backup_type" id="backup_type" maxlength="100" size="50"/>	
