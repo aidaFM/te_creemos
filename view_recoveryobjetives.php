@@ -27,16 +27,16 @@ show_navbar();
 			<div class="col-md-12">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
-						<h3>Proceso en blanco</h3>
+						<h3>Objetivos de recuperación</h3>
 					</div>
 					<div class="panel-body">
-						<p class="lead">Ingresa la información del <strong>processo</strong>.</p>
+						<p class="lead"></p>
 						<div class="row">
 							<div class="col-md-12">	
 								<form action="validate_recoveryobjetives.php" method="post">
 								<div class="form-group">
 									<label for="id">Clave del proceso:</label>
-									<input class="form-control" type="text" name="id" id="id" value="<?= $id ?>" maxlength="10" size="50"/>	
+									<input class="form-control" type="text" name="id" id="id" value="<?= $id ?>" maxlength="10" size="50" readonly/>	
 								</div>
 								<div class="form-group">
 									<label for="critycality">Objetivo tiempo de recuperación:</label>
