@@ -26,7 +26,12 @@ show_navbar();
 						<p class="lead">Indica el horario de operacion y niveles de carga del mismo</p>
 						<div class="row">
 							<div class="col-md-12">	
-								<form action="validate_backuptype.php" method="post">
+								<form action="validate_windowoperation.php" method="post">
+								<div class="form-group">
+									<label for="id">Clave del proceso:</label>
+									<input class="form-control" type="text" name="id" id="id" value="<?= $id ?>" maxlength="10" size="50" readonly/>	
+								</div>
+								
 								<div class="form-group">
 									<label for="backup_type">00:00:</label>
 									<select class="form-control" name="hora_0"><?php echo $charge_level; ?></select>

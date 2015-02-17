@@ -33,8 +33,8 @@ try{
 		throw new Exception('El formulario para crear el proceso cuenta con campos vacios.');
 	}else{
 		show_header('Guardar leader');
-		save_processfrequency($id,$var,$var1);
-		header("refresh:0; url=\"view_system.php?id=$id\"");
+		save_windowoperation($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var7,$var8,$var9,$var10,$var11,$var12,$var13,$var14,$var15,$var16,$var17,$var18,$var19,$var20,$var21,$var22,$var23);
+		header("refresh:0; url=\"view_cyclicalprocessing.php?id=$id\"");
 		show_footer();
 	}
 }catch(Exception $e){
