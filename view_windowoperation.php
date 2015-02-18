@@ -31,102 +31,67 @@ show_navbar();
 									<label for="id">Clave del proceso:</label>
 									<input class="form-control" type="text" name="id" id="id" value="<?= $id ?>" maxlength="10" size="50" readonly/>	
 								</div>
-								
-								<div class="form-group">
-									<label for="backup_type">00:00:</label>
-									<select class="form-control" name="hora_0"><?php echo $charge_level; ?></select>
-								</div>
-								<div class="form-group">
-									<label for="backup_type">1:00:</label>
-									<select class="form-control" name="hora_1"><?php echo $charge_level; ?></select>
-								</div>
-								<div class="form-group">
-									<label for="backup_type">2:00:</label>
-									<select class="form-control" name="hora_2"><?php echo $charge_level; ?></select>
-								</div>
-								<div class="form-group">
-									<label for="backup_type">3:00:</label>
-									<select class="form-control" name="hora_3"><?php echo $charge_level; ?></select>
-								</div>
-								<div class="form-group">
-									<label for="backup_type">4:00:</label>
-									<select class="form-control" name="hora_4"><?php echo $charge_level; ?></select>
-								</div>
-								<div class="form-group">
-									<label for="backup_type">5:00:</label>
-									<select class="form-control" name="hora_5"><?php echo $charge_level; ?></select>
-								</div>
-								<div class="form-group">
-									<label for="backup_type">6:00:</label>
-									<select class="form-control" name="hora_6"><?php echo $charge_level; ?></select>
-								</div>
-								<div class="form-group">
-									<label for="backup_type">7:00:</label>
-									<select class="form-control" name="hora_7"><?php echo $charge_level; ?></select>
-								</div>
-								<div class="form-group">
-									<label for="backup_type">8:00:</label>
-									<select class="form-control" name="hora_8"><?php echo $charge_level; ?></select>
-								</div>
-								<div class="form-group">
-									<label for="backup_type">9:00:</label>
-									<select class="form-control" name="hora_9"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">10:00:</label>
-									<select class="form-control" name="hora_10"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">11:00:</label>
-									<select class="form-control" name="hora_11"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">12:00:</label>
-									<select class="form-control" name="hora_12"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">13:00:</label>
-									<select class="form-control" name="hora_13"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">14:00:</label>
-									<select class="form-control" name="hora_14"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">15:00:</label>
-									<select class="form-control" name="hora_15"><?php echo $charge_level; ?></select>	
-								</div>
-									<div class="form-group">
-									<label for="backup_type">16:00:</label>
-									<select class="form-control" name="hora_16"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">17:00:</label>
-									<select class="form-control" name="hora_17"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">18:00:</label>
-									<select class="form-control" name="hora_18"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">19:00:</label>
-									<select class="form-control" name="hora_19"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">20:00:</label>
-									<select class="form-control" name="hora_20"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">21:00:</label>
-									<select class="form-control" name="hora_21"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">22:00:</label>
-									<select class="form-control" name="hora_22"><?php echo $charge_level; ?></select>	
-								</div>
-								<div class="form-group">
-									<label for="backup_type">23:00:</label>
-									<select class="form-control" name="hora_23"><?php echo $charge_level; ?></select>	
+								<div class="table-responsive">
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th>Horas</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;01:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;02:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;03:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;05:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;06:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;08:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;09:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;14:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;16:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;21:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;22:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+												<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row"></th>
+												<td><select class="form-control" name="hora_0"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_1"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_2"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_3"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_4"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_5"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_6"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_7"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_8"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_9"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_10"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_11"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_12"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_13"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_14"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_15"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_16"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_17"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_18"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_19"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_20"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_21"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_22"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_23"><?php echo $charge_level; ?></select></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary pull-right">Guardar</button>
