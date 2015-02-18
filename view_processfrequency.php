@@ -3,6 +3,7 @@
 require_once('basic_files.php');
 
 $id = $_GET['id'];
+
 $conn = home_connection();
 
 $frequencies = "select * from cat_frecuencia_proceso";

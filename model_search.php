@@ -126,3 +126,18 @@ function getNoneFinancialImpactLevel($var)
 	$searchdata->free();
 	$searchdata->close();
 }
+
+function getStaffId($var)
+{
+	$conn = home_connection();
+	$searchdata = $conn->query("SELECT clave_personal FROM cat_directorio_personal_critico WHERE nombre_personal = '".$var."'");
+	if(!$searchdata){
+		throw new Exception('Error en la consulta getStaffId.');
+	}else{
+		while($data = $searchdata->fetch_array()){
+			return $data['clave_personal'];
+		}
+	}
+	$searchdata->free();
+	$searchdata->close();
+}
