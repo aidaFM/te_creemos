@@ -96,3 +96,33 @@ function getTypeFinancialImpact($var)
 	$searchdata->free();
 	$searchdata->close();
 }
+
+function getNoneFinancialImpact($var)
+{
+	$conn = home_connection();
+	$searchdata = $conn->query("SELECT descripcion_impacto_no_fin FROM cat_impactos_no_financieros WHERE clave_impacto_no_fin = '".$var."'");
+	if(!$searchdata){
+		throw new Exception('Error en la consulta getNoneFinancialImpact.');
+	}else{
+		while($data = $searchdata->fetch_array()){
+			return $data['descripcion_impacto_no_fin'];
+		}
+	}
+	$searchdata->free();
+	$searchdata->close();
+}
+
+function getNoneFinancialImpactLevel($var)
+{
+	$conn = home_connection();
+	$searchdata = $conn->query("SELECT descripcion_nivel_imp_no_fin FROM cat_nivel_impactos_no_financieros WHERE clave_nivel_imp_no_fin = '".$var."'");
+	if(!$searchdata){
+		throw new Exception('Error en la consulta getNoneFinancialImpact.');
+	}else{
+		while($data = $searchdata->fetch_array()){
+			return $data['descripcion_nivel_imp_no_fin'];
+		}
+	}
+	$searchdata->free();
+	$searchdata->close();
+}

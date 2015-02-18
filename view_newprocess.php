@@ -56,7 +56,7 @@ show_navbar();
 								<form id="new" action="validate_process.php" method="post">
 								<div class="form-group">
 									<label for="process_name">Nombre del proceso:</label>
-									<input class="form-control" type="text" name="process_name" id="process_name" maxlength="100" size="50"/>						
+									<input class="form-control" type="text" name="process_name" id="process_name" maxlength="100" size="50" required/>						
 								</div>
 								<div class="form-group">
 									<label for="area">Área del proceso:</label>
@@ -92,7 +92,7 @@ show_navbar();
 								</div>
 								<div class="form-group">
 									<label for="contingency_operators">Numero de operadores en contingencia</label>
-									<input class="form-control" type="text" name="contingency_operators" id="contingency_operators" maxlength="100" size="50" />						
+									<input class="form-control" type="text" name="contingency_operators" id="contingency_operators" maxlength="100" size="50"/>						
 								</div>
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary pull-right">Crear proceso</button>

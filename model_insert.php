@@ -120,6 +120,18 @@ function save_transactionalvolume($id,$var)
 	$savedata = $conn->query("UPDATE inventario_procesos SET promedio_transacciones_mensuales='".$var."' WHERE clave_proceso='".$id."'");
 }
 
+function save_windowoperation($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var7,$var8,$var9,$var10,$var11,$var12,$var13,$var14,$var15,$var16,$var17,$var18,$var19,$var20,$var21,$var22,$var23)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("INSERT INTO operacion_proceso VALUES('".$id."','".$var0."','".$var1."','".$var2."','".$var3."','".$var4."','".$var5."','".$var6."','".$var7."','".$var8."','".$var9."','".$var10."','".$var11."','".$var12."','".$var13."','".$var14."','".$var15."','".$var16."','".$var17."','".$var18."','".$var19."','".$var20."','".$var21."','".$var22."','".$var23."')");
+}
+
+function save_cyclicalprocessing($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var7,$var8,$var9,$var10,$var11)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("INSERT INTO procesa_ciclico VALUES('".$id."','".$var0."','".$var1."','".$var2."','".$var3."','".$var4."','".$var5."','".$var6."','".$var7."','".$var8."','".$var9."','".$var10."','".$var11."')"); 
+}
+
 function save_financialimpact($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var7)
 {
 	$conn = home_connection();
@@ -133,8 +145,11 @@ function save_financialimpact($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var
 	$savedata = $conn->query("INSERT INTO impactos_financiero VALUES('".$id."',null,7,'".$var7."')");
 }
 
-function save_windowoperation($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var7,$var8,$var9,$var10,$var11,$var12,$var13,$var14,$var15,$var16,$var17,$var18,$var19,$var20,$var21,$var22,$var23)
+function save_nonfinancialimpacts($id,$var0,$var1,$var2,$var3)
 {
 	$conn = home_connection();
-	$savedata = $conn->query("INSERT INTO operacion_proceso VALUES('".$id."','".$var0."','".$var1."','".$var2."','".$var3."','".$var4."','".$var5."','".$var6."','".$var7."','".$var8."','".$var9."','".$var10."','".$var11."','".$var12."','".$var13."','".$var14."','".$var15."','".$var16."','".$var17."','".$var18."','".$var19."','".$var20."','".$var21."','".$var22."','".$var23."')");
+	$savedata = $conn->query("INSERT INTO impactos_no_financieros VALUES('".$id."',1,'".$var0."')");
+	$savedata = $conn->query("INSERT INTO impactos_no_financieros VALUES('".$id."',2,'".$var1."')");
+	$savedata = $conn->query("INSERT INTO impactos_no_financieros VALUES('".$id."',3,'".$var2."')");
+	$savedata = $conn->query("INSERT INTO impactos_no_financieros VALUES('".$id."',4,'".$var3."')");
 }

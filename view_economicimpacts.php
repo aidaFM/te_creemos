@@ -18,7 +18,7 @@ show_navbar();
 						<p class="lead"></p>
 						<div class="row">
 							<div class="col-md-12">	
-								<form action="validate_financialimpact.php" method="post">
+								<form action="validate_economicimpacts.php" method="post">
 								<div class="form-group">
 									<label for="id">Clave del proceso:</label>
 									<input class="form-control" type="text" name="id" id="id" value="<?= $id ?>" maxlength="10" size="50" readonly/>	
