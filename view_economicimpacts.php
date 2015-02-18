@@ -24,7 +24,7 @@ show_navbar();
 									<input class="form-control" type="text" name="id" id="id" value="<?= $id ?>" maxlength="10" size="50" readonly/>	
 								</div>
 								<div class="form-group">
-										<div class="table-responsive">
+									<div class="table-responsive">
 										<table class="table table-bordered">
 											<thead>
 												<tr>
