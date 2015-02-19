@@ -145,6 +145,19 @@ function save_financialimpact($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var
 	$savedata = $conn->query("INSERT INTO impactos_financiero VALUES('".$id."',null,7,'".$var7."')");
 }
 
+function save_economicimpacts($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var7)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("INSERT INTO multas_penalizaciones VALUES('".$id."',null,1,'".$var0."')");
+	$savedata = $conn->query("INSERT INTO multas_penalizaciones VALUES('".$id."',null,1,'".$var1."')");
+	$savedata = $conn->query("INSERT INTO multas_penalizaciones VALUES('".$id."',null,2,'".$var2."')");
+	$savedata = $conn->query("INSERT INTO multas_penalizaciones VALUES('".$id."',null,3,'".$var3."')");
+	$savedata = $conn->query("INSERT INTO multas_penalizaciones VALUES('".$id."',null,4,'".$var4."')");
+	$savedata = $conn->query("INSERT INTO multas_penalizaciones VALUES('".$id."',null,5,'".$var5."')");
+	$savedata = $conn->query("INSERT INTO multas_penalizaciones VALUES('".$id."',null,6,'".$var6."')");
+	$savedata = $conn->query("INSERT INTO multas_penalizaciones VALUES('".$id."',null,7,'".$var7."')");
+}
+
 function save_nonfinancialimpacts($id,$var0,$var1,$var2,$var3)
 {
 	$conn = home_connection();
@@ -164,4 +177,10 @@ function save_processstaff($id,$staff_id,$var0)
 {
 	$conn = home_connection();
 	$savedata = $conn->query("INSERT INTO proceso_personal_tipopersonal VALUES('".$id."','".$staff_id."','".$var0."')");
+}
+
+function save_technologicaldependencies($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6)
+{
+	$conn = home_connection();
+	$savedata = $conn->query("INSERT INTO dependencias_tecnologicas VALUES('".$id."',null,'".$var0."','".$var1."','".$var2."','".$var3."','".$var4."','".$var5."','".$var6."')");
 }

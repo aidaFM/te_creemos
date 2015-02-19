@@ -12,7 +12,7 @@ show_navbar();
 			<div class="col-md-12">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
-						<h3>Impacto financiero</h3>
+						<h3>Impactos Economicos asociados</h3>
 					</div>
 					<div class="panel-body">
 						<p class="lead"></p>

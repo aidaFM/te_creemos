@@ -14,7 +14,7 @@ require_once('basic_files.php');
 @$var8 = $_POST['address'];
 @$var9 = $_POST['internal_email'];
 @$var10 = $_POST['external_email'];
-print_r($_POST);
+
 @$button = $_POST['save'];
 
 try{
@@ -30,15 +30,9 @@ try{
 			show_footer();
 		}
 	}else{
-		if(getNumberOfSystems($id) == FALSE){
-			show_header('Guardar volumen transaccional');
-			// header("refresh:0; url=\"view_alternateprocedure.php?id=$id\"");
-			show_footer();			
-		}else{
-			show_header('Guardar volumen transaccional');
-			// header("refresh:0; url=\"view_transactionalvolume.php?id=$id\"");
-			show_footer();
-		}
+		show_header('Dependencias tecnologicas');
+		header("refresh:0; url=\"view_technologicaldependencies.php?id=$id\"");
+		show_footer();
 	}
 }catch(Exception $e){
 	show_header('Errores');

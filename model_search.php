@@ -117,7 +117,7 @@ function getNoneFinancialImpactLevel($var)
 	$conn = home_connection();
 	$searchdata = $conn->query("SELECT descripcion_nivel_imp_no_fin FROM cat_nivel_impactos_no_financieros WHERE clave_nivel_imp_no_fin = '".$var."'");
 	if(!$searchdata){
-		throw new Exception('Error en la consulta getNoneFinancialImpact.');
+		throw new Exception('Error en la consulta getNoneFinancialImpactLevel.');
 	}else{
 		while($data = $searchdata->fetch_array()){
 			return $data['descripcion_nivel_imp_no_fin'];

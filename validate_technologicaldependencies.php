@@ -7,17 +7,26 @@ require_once('basic_files.php');
 @$var0 = $_POST['area'];
 @$var1 = $_POST['service'];
 @$var2 = $_POST['internal_dependency'];
-@$var3 = $_POST['internal_dependency'];
+@$var3 = $_POST['external_dependency'];
 @$var4 = $_POST['input_dependency'];
 @$var5 = $_POST['output_dependency'];
+@$var6 = $_POST['dependency_level'];
+
+@$button = $_POST['save'];
 
 try{
-	if(!empty_fields($_POST)){
-		throw new Exception('El formulario cuenta con campos vacios.');
+	if($button == 'save'){
+		if(!empty_fields($_POST)){
+			throw new Exception('El formulario para crear el proceso cuenta con campos vacios.');
+		}else{
+			show_header('Guardar personal critico');
+			save_technologicaldependencies($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6);
+			header("refresh:0; url=\"view_technologicaldependencies.php?id=$id\"");
+			show_footer();
+		}
 	}else{
-		show_header('Guardar dependencias tecnológicas');
-		save_financialimpact($id,$var0,$var1,$var2,$var3,$var4,$var5);
-		header("refresh:0; url=\"view_economicimpacts.php?id=$id\"");
+		show_header('Guardar volumen transaccional');
+		header("refresh:0; url=\"view_databackups.php?id=$id\"");
 		show_footer();
 	}
 }catch(Exception $e){
