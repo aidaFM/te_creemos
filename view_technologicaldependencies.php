@@ -41,7 +41,7 @@ show_navbar();
 								</div>
 								<div class="form-group">
 									<label for="area">Área que proporciona el servicio (considerar a proveedores):</label>
-									<select class="form-control" name="area"><?php echo $area; ?></select>
+									<input class="form-control" type="text" name="area" id="area" maxlength="100" size="50" />
 								</div>
 								<div class="form-group">
 									<label for="service">Servicio / Equipos / Otros:</label>
@@ -68,6 +68,7 @@ show_navbar();
 									        	</tr>
 									      	</tbody>
 									    </table>																			
+									</div>
 								</div>
 								<div class="form-group">
 									<label for="dependency_level">Nivel de dependencia:</label>

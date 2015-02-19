@@ -6,18 +6,18 @@ $id = $_GET['id'];
 
 $conn = home_connection();
 
-$areas = "select * from cat_areas";
-$result = $conn->query($areas);
-$area= "";
+$backup_types = "select * from cat_tipo_respaldos";
+$result = $conn->query($backup_types);
+$backup_type= "";
 while ($row = $result->fetch_assoc()) {
-	$area .= "<option value='$row[clave_area]'>$row[descripcion_area]</option>";
+	$backup_type .= "<option value='$row[clave_tipo_respaldo]'>$row[descripcion_tipo_respaldo]</option>";
 }
 
-$dependency_levels = "select * from cat_nivel_dependencia";
-$result = $conn->query($dependency_levels);
-$dependency_level= "";
+$backup_storages = "select * from cat_medio_respaldo";
+$result = $conn->query($backup_storages);
+$backup_storage= "";
 while ($row = $result->fetch_assoc()) {
-	$dependency_level .= "<option value='$row[clave_nivel_dependencia]'>$row[descripcion_nivel_dependencia]</option>";
+	$backup_storage .= "<option value='$row[clave_medio_respaldo]'>$row[descripcion_medio_respaldo]</option>";
 }
 
 show_header('Dependencias tecnologicas');
@@ -41,27 +41,23 @@ show_navbar();
 								</div>
 								<div class="form-group">
 									<label>Tipo de respaldo:</label>
-									<select class="form-control" name="area"><?php echo $area; ?></select>
+									<select class="form-control" name="backup_type"><?php echo $backup_type; ?></select>
 								</div>
 								<div class="form-group">
-									<label>Medio de almacenamiento:</label>
-									<select class="form-control" name="area"><?php echo $area; ?></select>
+									<label for="backup_storage">Medio de almacenamiento:</label>
+									<select class="form-control" name="backup_storage"><?php echo $backup_storage; ?></select>
 								</div>
 								<div class="form-group">
-									<label for="service">Lugar donde se realizan los respaldos:</label>
-									<input class="form-control" type="text" name="service" id="service" maxlength="100" size="50" />						
+									<label for="place">Lugar donde se realizan los respaldos:</label>
+									<input class="form-control" type="text" name="place" id="place" maxlength="100" size="50" />						
 								</div>
 								<div class="form-group">
-									<label for="service">Lugar donde se almacenan los respaldos:</label>
-									<input class="form-control" type="text" name="service" id="service" maxlength="100" size="50" />						
+									<label for="zone">Lugar donde se almacenan los respaldos:</label>
+									<input class="form-control" type="text" name="zone" id="zone" maxlength="100" size="50" />						
 								</div>
 								<div class="form-group">
-									<label for="service">Persona que realiza los respaldos:</label>
-									<input class="form-control" type="text" name="service" id="service" maxlength="100" size="50" />						
-								</div>
-								<div class="form-group">
-									<label for="dependency_level">Nivel de dependencia:</label>
-									<select class="form-control" name="dependency_level"><?php echo $dependency_level; ?></select>
+									<label for="name">Persona que realiza los respaldos:</label>
+									<input class="form-control" type="text" name="name" id="name" maxlength="100" size="50" />						
 								</div>
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary pull-right">Continuar</button>

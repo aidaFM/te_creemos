@@ -141,3 +141,18 @@ function getStaffId($var)
 	$searchdata->free();
 	$searchdata->close();
 }
+
+function getProviderId($var)
+{
+	$conn = home_connection();
+	$searchdata = $conn->query("SELECT clave_provedor FROM cat_directorio_proveedores WHERE nombre_provedor = '".$var."'");
+	if(!$searchdata){
+		throw new Exception('Error en la consulta getProviderId.');
+	}else{
+		while($data = $searchdata->fetch_array()){
+			return $data['clave_provedor'];
+		}
+	}
+	$searchdata->free();
+	$searchdata->close();
+}
