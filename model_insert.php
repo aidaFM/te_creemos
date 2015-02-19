@@ -218,5 +218,5 @@ function save_providerprocess($id,$provider_id)
 function save_recoveryrequirements($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var7,$var8,$var9,$var10,$var11,$var12,$var13)
 {
 	$conn = home_connection();
-	$savedata = $conn->query("INSERT INTO requerimientos_bcp VALUES('".$id."','".$var0."','".$var1."','".$var2."','".$var3."','".$var4."','".$var6."','".$var7."','".$var8."','".$var9."','".$var10."','".$var11."','".$var12."','".$var13."')"); 	
+	$savedata = $conn->query("INSERT INTO requerimientos_bcp VALUES('".$id."','".$var0."','".$var1."','".$var2."','".$var3."','".$var4."','".$var5."','".$var6."','".$var7."','".$var8."','".$var9."','".$var10."','".$var11."','".$var12."','".$var13."')"); 	
 }
