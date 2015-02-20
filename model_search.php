@@ -156,3 +156,18 @@ function getProviderId($var)
 	$searchdata->free();
 	$searchdata->close();
 }
+
+function getConsecutiveNumber($id,$table,$var0)
+{
+	$conn = home_connection();
+	$searchdata = $conn->query("SELECT ".$var0." FROM ".$table." WHERE clave_proceso = '".$id."'");
+	if(!$searchdata){
+		throw new Exception('Error en la consulta getConsecutiveNumber.');
+	}else{
+		while($data = $searchdata->fetch_array()){
+			return $data[$var0];
+		}
+	}
+	$searchdata->free();
+	$searchdata->close();
+}
