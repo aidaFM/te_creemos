@@ -18,7 +18,8 @@ try{
 		throw new Exception('El formulario cuenta con campos vacios.');
 	}else{
 		show_header('Guardar objetivos de recuperación');
-		save_financialimpact($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var7);
+		$next_number= getConsecutiveNumber($id,'impactos_financiero','consecutivo_impacto_financiero');
+		save_financialimpact($id,$next_number,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var7);
 		header("refresh:0; url=\"view_economicimpacts.php?id=$id\"");
 		show_footer();
 	}
