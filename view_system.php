@@ -34,7 +34,6 @@ show_navbar();
 								</form>
 							</div>
 						</div>
-						</div>
 					</div>
 				</div>	
 			</div>
