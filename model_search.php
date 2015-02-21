@@ -171,3 +171,19 @@ function getConsecutiveNumber($id,$table,$var0)
 	$searchdata->free();
 	$searchdata->close();
 }
+
+function getProcessData($id)
+{
+	$conn = home_connection();
+	$getdata = $conn->query("SELECT * FROM cat_procesos JOIN inventario_procesos ON cat_procesos.clave_proceso=inventario_procesos.clave_proceso WHERE cat_procesos.clave_proceso = $id");
+	if(!$getdata){
+		throw new Exception('Error en la consulta getConsecutiveNumber.');
+	}else{
+		while($data = $getdata->fetch_array()){
+			return $data;
+		}
+	}
+	$getdata->free();
+	$getdata->close();
+}
+	

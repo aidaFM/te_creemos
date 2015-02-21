@@ -2,6 +2,62 @@
 
 require_once('basic_files.php');
 
+$id = $_GET['id'];
+
+$conn = home_connection();
+
+$areas = "select * from cat_areas";
+$result = $conn->query($areas);
+$area= "";
+while ($row = $result->fetch_assoc()) {
+	$area .= "<option value='$row[clave_area]'>$row[descripcion_area]</option>";
+}
+
+$criticality_levels = "select * from cat_criticidad_procesos";
+$result = $conn->query($criticality_levels);
+$criticality_level= "";
+while ($row = $result->fetch_assoc()) {
+	$criticality_level .= "<option value='$row[clave_criticidad_proceso]'>$row[descripcion_criticidad_proceso]</option>";
+}
+
+$leaders = "select * from cat_lider_proyecto";
+$result = $conn->query($leaders);
+$leader_name= "";
+while ($row = $result->fetch_assoc()) {
+	$leader_name .= "<option value='$row[clave_lider_proyecto]'>$row[nombre_lider_proyecto]</option>";
+}
+
+$bosses = "select * from cat_jefes_inmediatos";
+$result = $conn->query($bosses);
+$boss_name= "";
+while ($row = $result->fetch_assoc()) {
+	$boss_name .= "<option value='$row[clave_jefes_inmediatos]'>$row[nombre_jefes_inmediatos], $row[puesto_jefes_inmediatos]</option>";
+}
+
+$times = "select * from cat_tiempo_maximo_fs";
+$result = $conn->query($times);
+$out_of_service= "";
+while ($row = $result->fetch_assoc()) {
+	$out_of_service .= "<option value='$row[clave_tiempo_maximo_fs]'>$row[descripcion_tiempo_maximo_fs]</option>";
+}
+
+$rto_options = "select * from cat_objetivo_tiempo_recuperacion";
+$result = $conn->query($rto_options);
+$rto_option= "";
+while ($row = $result->fetch_assoc()) {
+	$rto_option .= "<option value='$row[clave_rto]'>$row[descripcion_rto]</option>";
+}
+
+$rpo_options = "select * from cat_objetivo_punto_recuperacion";
+$result = $conn->query($rpo_options);
+$rpo_option= "";
+while ($row = $result->fetch_assoc()) {
+	$rpo_option .= "<option value='$row[clave_rpo]'>$row[descripcion_rpo]</option>";
+}
+
+$process = getProcessData($id);
+print_r($process);
+
 show_header('Proceso nuevo');
 show_navbar();
 ?>
@@ -19,43 +75,43 @@ show_navbar();
 								<form id="new" action="validate_process.php" method="post">
 								<div class="form-group">
 									<label for="process_name">Nombre del proceso:</label>
-									<input class="form-control" type="text" name="process_name" id="process_name" maxlength="100" size="50" required/>						
+									<input class="form-control" type="text" name="process_name" id="process_name" value="<?= $process['nombre_proceso'] ?>" maxlength="100" size="50" required/>						
 								</div>
 								<div class="form-group">
 									<label for="area">Área del proceso:</label>
-									<select class="form-control" name="area"><?php echo $area; ?></select>
+									<select class="form-control" name="area" value="<?= $process['clave_area'] ?>"><?php echo $area; ?></select>
 								</div>
 								<div class="form-group">
 									<label for="leader_name">Lider del proyecto:</label>
-									<select class="form-control" name="leader_name"><?php echo $leader_name; ?></select>														
+									<select class="form-control" name="leader_name" value="<?= $process['lider_proyecto'] ?>"><?php echo $leader_name; ?></select>														
 								</div>
 								<div class="form-group">
 									<label for="process_target">Objetivo del proceso:</label>
-									<input class="form-control" type="text" name="process_target" id="process_target" maxlength="100" size="50" />						
+									<input class="form-control" type="text" name="process_target" id="process_target" value="<?= $process['objetivo_proceso'] ?>" maxlength="100" size="50" />						
 								</div>
 								<div class="form-group">
 									<label for="process_description">Descripción del proceso</label>
-									<textarea class="form-control" name="process_description" id="process_description" rows="8" ></textarea>														
+									<textarea class="form-control" name="process_description" id="process_description" rows="8" ><?= $process['descripcion_proceso'] ?></textarea>														
 								</div>
 								<div class="form-group">
 									<label for="boss_name">Nombre y puesto del Jefe inmediato:</label>
-									<select class="form-control" name="boss_name"><?php echo $boss_name; ?></select>															
+									<select class="form-control" name="boss_name" value="<?= $process['clave_jefes_inmediatos'] ?>"><?php echo $boss_name; ?></select>															
 								</div>
 								<div class="form-group">
 									<label for="critycality_level">Nivel de criticidad:</label>
-									<select class="form-control" name="criticality_level"><?php echo $criticality_level; ?></select>
+									<select class="form-control" name="criticality_level" value="<?= $process['clave_criticidad_proceso'] ?>"><?php echo $criticality_level; ?></select>
 								</div>
 								<div class="form-group">
 									<label for="out_of_service">Tiempo máximo tolerable fuera de servicio:</label>
-									<select class="form-control" name="out_of_service"><?php echo $out_of_service; ?></select>						
+									<select class="form-control" name="out_of_service" value="<?= $process['clave_tiempo_maximo_fs'] ?>"><?php echo $out_of_service; ?></select>						
 								</div>
 								<div class="form-group">
 									<label for="normal_operators">Numero de operadores en operación normal</label>
-									<input class="form-control" type="text" name="normal_operators" id="normal_operators" maxlength="100" size="50" />						
+									<input class="form-control" type="text" name="normal_operators" id="normal_operators" value="<?= $process['personal_operacion_normal'] ?>" maxlength="100" size="50" />						
 								</div>
 								<div class="form-group">
 									<label for="contingency_operators">Numero de operadores en contingencia</label>
-									<input class="form-control" type="text" name="contingency_operators" id="contingency_operators" maxlength="100" size="50"/>						
+									<input class="form-control" type="text" name="contingency_operators" id="contingency_operators" value="<?= $process['personal_operacion_contingencia'] ?>" maxlength="100" size="50"/>						
 								</div>
 							</div>
 						</div>
@@ -75,11 +131,11 @@ show_navbar();
 							<div class="col-md-12">	
 								<div class="form-group">
 									<label for="critycality">Objetivo tiempo de recuperación:</label>
-									<select class="form-control" name="rto"><?php echo $rto_option; ?></select>
+									<select class="form-control" name="rto" value="<?= $process['clave_rto'] ?>"><?php echo $rto_option; ?></select>
 								</div>
 								<div class="form-group">
 									<label for="critycality">Objetivo punto de recuperación:</label>
-									<select class="form-control" name="rpo"><?php echo $rpo_option; ?></select>							
+									<select class="form-control" name="rpo" value="<?= $process['clave_rpo'] ?>"><?php echo $rpo_option; ?></select>							
 								</div>
 							</div>
 						</div>
@@ -163,7 +219,7 @@ show_navbar();
 							<div class="col-md-12">
 								<div class="form-group">
 									<label for="average">Promedio de transacciones:</label>
-									<input class="form-control" type="text" name="average" id="average" maxlength="100" size="50"/>						
+									<input class="form-control" type="text" name="average" id="average" value="<?= $process['promedio_transacciones_mensuales'] ?>" maxlength="100" size="50"/>						
 								</div>
 							</div>
 						</div>
@@ -635,7 +691,7 @@ show_navbar();
 						<h3>Personal critico</h3>
 					</div>
 					<div class="panel-body">
-						<p class="lead">.</p>
+						<p class="lead"></p>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
