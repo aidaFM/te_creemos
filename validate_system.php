@@ -13,7 +13,8 @@ try{
 			show_header('Guardar sistema');
 			save_sytem($var);
 			$system_id = getSystemId($var);
-			save_systemprocess($id,$system_id);
+			$next_number = getConsecutiveNumber($id,'proceso_sistemas','consecutivo_sistema');
+			save_systemprocess($id,$next_number,$system_id);
 			header("refresh:0; url=\"view_system.php?id=$id\"");
 			show_footer();
 		}

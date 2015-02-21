@@ -101,10 +101,10 @@ function save_sytem($var)
 	$savedata = $conn->query("INSERT INTO cat_sistemas VALUES(null,'".$var."')");
 }
 
-function save_systemprocess($id,$system_id)
+function save_systemprocess($id,$next_number,$system_id)
 {
 	$conn = home_connection();
-	$savedata = $conn->query("INSERT INTO proceso_sistemas VALUES('".$id."',null,'".$system_id."')");
+	$savedata = $conn->query("INSERT INTO proceso_sistemas VALUES('".$id."','".$next_number."','".$system_id."')");
 }
 
 function save_alternateprocedure($id,$var)
@@ -224,10 +224,10 @@ function save_provider($var0,$var2,$var3,$var4,$var5,$var6)
 	$savedata = $conn->query("INSERT INTO cat_directorio_proveedores VALUES(null,'".$var0."','".$var2."','".$var3."','".$var4."','".$var5."','".$var6."')");	
 }
 
-function save_providerprocess($id,$provider_id)
+function save_providerprocess($id,$next_number,$provider_id)
 {
 	$conn = home_connection();
-	$savedata = $conn->query("INSERT INTO proceso_proveedor VALUES('".$id."',null,'".$provider_id."')");		
+	$savedata = $conn->query("INSERT INTO proceso_proveedor VALUES('".$id."','".$next_number."','".$provider_id."')");		
 }
 
 function save_recoveryrequirements($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var7,$var8,$var9,$var10,$var11,$var12,$var13)
