@@ -16,7 +16,8 @@ try{
 			throw new Exception('El formulario para crear el proceso cuenta con campos vacios.');
 		}else{
 			show_header('Guardar dependencias externas');
-			save_externaldependencies($id,$var0,$var1,$var2);
+			$next_number= getConsecutiveNumber($id,'interdependencias_externas','clave_interdependencia_externa');
+			save_externaldependencies($id,$next_number,$var0,$var1,$var2);
 			header("refresh:0; url=\"view_externaldependencies.php?id=$id\"");
 			show_footer();
 		}

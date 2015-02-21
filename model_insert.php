@@ -194,10 +194,10 @@ function save_processstaff($id,$staff_id,$var0)
 	$savedata = $conn->query("INSERT INTO proceso_personal_tipopersonal VALUES('".$id."','".$staff_id."','".$var0."')");
 }
 
-function save_technologicaldependencies($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6)
+function save_technologicaldependencies($id,$next_number,$var0,$var1,$var2,$var3,$var4,$var5,$var6)
 {
 	$conn = home_connection();
-	$savedata = $conn->query("INSERT INTO dependencias_tecnologicas VALUES('".$id."',null,'".$var0."','".$var1."','".$var2."','".$var3."','".$var4."','".$var5."','".$var6."')");
+	$savedata = $conn->query("INSERT INTO dependencias_tecnologicas VALUES('".$id."','".$next_number."','".$var0."','".$var1."','".$var2."','".$var3."','".$var4."','".$var5."','".$var6."')");
 }
 
 function save_databackups($id,$var0,$var1,$var2,$var3,$var4)
@@ -206,16 +206,16 @@ function save_databackups($id,$var0,$var1,$var2,$var3,$var4)
 	$savedata = $conn->query("INSERT INTO respaldos_proceso VALUES('".$id."','".$var0."','".$var1."','".$var2."','".$var3."','".$var4."')");
 }
 
-function save_internaldependencies($id,$var0,$var1,$var2)
+function save_internaldependencies($id,$next_number,$var0,$var1,$var2)
 {
 	$conn = home_connection();
-	$savedata = $conn->query("INSERT INTO interdependencias_internas VALUES('".$id."',null,'".$var0."','".$var1."','".$var2."')");
+	$savedata = $conn->query("INSERT INTO interdependencias_internas VALUES('".$id."','".$next_number."','".$var0."','".$var1."','".$var2."')");
 }
 
-function save_externaldependencies($id,$var0,$var1,$var2)
+function save_externaldependencies($id,$next_number,$var0,$var1,$var2)
 {
 	$conn = home_connection();
-	$savedata = $conn->query("INSERT INTO interdependencias_externas VALUES('".$id."',null,'".$var0."','".$var1."','".$var2."')");
+	$savedata = $conn->query("INSERT INTO interdependencias_externas VALUES('".$id."','".$next_number."','".$var0."','".$var1."','".$var2."')");
 }
 
 function save_provider($var0,$var2,$var3,$var4,$var5,$var6)

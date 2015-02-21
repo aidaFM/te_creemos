@@ -22,7 +22,7 @@ try{
 			show_header('Guardar provedor');
 			save_provider($var0,$var2,$var3,$var4,$var5,$var6);
 			$provider_id = getProviderId($var0);
-			$next_number = getConsecutiveNumber($id,'proceso_proveedor','consecutivo_proveedor')
+			$next_number = getConsecutiveNumber($id,'proceso_proveedor','consecutivo_proveedor');
 			save_providerprocess($id,$next_number,$provider_id);
 			header("refresh:0; url=\"view_providers.php?id=$id\"");
 			show_footer();

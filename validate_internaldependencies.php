@@ -16,7 +16,8 @@ try{
 			throw new Exception('El formulario para crear el proceso cuenta con campos vacios.');
 		}else{
 			show_header('Guardar dependencias internas');
-			save_internaldependencies($id,$var0,$var1,$var2);
+			$next_number= getConsecutiveNumber($id,'interdependencias_internas','clave_interdependencia_interna');
+			save_internaldependencies($id,$next_number,$var0,$var1,$var2);
 			header("refresh:0; url=\"view_internaldependencies.php?id=$id\"");
 			show_footer();
 		}

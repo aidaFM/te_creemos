@@ -20,7 +20,8 @@ try{
 			throw new Exception('El formulario para crear el proceso cuenta con campos vacios.');
 		}else{
 			show_header('Guardar personal critico');
-			save_technologicaldependencies($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6);
+			$next_number= getConsecutiveNumber($id,'dependencias_tecnologicas','num_dependencia_proceso');
+			save_technologicaldependencies($id,$next_number,$var0,$var1,$var2,$var3,$var4,$var5,$var6);
 			header("refresh:0; url=\"view_technologicaldependencies.php?id=$id\"");
 			show_footer();
 		}
