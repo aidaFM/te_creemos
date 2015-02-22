@@ -177,7 +177,7 @@ function getProcessData($id)
 	$conn = home_connection();
 	$getdata = $conn->query("SELECT * FROM cat_procesos JOIN inventario_procesos ON cat_procesos.clave_proceso=inventario_procesos.clave_proceso WHERE cat_procesos.clave_proceso = $id");
 	if(!$getdata){
-		throw new Exception('Error en la consulta getConsecutiveNumber.');
+		throw new Exception('Error en la consulta getProcessData.');
 	}else{
 		while($data = $getdata->fetch_array()){
 			return $data;
@@ -186,4 +186,69 @@ function getProcessData($id)
 	$getdata->free();
 	$getdata->close();
 }
-	
+
+function getWindowOperationData($id)
+{
+	$conn = home_connection();
+	$getdata = $conn->query("SELECT * FROM operacion_proceso WHERE clave_proceso = $id");
+	if(!$getdata){
+		throw new Exception('Error en la consulta getWindowOperationData.');
+	}else{
+		while($data = $getdata->fetch_array()){
+			return $data;
+		}
+	}
+	$getdata->free();
+	$getdata->close();
+}
+
+function getCyclicalProcessing($id)
+{
+	$conn = home_connection();
+	$getdata = $conn->query("SELECT * FROM procesa_ciclico WHERE clave_proceso = $id");
+	if(!$getdata){
+		throw new Exception('Error en la consulta getWindowOperationData.');
+	}else{
+		while($data = $getdata->fetch_array()){
+			return $data;
+		}
+	}
+	$getdata->free();
+	$getdata->close();
+}
+
+function getFinancialImpacts($id)
+{
+	$conn = home_connection();
+	$i=0;
+	$getdata = $conn->query("SELECT * FROM impactos_financiero WHERE clave_proceso = $id");
+	if(!$getdata){
+		throw new Exception('Error en la consulta getFinancialImpacts.');
+	}else{
+		while($data = $getdata->fetch_array()){
+			$data_temp[$i]=$data;
+			$i++;
+		}
+		return $data_temp;
+	}
+	$getdata->free();
+	$getdata->close();
+}
+
+function getEconomicImpacts($id)
+{
+	$conn = home_connection();
+	$i=0;
+	$getdata = $conn->query("SELECT * FROM multas_penalizaciones WHERE clave_proceso = $id");
+	if(!$getdata){
+		throw new Exception('Error en la consulta getFinancialImpacts.');
+	}else{
+		while($data = $getdata->fetch_array()){
+			$data_temp[$i]=$data;
+			$i++;
+		}
+		return $data_temp;
+	}
+	$getdata->free();
+	$getdata->close();
+}

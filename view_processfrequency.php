@@ -45,10 +45,10 @@ show_navbar();
 								</div>
 								<div class="form-group">
 									<label for="critical_period">Periodos críticos:</label>
-									<select class="form-control" name="critical_period"><?php echo $critical_period; ?></select>
+									<select class="form-control" name="critical_period"><?php echo utf8_encode($critical_period); ?></select>
 								</div>
 								<div class="form-group">
-									<button type="submit" class="btn btn-primary pull-right">Crear proceso</button>
+									<button type="submit" class="btn btn-primary pull-right">Guardar</button>
 								</div>
 								</form>
 							</div>

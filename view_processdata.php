@@ -4,59 +4,124 @@ require_once('basic_files.php');
 
 $id = $_GET['id'];
 
+$process = getProcessData($id);
+$window_operation = getWindowOperationData($id);
+$cyclical_processing = getCyclicalProcessing($id);
+$financial_impacts=getFinancialImpacts($id);
+$economic_impacts=getEconomicImpacts($id);
+
 $conn = home_connection();
 
 $areas = "select * from cat_areas";
 $result = $conn->query($areas);
 $area= "";
 while ($row = $result->fetch_assoc()) {
-	$area .= "<option value='$row[clave_area]'>$row[descripcion_area]</option>";
+	if($row['clave_area']==$process['clave_area']){
+		$area .= "<option value='$row[clave_area]' selected>$row[descripcion_area]</option>";
+	}
+	else{
+		$area .= "<option value='$row[clave_area]'>$row[descripcion_area]</option>";
+	}
 }
 
 $criticality_levels = "select * from cat_criticidad_procesos";
 $result = $conn->query($criticality_levels);
 $criticality_level= "";
 while ($row = $result->fetch_assoc()) {
-	$criticality_level .= "<option value='$row[clave_criticidad_proceso]'>$row[descripcion_criticidad_proceso]</option>";
+	if($row['clave_criticidad_proceso']==$process['clave_criticidad_proceso']){
+		$criticality_level .= "<option value='$row[clave_criticidad_proceso]' selected>$row[descripcion_criticidad_proceso]</option>";
+	}else{
+		$criticality_level .= "<option value='$row[clave_criticidad_proceso]'>$row[descripcion_criticidad_proceso]</option>";
+	}
 }
 
 $leaders = "select * from cat_lider_proyecto";
 $result = $conn->query($leaders);
 $leader_name= "";
 while ($row = $result->fetch_assoc()) {
-	$leader_name .= "<option value='$row[clave_lider_proyecto]'>$row[nombre_lider_proyecto]</option>";
+	if($row['clave_lider_proyecto']==$process['clave_lider_proyecto']){
+		$leader_name .= "<option value='$row[clave_lider_proyecto]' selected>$row[nombre_lider_proyecto]</option>";
+	}else{
+		$leader_name .= "<option value='$row[clave_lider_proyecto]'>$row[nombre_lider_proyecto]</option>";
+	}
 }
 
 $bosses = "select * from cat_jefes_inmediatos";
 $result = $conn->query($bosses);
 $boss_name= "";
 while ($row = $result->fetch_assoc()) {
-	$boss_name .= "<option value='$row[clave_jefes_inmediatos]'>$row[nombre_jefes_inmediatos], $row[puesto_jefes_inmediatos]</option>";
+	if($row['clave_jefes_inmediatos']==$process['clave_jefes_inmediatos']){
+		$boss_name .= "<option value='$row[clave_jefes_inmediatos]' selected>$row[nombre_jefes_inmediatos], $row[puesto_jefes_inmediatos]</option>";
+	}else{
+		$boss_name .= "<option value='$row[clave_jefes_inmediatos]'>$row[nombre_jefes_inmediatos], $row[puesto_jefes_inmediatos]</option>";
+	}
 }
 
 $times = "select * from cat_tiempo_maximo_fs";
 $result = $conn->query($times);
 $out_of_service= "";
 while ($row = $result->fetch_assoc()) {
-	$out_of_service .= "<option value='$row[clave_tiempo_maximo_fs]'>$row[descripcion_tiempo_maximo_fs]</option>";
+	if($row['clave_tiempo_maximo_fs']==$process['clave_tiempo_maximo_fs']){
+		$out_of_service .= "<option value='$row[clave_tiempo_maximo_fs]'>$row[descripcion_tiempo_maximo_fs]</option>";
+	}else{
+		$out_of_service .= "<option value='$row[clave_tiempo_maximo_fs]'>$row[descripcion_tiempo_maximo_fs]</option>";
+	}
 }
 
 $rto_options = "select * from cat_objetivo_tiempo_recuperacion";
 $result = $conn->query($rto_options);
 $rto_option= "";
 while ($row = $result->fetch_assoc()) {
-	$rto_option .= "<option value='$row[clave_rto]'>$row[descripcion_rto]</option>";
+	if($row['clave_rto']==$process['clave_rto']){
+		$rto_option .= "<option value='$row[clave_rto]' selected>$row[descripcion_rto]</option>";
+	}else{
+		$rto_option .= "<option value='$row[clave_rto]'>$row[descripcion_rto]</option>";
+	}
 }
 
 $rpo_options = "select * from cat_objetivo_punto_recuperacion";
 $result = $conn->query($rpo_options);
 $rpo_option= "";
 while ($row = $result->fetch_assoc()) {
-	$rpo_option .= "<option value='$row[clave_rpo]'>$row[descripcion_rpo]</option>";
+	if($row['clave_rpo']==$process['clave_rpo']){
+		$rpo_option .= "<option value='$row[clave_rpo]' selected>$row[descripcion_rpo]</option>";
+	}else{
+		$rpo_option .= "<option value='$row[clave_rpo]'>$row[descripcion_rpo]</option>";
+	}
 }
 
-$process = getProcessData($id);
-print_r($process);
+$frequencies = "select * from cat_frecuencia_proceso";
+$result = $conn->query($frequencies);
+$frequency= "";
+while ($row = $result->fetch_assoc()) {
+	if($row['clave_frecuencia_proceso']==$process['clave_frecuencia_proceso']){
+		$frequency .= "<option value='$row[clave_frecuencia_proceso]'>$row[descripcion_frecuencia_proceso]</option>";
+	}else{
+	$frequency .= "<option value='$row[clave_frecuencia_proceso]'>$row[descripcion_frecuencia_proceso]</option>";
+	}
+}
+
+$critical_periods = "select * from cat_periodos_criticos";
+$result = $conn->query($critical_periods);
+$critical_period= "";
+while ($row = $result->fetch_assoc()) {
+	if($row['clave_periodos_criticos']==$process['clave_periodos_criticos']){
+		$critical_period .= "<option value='$row[clave_periodos_criticos]' selected>$row[descripcion_periodos_criticos]</option>";
+	}else{
+		$critical_period .= "<option value='$row[clave_periodos_criticos]'>$row[descripcion_periodos_criticos]</option>";
+	}
+}
+
+$charge_levels = "select * from cat_nivel_carga";
+$result = $conn->query($charge_levels);
+$charge_level= "";
+while ($row = $result->fetch_assoc()) {
+	if($row['clave_nivel_carga']==$window_operation['hora_0']){
+		$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+	}else{
+		$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+	}
+}
 
 show_header('Proceso nuevo');
 show_navbar();
@@ -131,11 +196,11 @@ show_navbar();
 							<div class="col-md-12">	
 								<div class="form-group">
 									<label for="critycality">Objetivo tiempo de recuperación:</label>
-									<select class="form-control" name="rto" value="<?= $process['clave_rto'] ?>"><?php echo $rto_option; ?></select>
+									<select class="form-control" name="rto" value="<?= $process['clave_rto'] ?>"><?php echo utf8_encode($rto_option); ?></select>
 								</div>
 								<div class="form-group">
 									<label for="critycality">Objetivo punto de recuperación:</label>
-									<select class="form-control" name="rpo" value="<?= $process['clave_rpo'] ?>"><?php echo $rpo_option; ?></select>							
+									<select class="form-control" name="rpo" value="<?= $process['clave_rpo'] ?>"><?php echo utf8_encode($rpo_option); ?></select>							
 								</div>
 							</div>
 						</div>
@@ -155,11 +220,11 @@ show_navbar();
 							<div class="col-md-12">
 								<div class="form-group">
 									<label for="frequency">Frecuencia del proceso:</label>
-									<select class="form-control" name="frequency"><?php echo $frequency; ?></select>							
+									<select class="form-control" name="frequency" value="<?= $process['clave_frecuencia_proceso'] ?>"><?php echo $frequency; ?></select>							
 								</div>
 								<div class="form-group">
 									<label for="critical_period">Periodos críticos:</label>
-									<select class="form-control" name="critical_period"><?php echo $critical_period; ?></select>
+									<select class="form-control" name="critical_period"><?php echo utf8_encode($critical_period); ?></select>
 								</div>
 							</div>
 						</div>
@@ -177,10 +242,21 @@ show_navbar();
 						<p class="lead"></p>
 						<div class="row">
 							<div class="col-md-12">
-								<div class="form-group">
-									<label for="system_name">Sistema:</label>
-									<input class="form-control" type="text" name="system_name" id="system_name" maxlength="100" size="50"/>						
-								</div>
+								<?php
+									$systems = $conn->query("SELECT * FROM cat_sistemas JOIN proceso_sistemas ON cat_sistemas.clave_sistema=proceso_sistemas.clave_sistema WHERE proceso_sistemas.clave_proceso = $id");
+									if(!$systems){
+										throw new Exception('Error en la consulta getConsecutiveNumber.');
+									}else{
+										while($data = $systems->fetch_array()){
+								?>
+									<div class="form-group">
+										<label>Clave del sistema: <?= $data['clave_sistema'] ?></label>
+										<input class="form-control" type="text" name="system_name" id="system_name" value="<?= $data['nombre_sistema'] ?>" maxlength="100" size="50"/>
+									</div>
+								<?php
+										}
+									}
+								?>														
 							</div>
 						</div>
 					</div>
@@ -199,7 +275,7 @@ show_navbar();
 							<div class="col-md-12">
 								<div class="form-group">
 									<label for="procedure">Procedimiento:</label>
-									<input class="form-control" type="text" name="procedure" id="procedure" maxlength="100" size="50"/>	
+									<input class="form-control" type="text" name="procedure" id="procedure" value="<?= $process['procedimiento_alterno'] ?>" maxlength="100" size="50"/>	
 								</div>
 							</div>
 						</div>
@@ -271,30 +347,319 @@ show_navbar();
 										<tbody>
 											<tr>
 												<th scope="row"></th>
-												<td><select class="form-control" name="hora_0"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_1"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_2"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_3"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_4"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_5"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_6"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_7"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_8"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_9"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_10"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_11"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_12"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_13"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_14"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_15"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_16"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_17"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_18"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_19"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_20"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_21"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_22"><?php echo $charge_level; ?></select></td>
-												<td><select class="form-control" name="hora_23"><?php echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_0">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_0']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?>
+												</select></td>
+												<td><select class="form-control" name="hora_1">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_1']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_2">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_2']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_3">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_3']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_4">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_4']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_5">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_5']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_6">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_6']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_7">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_7']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_8">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_8']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_9">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_9']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_10">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_10']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_11">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_11']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_12">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_12']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_13">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_13']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_14">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_14']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_15">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_15']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_16">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_16']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_17">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_17']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_18">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_18']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_19">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_19']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_20">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_20']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_21">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_21']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_22">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_22']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
+												<td><select class="form-control" name="hora_23">
+												<?php
+												$charge_levels = "select * from cat_nivel_carga";
+												$result = $conn->query($charge_levels);
+												$charge_level= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_carga']==$window_operation['hora_23']){
+														$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
+													}else{
+														$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+													}
+												}
+												echo $charge_level; ?></select></td>
 											</tr>
 										</tbody>
 									</table>
@@ -338,48 +703,480 @@ show_navbar();
 								    	<tbody>
 								    		<tr>
 								        		<th scope="row">Alto</th>
-								          		<td><input type="radio" name="1" value="3"></td>
-								          		<td><input type="radio" name="2" value="3"></td>
-								          		<td><input type="radio" name="3" value="3"></td>
-								          		<td><input type="radio" name="4" value="3"></td>
-								          		<td><input type="radio" name="5" value="3"></td>
-								          		<td><input type="radio" name="6" value="3"></td>
-								          		<td><input type="radio" name="7" value="3"></td>
-								          		<td><input type="radio" name="8" value="3"></td>
-								          		<td><input type="radio" name="9" value="3"></td>
-								          		<td><input type="radio" name="10" value="3"></td>
-								          		<td><input type="radio" name="11" value="3"></td>
-								          		<td><input type="radio" name="12" value="3"></td>
+								        		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['enero']==3){
+														$cyclical_charge .= '<input type="radio" name="1" value="3" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="1" value="3">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['febrero']==3){
+														$cyclical_charge .= '<input type="radio" name="2" value="3" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="2" value="3">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['marzo']==3){
+														$cyclical_charge .= '<input type="radio" name="3" value="3" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="3" value="3">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['abril']==3){
+														$cyclical_charge .= '<input type="radio" name="4" value="3" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="4" value="3">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['mayo']==3){
+														$cyclical_charge .= '<input type="radio" name="5" value="3" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="5" value="3">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['junio']==3){
+														$cyclical_charge .= '<input type="radio" name="6" value="3" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="6" value="3">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['julio']==3){
+														$cyclical_charge .= '<input type="radio" name="7" value="3" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="7" value="3">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['agosto']==3){
+														$cyclical_charge .= '<input type="radio" name="8" value="3" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="8" value="3">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['septiembre']==3){
+														$cyclical_charge .= '<input type="radio" name="9" value="3" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="9" value="3">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['octubre']==3){
+														$cyclical_charge .= '<input type="radio" name="10" value="3" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="10" value="3">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['noviembre']==3){
+														$cyclical_charge .= '<input type="radio" name="11" value="3" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="11" value="3">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+												<td>
+								          		<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['diciembre']==3){
+														$cyclical_charge .= '<input type="radio" name="12" value="3" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="12" value="3">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
 								        	</tr>
 								        	<tr>
 								        		<th scope="row">Medio</th>
-												<td><input type="radio" name="1" value="2"></td>
-								          		<td><input type="radio" name="2" value="2"></td>
-								          		<td><input type="radio" name="3" value="2"></td>
-								          		<td><input type="radio" name="4" value="2"></td>
-								          		<td><input type="radio" name="5" value="2"></td>
-								          		<td><input type="radio" name="6" value="2"></td>
-								          		<td><input type="radio" name="7" value="2"></td>
-								          		<td><input type="radio" name="8" value="2"></td>
-								          		<td><input type="radio" name="9" value="2"></td>
-								          		<td><input type="radio" name="10" value="2"></td>
-								          		<td><input type="radio" name="11" value="2"></td>
-								          		<td><input type="radio" name="12" value="2"></td>
+								        		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['enero']==2){
+														$cyclical_charge .= '<input type="radio" name="1" value="2" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="1" value="2">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['febrero']==2){
+														$cyclical_charge .= '<input type="radio" name="2" value="2" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="2" value="2">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['marzo']==2){
+														$cyclical_charge .= '<input type="radio" name="3" value="2" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="3" value="2">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['abril']==2){
+														$cyclical_charge .= '<input type="radio" name="4" value="2" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="4" value="2">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['mayo']==2){
+														$cyclical_charge .= '<input type="radio" name="5" value="2" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="5" value="2">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['junio']==2){
+														$cyclical_charge .= '<input type="radio" name="6" value="2" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="6" value="2">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['julio']==2){
+														$cyclical_charge .= '<input type="radio" name="7" value="2" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="7" value="2">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['agosto']==2){
+														$cyclical_charge .= '<input type="radio" name="8" value="2" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="8" value="2">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['septiembre']==2){
+														$cyclical_charge .= '<input type="radio" name="9" value="2" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="9" value="2">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['octubre']==2){
+														$cyclical_charge .= '<input type="radio" name="10" value="2" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="10" value="2">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['noviembre']==2){
+														$cyclical_charge .= '<input type="radio" name="11" value="2" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="11" value="2">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+												<td>
+								          		<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['diciembre']==2){
+														$cyclical_charge .= '<input type="radio" name="12" value="2" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="12" value="2">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
 								        	</tr>
 								        	<tr>
 								        		<th scope="row">Bajo</th>
-								          		<td><input type="radio" name="1" value="1"></td>
-								          		<td><input type="radio" name="2" value="1"></td>
-								          		<td><input type="radio" name="3" value="1"></td>
-								          		<td><input type="radio" name="4" value="1"></td>
-								          		<td><input type="radio" name="5" value="1"></td>
-								          		<td><input type="radio" name="6" value="1"></td>
-								          		<td><input type="radio" name="7" value="1"></td>
-								          		<td><input type="radio" name="8" value="1"></td>
-								          		<td><input type="radio" name="9" value="1"></td>
-								          		<td><input type="radio" name="10" value="1"></td>
-								          		<td><input type="radio" name="11" value="1"></td>
-								          		<td><input type="radio" name="12" value="1"></td>
+								        		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['enero']==1){
+														$cyclical_charge .= '<input type="radio" name="1" value="1" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="1" value="1">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['febrero']==1){
+														$cyclical_charge .= '<input type="radio" name="2" value="1" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="2" value="1">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['marzo']==1){
+														$cyclical_charge .= '<input type="radio" name="3" value="1" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="3" value="1">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['abril']==1){
+														$cyclical_charge .= '<input type="radio" name="4" value="1" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="4" value="1">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['mayo']==1){
+														$cyclical_charge .= '<input type="radio" name="5" value="1" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="5" value="1">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['junio']==1){
+														$cyclical_charge .= '<input type="radio" name="6" value="1" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="6" value="1">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['julio']==1){
+														$cyclical_charge .= '<input type="radio" name="7" value="1" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="7" value="1">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['agosto']==1){
+														$cyclical_charge .= '<input type="radio" name="8" value="1" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="8" value="1">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['septiembre']==1){
+														$cyclical_charge .= '<input type="radio" name="9" value="1" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="9" value="1">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['octubre']==1){
+														$cyclical_charge .= '<input type="radio" name="10" value="1" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="10" value="1">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+								          		<td>
+												<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['noviembre']==1){
+														$cyclical_charge .= '<input type="radio" name="11" value="1" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="11" value="1">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
+												<td>
+								          		<?php
+												$cyclical_charges = "select * from procesa_ciclico";
+												$result = $conn->query($cyclical_charges);
+												$cyclical_charge= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['diciembre']==1){
+														$cyclical_charge .= '<input type="radio" name="12" value="1" checked>';
+													}else{
+														$cyclical_charge .= '<input type="radio" name="12" value="1">';
+													}
+												}
+												echo $cyclical_charge; ?></td>
 								        	</tr>
 								      	</tbody>
 								    </table>
@@ -419,83 +1216,755 @@ show_navbar();
 								    	<tbody>
 								    		<tr>
 								        		<th scope="row"><?= getTimeAffectation('1') ?></th>
-								          		<td><input type="radio" name="1" value="1"></td>
-								          		<td><input type="radio" name="1" value="2"></td>
-								          		<td><input type="radio" name="1" value="3"></td>
-								          		<td><input type="radio" name="1" value="4"></td>
-								          		<td><input type="radio" name="1" value="5"></td>
-								          		<td><input type="radio" name="1" value="6"></td>
-								          		<td><input type="radio" name="1" value="7"></td>
+								        		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==1 && $financial_impacts[0]['clave_impacto_financiero']==1){
+														$financial .= '<input type="radio" name="1f" value="1" checked>';
+													}else{
+														$financial .= '<input type="radio" name="1f" value="1">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==2 && $financial_impacts[0]['clave_impacto_financiero']==2){
+														$financial .= '<input type="radio" name="1f" value="2" checked>';
+													}else{
+														$financial .= '<input type="radio" name="1f" value="2">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==3 && $financial_impacts[0]['clave_impacto_financiero']==3){
+														$financial .= '<input type="radio" name="1f" value="3" checked>';
+													}else{
+														$financial .= '<input type="radio" name="1f" value="3">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==4 && $financial_impacts[0]['clave_impacto_financiero']==4){
+														$financial .= '<input type="radio" name="1f" value="4" checked>';
+													}else{
+														$financial .= '<input type="radio" name="1f" value="4">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==5 && $financial_impacts[0]['clave_impacto_financiero']==5){
+														$financial .= '<input type="radio" name="1f" value="5" checked>';
+													}else{
+														$financial .= '<input type="radio" name="1f" value="5">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==6 && $financial_impacts[0]['clave_impacto_financiero']==6){
+														$financial .= '<input type="radio" name="1f" value="6" checked>';
+													}else{
+														$financial .= '<input type="radio" name="1f" value="6">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==7 && $financial_impacts[0]['clave_impacto_financiero']==7){
+														$financial .= '<input type="radio" name="1f" value="7" checked>';
+													}else{
+														$financial .= '<input type="radio" name="1f" value="7">';
+													}
+												}
+												echo $financial; ?></td>
 								        	</tr>
 								        	<tr>
 								        		<th scope="row"><?= getTimeAffectation('2') ?></th>
-												<td><input type="radio" name="2" value="1"></td>
-								          		<td><input type="radio" name="2" value="2"></td>
-								          		<td><input type="radio" name="2" value="3"></td>
-								          		<td><input type="radio" name="2" value="4"></td>
-								          		<td><input type="radio" name="2" value="5"></td>
-								          		<td><input type="radio" name="2" value="6"></td>
-								          		<td><input type="radio" name="2" value="7"></td>
+								        		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==1 && $financial_impacts[1]['clave_impacto_financiero']==1){
+														$financial .= '<input type="radio" name="2f" value="1" checked>';
+													}else{
+														$financial .= '<input type="radio" name="2f" value="1">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==2 && $financial_impacts[1]['clave_impacto_financiero']==2){
+														$financial .= '<input type="radio" name="2f" value="2" checked>';
+													}else{
+														$financial .= '<input type="radio" name="2f" value="2">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==3 && $financial_impacts[1]['clave_impacto_financiero']==3){
+														$financial .= '<input type="radio" name="2f" value="3" checked>';
+													}else{
+														$financial .= '<input type="radio" name="2f" value="3">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==4 && $financial_impacts[1]['clave_impacto_financiero']==4){
+														$financial .= '<input type="radio" name="2f" value="4" checked>';
+													}else{
+														$financial .= '<input type="radio" name="2f" value="4">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==5 && $financial_impacts[1]['clave_impacto_financiero']==5){
+														$financial .= '<input type="radio" name="2f" value="5" checked>';
+													}else{
+														$financial .= '<input type="radio" name="2f" value="5">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==6 && $financial_impacts[1]['clave_impacto_financiero']==6){
+														$financial .= '<input type="radio" name="2f" value="6" checked>';
+													}else{
+														$financial .= '<input type="radio" name="2f" value="6">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==7 && $financial_impacts[1]['clave_impacto_financiero']==7){
+														$financial .= '<input type="radio" name="2f" value="7" checked>';
+													}else{
+														$financial .= '<input type="radio" name="2f" value="7">';
+													}
+												}
+												echo $financial; ?></td>
 								        	</tr>
 								        	<tr>
 								        		<th scope="row"><?= getTimeAffectation('3') ?></th>
-								          		<td><input type="radio" name="3" value="1"></td>
-								          		<td><input type="radio" name="3" value="2"></td>
-								          		<td><input type="radio" name="3" value="3"></td>
-								          		<td><input type="radio" name="3" value="4"></td>
-								          		<td><input type="radio" name="3" value="5"></td>
-								          		<td><input type="radio" name="3" value="6"></td>
-								          		<td><input type="radio" name="3" value="7"></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==1 && $financial_impacts[2]['clave_impacto_financiero']==1){
+														$financial .= '<input type="radio" name="3f" value="1" checked>';
+													}else{
+														$financial .= '<input type="radio" name="3f" value="1">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==2 && $financial_impacts[2]['clave_impacto_financiero']==2){
+														$financial .= '<input type="radio" name="3f" value="2" checked>';
+													}else{
+														$financial .= '<input type="radio" name="3f" value="2">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==3 && $financial_impacts[2]['clave_impacto_financiero']==3){
+														$financial .= '<input type="radio" name="3f" value="3" checked>';
+													}else{
+														$financial .= '<input type="radio" name="3f" value="3">';
+													}
+												}
+												echo $financial; ?></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==4 && $financial_impacts[2]['clave_impacto_financiero']==4){
+														$financial .= '<input type="radio" name="3f" value="4" checked>';
+													}else{
+														$financial .= '<input type="radio" name="3f" value="4">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==5 && $financial_impacts[2]['clave_impacto_financiero']==5){
+														$financial .= '<input type="radio" name="3f" value="5" checked>';
+													}else{
+														$financial .= '<input type="radio" name="3f" value="5">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==6 && $financial_impacts[2]['clave_impacto_financiero']==6){
+														$financial .= '<input type="radio" name="3f" value="6" checked>';
+													}else{
+														$financial .= '<input type="radio" name="3f" value="6">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==7 && $financial_impacts[2]['clave_impacto_financiero']==7){
+														$financial .= '<input type="radio" name="3f" value="7" checked>';
+													}else{
+														$financial .= '<input type="radio" name="3f" value="7">';
+													}
+												}
+												echo $financial; ?></td>
 								        	</tr>
 								        	<tr>
 								        		<th scope="row"><?= getTimeAffectation('4') ?></th>
-								          		<td><input type="radio" name="4" value="1"></td>
-								          		<td><input type="radio" name="4" value="2"></td>
-								          		<td><input type="radio" name="4" value="3"></td>
-								          		<td><input type="radio" name="4" value="4"></td>
-								          		<td><input type="radio" name="4" value="5"></td>
-								          		<td><input type="radio" name="4" value="6"></td>
-								          		<td><input type="radio" name="4" value="7"></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==1 && $financial_impacts[3]['clave_impacto_financiero']==1){
+														$financial .= '<input type="radio" name="4f" value="1" checked>';
+													}else{
+														$financial .= '<input type="radio" name="4f" value="1">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==2 && $financial_impacts[3]['clave_impacto_financiero']==2){
+														$financial .= '<input type="radio" name="4f" value="2" checked>';
+													}else{
+														$financial .= '<input type="radio" name="4f" value="2">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==3 && $financial_impacts[3]['clave_impacto_financiero']==3){
+														$financial .= '<input type="radio" name="4f" value="3" checked>';
+													}else{
+														$financial .= '<input type="radio" name="4f" value="3">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==4 && $financial_impacts[3]['clave_impacto_financiero']==4){
+														$financial .= '<input type="radio" name="4f" value="4" checked>';
+													}else{
+														$financial .= '<input type="radio" name="4f" value="4">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==5 && $financial_impacts[3]['clave_impacto_financiero']==5){
+														$financial .= '<input type="radio" name="4f" value="5" checked>';
+													}else{
+														$financial .= '<input type="radio" name="4f" value="5">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==6 && $financial_impacts[3]['clave_impacto_financiero']==6){
+														$financial .= '<input type="radio" name="4f" value="6" checked>';
+													}else{
+														$financial .= '<input type="radio" name="4f" value="6">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==7 && $financial_impacts[3]['clave_impacto_financiero']==7){
+														$financial .= '<input type="radio" name="4f" value="7" checked>';
+													}else{
+														$financial .= '<input type="radio" name="4f" value="7">';
+													}
+												}
+												echo $financial; ?></td>
 								        	</tr>
 								        	<tr>
 								        		<th scope="row"><?= getTimeAffectation('5') ?></th>
-								          		<td><input type="radio" name="5" value="1"></td>
-								          		<td><input type="radio" name="5" value="2"></td>
-								          		<td><input type="radio" name="5" value="3"></td>
-								          		<td><input type="radio" name="5" value="4"></td>
-								          		<td><input type="radio" name="5" value="5"></td>
-								          		<td><input type="radio" name="5" value="6"></td>
-								          		<td><input type="radio" name="5" value="7"></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==1 && $financial_impacts[4]['clave_impacto_financiero']==1){
+														$financial .= '<input type="radio" name="5f" value="1" checked>';
+													}else{
+														$financial .= '<input type="radio" name="5f" value="1">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==2 && $financial_impacts[4]['clave_impacto_financiero']==2){
+														$financial .= '<input type="radio" name="5f" value="2" checked>';
+													}else{
+														$financial .= '<input type="radio" name="5f" value="2">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==3 && $financial_impacts[4]['clave_impacto_financiero']==3){
+														$financial .= '<input type="radio" name="5f" value="3" checked>';
+													}else{
+														$financial .= '<input type="radio" name="5f" value="3">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==4 && $financial_impacts[4]['clave_impacto_financiero']==4){
+														$financial .= '<input type="radio" name="5f" value="4" checked>';
+													}else{
+														$financial .= '<input type="radio" name="5f" value="4">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==5 && $financial_impacts[4]['clave_impacto_financiero']==5){
+														$financial .= '<input type="radio" name="5f" value="5" checked>';
+													}else{
+														$financial .= '<input type="radio" name="5f" value="5">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==6 && $financial_impacts[4]['clave_impacto_financiero']==6){
+														$financial .= '<input type="radio" name="5f" value="6" checked>';
+													}else{
+														$financial .= '<input type="radio" name="5f" value="6">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==7 && $financial_impacts[4]['clave_impacto_financiero']==7){
+														$financial .= '<input type="radio" name="5f" value="7" checked>';
+													}else{
+														$financial .= '<input type="radio" name="5f" value="7">';
+													}
+												}
+												echo $financial; ?></td>
 								        	</tr>
 								        	<tr>
 								        		<th scope="row"><?= getTimeAffectation('6') ?></th>
-								          		<td><input type="radio" name="6" value="1"></td>
-								          		<td><input type="radio" name="6" value="2"></td>
-								          		<td><input type="radio" name="6" value="3"></td>
-								          		<td><input type="radio" name="6" value="4"></td>
-								          		<td><input type="radio" name="6" value="5"></td>
-								          		<td><input type="radio" name="6" value="6"></td>
-								          		<td><input type="radio" name="6" value="7"></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==1 && $financial_impacts[5]['clave_impacto_financiero']==1){
+														$financial .= '<input type="radio" name="6f" value="1" checked>';
+													}else{
+														$financial .= '<input type="radio" name="6f" value="1">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==2 && $financial_impacts[5]['clave_impacto_financiero']==2){
+														$financial .= '<input type="radio" name="6f" value="2" checked>';
+													}else{
+														$financial .= '<input type="radio" name="6f" value="2">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==3 && $financial_impacts[5]['clave_impacto_financiero']==3){
+														$financial .= '<input type="radio" name="6f" value="3" checked>';
+													}else{
+														$financial .= '<input type="radio" name="6f" value="3">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==4 && $financial_impacts[5]['clave_impacto_financiero']==4){
+														$financial .= '<input type="radio" name="6f" value="4" checked>';
+													}else{
+														$financial .= '<input type="radio" name="6f" value="4">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==5 && $financial_impacts[5]['clave_impacto_financiero']==5){
+														$financial .= '<input type="radio" name="6f" value="5" checked>';
+													}else{
+														$financial .= '<input type="radio" name="6f" value="5">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==6 && $financial_impacts[5]['clave_impacto_financiero']==6){
+														$financial .= '<input type="radio" name="6f" value="6" checked>';
+													}else{
+														$financial .= '<input type="radio" name="6f" value="6">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==7 && $financial_impacts[5]['clave_impacto_financiero']==7){
+														$financial .= '<input type="radio" name="6f" value="7" checked>';
+													}else{
+														$financial .= '<input type="radio" name="6f" value="7">';
+													}
+												}
+												echo $financial; ?></td>
 								        	</tr>
 								        	<tr>
 								        		<th scope="row"><?= getTimeAffectation('7') ?></th>
-								          		<td><input type="radio" name="7" value="1"></td>
-								          		<td><input type="radio" name="7" value="2"></td>
-								          		<td><input type="radio" name="7" value="3"></td>
-								          		<td><input type="radio" name="7" value="4"></td>
-								          		<td><input type="radio" name="7" value="5"></td>
-								          		<td><input type="radio" name="7" value="6"></td>
-								          		<td><input type="radio" name="7" value="7"></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==1 && $financial_impacts[6]['clave_impacto_financiero']==1){
+														$financial .= '<input type="radio" name="7f" value="1" checked>';
+													}else{
+														$financial .= '<input type="radio" name="7f" value="1">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==2 && $financial_impacts[6]['clave_impacto_financiero']==2){
+														$financial .= '<input type="radio" name="7f" value="2" checked>';
+													}else{
+														$financial .= '<input type="radio" name="7f" value="2">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==3 && $financial_impacts[6]['clave_impacto_financiero']==3){
+														$financial .= '<input type="radio" name="7f" value="3" checked>';
+													}else{
+														$financial .= '<input type="radio" name="7f" value="3">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==4 && $financial_impacts[6]['clave_impacto_financiero']==4){
+														$financial .= '<input type="radio" name="7f" value="4" checked>';
+													}else{
+														$financial .= '<input type="radio" name="7f" value="4">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==5 && $financial_impacts[6]['clave_impacto_financiero']==5){
+														$financial .= '<input type="radio" name="7f" value="5" checked>';
+													}else{
+														$financial .= '<input type="radio" name="7f" value="5">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==6 && $financial_impacts[6]['clave_impacto_financiero']==6){
+														$financial .= '<input type="radio" name="7f" value="6" checked>';
+													}else{
+														$financial .= '<input type="radio" name="7f" value="6">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==7 && $financial_impacts[6]['clave_impacto_financiero']==7){
+														$financial .= '<input type="radio" name="7f" value="7" checked>';
+													}else{
+														$financial .= '<input type="radio" name="7f" value="7">';
+													}
+												}
+												echo $financial; ?></td>
 								        	</tr>
 								        	<tr>
 								        		<th scope="row"><?= getTimeAffectation('8') ?></th>
-								          		<td><input type="radio" name="8" value="1"></td>
-								          		<td><input type="radio" name="8" value="2"></td>
-								          		<td><input type="radio" name="8" value="3"></td>
-								          		<td><input type="radio" name="8" value="4"></td>
-								          		<td><input type="radio" name="8" value="5"></td>
-								          		<td><input type="radio" name="8" value="6"></td>
-								          		<td><input type="radio" name="8" value="7"></td>
+								          		<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==1 && $financial_impacts[7]['clave_impacto_financiero']==1){
+														$financial .= '<input type="radio" name="8f" value="1" checked>';
+													}else{
+														$financial .= '<input type="radio" name="8f" value="1">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==2 && $financial_impacts[7]['clave_impacto_financiero']==2){
+														$financial .= '<input type="radio" name="8f" value="2" checked>';
+													}else{
+														$financial .= '<input type="radio" name="8f" value="2">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==3 && $financial_impacts[7]['clave_impacto_financiero']==3){
+														$financial .= '<input type="radio" name="8f" value="3" checked>';
+													}else{
+														$financial .= '<input type="radio" name="8f" value="3">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==4 && $financial_impacts[7]['clave_impacto_financiero']==4){
+														$financial .= '<input type="radio" name="8f" value="4" checked>';
+													}else{
+														$financial .= '<input type="radio" name="8f" value="4">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==5 && $financial_impacts[7]['clave_impacto_financiero']==5){
+														$financial .= '<input type="radio" name="8f" value="5" checked>';
+													}else{
+														$financial .= '<input type="radio" name="8f" value="5">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==6 && $financial_impacts[7]['clave_impacto_financiero']==6){
+														$financial .= '<input type="radio" name="8f" value="6" checked>';
+													}else{
+														$financial .= '<input type="radio" name="8f" value="6">';
+													}
+												}
+												echo $financial; ?></td>
+												<td>
+								          		<?php
+												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$result = $conn->query($financial_data);
+												$financial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==7 && $financial_impacts[7]['clave_impacto_financiero']==7){
+														$financial .= '<input type="radio" name="8f" value="7" checked>';
+													}else{
+														$financial .= '<input type="radio" name="8f" value="7">';
+													}
+												}
+												echo $financial; ?></td>
 								        	</tr>
 								      	</tbody>
 								    </table>
@@ -534,85 +2003,757 @@ show_navbar();
 									      	</thead>
 									    	<tbody>
 									    		<tr>
-									        		<th scope="row"><?= getTimeAffectation('1') ?></th>
-									          		<td><input type="radio" name="1" value="1"></td>
-									          		<td><input type="radio" name="1" value="2"></td>
-									          		<td><input type="radio" name="1" value="3"></td>
-									          		<td><input type="radio" name="1" value="4"></td>
-									          		<td><input type="radio" name="1" value="5"></td>
-									          		<td><input type="radio" name="1" value="6"></td>
-									          		<td><input type="radio" name="1" value="7"></td>
-									        	</tr>
-									        	<tr>
-									        		<th scope="row"><?= getTimeAffectation('2') ?></th>
-													<td><input type="radio" name="2" value="1"></td>
-									          		<td><input type="radio" name="2" value="2"></td>
-									          		<td><input type="radio" name="2" value="3"></td>
-									          		<td><input type="radio" name="2" value="4"></td>
-									          		<td><input type="radio" name="2" value="5"></td>
-									          		<td><input type="radio" name="2" value="6"></td>
-									          		<td><input type="radio" name="2" value="7"></td>
-									        	</tr>
-									        	<tr>
-									        		<th scope="row"><?= getTimeAffectation('3') ?></th>
-									          		<td><input type="radio" name="3" value="1"></td>
-									          		<td><input type="radio" name="3" value="2"></td>
-									          		<td><input type="radio" name="3" value="3"></td>
-									          		<td><input type="radio" name="3" value="4"></td>
-									          		<td><input type="radio" name="3" value="5"></td>
-									          		<td><input type="radio" name="3" value="6"></td>
-									          		<td><input type="radio" name="3" value="7"></td>
-									        	</tr>
-									        	<tr>
-									        		<th scope="row"><?= getTimeAffectation('4') ?></th>
-									          		<td><input type="radio" name="4" value="1"></td>
-									          		<td><input type="radio" name="4" value="2"></td>
-									          		<td><input type="radio" name="4" value="3"></td>
-									          		<td><input type="radio" name="4" value="4"></td>
-									          		<td><input type="radio" name="4" value="5"></td>
-									          		<td><input type="radio" name="4" value="6"></td>
-									          		<td><input type="radio" name="4" value="7"></td>
-									        	</tr>
-									        	<tr>
-									        		<th scope="row"><?= getTimeAffectation('5') ?></th>
-									          		<td><input type="radio" name="5" value="1"></td>
-									          		<td><input type="radio" name="5" value="2"></td>
-									          		<td><input type="radio" name="5" value="3"></td>
-									          		<td><input type="radio" name="5" value="4"></td>
-									          		<td><input type="radio" name="5" value="5"></td>
-									          		<td><input type="radio" name="5" value="6"></td>
-									          		<td><input type="radio" name="5" value="7"></td>
-									        	</tr>
-									        	<tr>
-									        		<th scope="row"><?= getTimeAffectation('6') ?></th>
-									          		<td><input type="radio" name="6" value="1"></td>
-									          		<td><input type="radio" name="6" value="2"></td>
-									          		<td><input type="radio" name="6" value="3"></td>
-									          		<td><input type="radio" name="6" value="4"></td>
-									          		<td><input type="radio" name="6" value="5"></td>
-									          		<td><input type="radio" name="6" value="6"></td>
-									          		<td><input type="radio" name="6" value="7"></td>
-									        	</tr>
-									        	<tr>
-									        		<th scope="row"><?= getTimeAffectation('7') ?></th>
-									          		<td><input type="radio" name="7" value="1"></td>
-									          		<td><input type="radio" name="7" value="2"></td>
-									          		<td><input type="radio" name="7" value="3"></td>
-									          		<td><input type="radio" name="7" value="4"></td>
-									          		<td><input type="radio" name="7" value="5"></td>
-									          		<td><input type="radio" name="7" value="6"></td>
-									          		<td><input type="radio" name="7" value="7"></td>
-									        	</tr>
-									        	<tr>
-									        		<th scope="row"><?= getTimeAffectation('8') ?></th>
-									          		<td><input type="radio" name="8" value="1"></td>
-									          		<td><input type="radio" name="8" value="2"></td>
-									          		<td><input type="radio" name="8" value="3"></td>
-									          		<td><input type="radio" name="8" value="4"></td>
-									          		<td><input type="radio" name="8" value="5"></td>
-									          		<td><input type="radio" name="8" value="6"></td>
-									          		<td><input type="radio" name="8" value="7"></td>
-									        	</tr>
+								        		<th scope="row"><?= getTimeAffectation('1') ?></th>
+								        		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[0]['clave_impacto_financiero_multa']==1){
+														$ecomomic .= '<input type="radio" name="1" value="1" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="1" value="1">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[0]['clave_impacto_financiero_multa']==2){
+														$ecomomic .= '<input type="radio" name="1" value="2" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="1" value="2">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[0]['clave_impacto_financiero_multa']==3){
+														$ecomomic .= '<input type="radio" name="1" value="3" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="1" value="3">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[0]['clave_impacto_financiero_multa']==4){
+														$ecomomic .= '<input type="radio" name="1" value="4" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="1" value="4">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[0]['clave_impacto_financiero_multa']==5){
+														$ecomomic .= '<input type="radio" name="1" value="5" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="1" value="5">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[0]['clave_impacto_financiero_multa']==6){
+														$ecomomic .= '<input type="radio" name="1" value="6" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="1" value="6">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[0]['clave_impacto_financiero_multa']==7){
+														$ecomomic .= '<input type="radio" name="1" value="7" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="1" value="7">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('2') ?></th>
+								        		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[1]['clave_impacto_financiero_multa']==1){
+														$ecomomic .= '<input type="radio" name="2" value="1" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="2" value="1">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[1]['clave_impacto_financiero_multa']==2){
+														$ecomomic .= '<input type="radio" name="2" value="2" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="2" value="2">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[1]['clave_impacto_financiero_multa']==3){
+														$ecomomic .= '<input type="radio" name="2" value="3" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="2" value="3">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[1]['clave_impacto_financiero_multa']==4){
+														$ecomomic .= '<input type="radio" name="2" value="4" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="2" value="4">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[1]['clave_impacto_financiero_multa']==5){
+														$ecomomic .= '<input type="radio" name="2" value="5" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="2" value="5">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[1]['clave_impacto_financiero_multa']==6){
+														$ecomomic .= '<input type="radio" name="2" value="6" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="2" value="6">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[1]['clave_impacto_financiero_multa']==7){
+														$ecomomic .= '<input type="radio" name="2" value="7" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="2" value="7">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('3') ?></th>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[2]['clave_impacto_financiero_multa']==1){
+														$ecomomic .= '<input type="radio" name="3" value="1" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="3" value="1">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[2]['clave_impacto_financiero_multa']==2){
+														$ecomomic .= '<input type="radio" name="3" value="2" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="3" value="2">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[2]['clave_impacto_financiero_multa']==3){
+														$ecomomic .= '<input type="radio" name="3" value="3" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="3" value="3">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[2]['clave_impacto_financiero_multa']==4){
+														$ecomomic .= '<input type="radio" name="3" value="4" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="3" value="4">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[2]['clave_impacto_financiero_multa']==5){
+														$ecomomic .= '<input type="radio" name="3" value="5" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="3" value="5">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[2]['clave_impacto_financiero_multa']==6){
+														$ecomomic .= '<input type="radio" name="3" value="6" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="3" value="6">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[2]['clave_impacto_financiero_multa']==7){
+														$ecomomic .= '<input type="radio" name="3" value="7" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="3" value="7">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('4') ?></th>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[3]['clave_impacto_financiero_multa']==1){
+														$ecomomic .= '<input type="radio" name="4" value="1" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="4" value="1">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[3]['clave_impacto_financiero_multa']==2){
+														$ecomomic .= '<input type="radio" name="4" value="2" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="4" value="2">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[3]['clave_impacto_financiero_multa']==3){
+														$ecomomic .= '<input type="radio" name="4" value="3" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="4" value="3">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[3]['clave_impacto_financiero_multa']==4){
+														$ecomomic .= '<input type="radio" name="4" value="4" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="4" value="4">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[3]['clave_impacto_financiero_multa']==5){
+														$ecomomic .= '<input type="radio" name="4" value="5" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="4" value="5">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[3]['clave_impacto_financiero_multa']==6){
+														$ecomomic .= '<input type="radio" name="4" value="6" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="4" value="6">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[3]['clave_impacto_financiero_multa']==7){
+														$ecomomic .= '<input type="radio" name="4" value="7" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="4" value="7">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('5') ?></th>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[4]['clave_impacto_financiero_multa']==1){
+														$ecomomic .= '<input type="radio" name="5" value="1" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="5" value="1">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[4]['clave_impacto_financiero_multa']==2){
+														$ecomomic .= '<input type="radio" name="5" value="2" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="5" value="2">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[4]['clave_impacto_financiero_multa']==3){
+														$ecomomic .= '<input type="radio" name="5" value="3" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="5" value="3">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[4]['clave_impacto_financiero_multa']==4){
+														$ecomomic .= '<input type="radio" name="5" value="4" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="5" value="4">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[4]['clave_impacto_financiero_multa']==5){
+														$ecomomic .= '<input type="radio" name="5" value="5" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="5" value="5">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[4]['clave_impacto_financiero_multa']==6){
+														$ecomomic .= '<input type="radio" name="5" value="6" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="5" value="6">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[4]['clave_impacto_financiero_multa']==7){
+														$ecomomic .= '<input type="radio" name="5" value="7" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="5" value="7">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('6') ?></th>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[5]['clave_impacto_financiero_multa']==1){
+														$ecomomic .= '<input type="radio" name="6" value="1" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="6" value="1">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[5]['clave_impacto_financiero_multa']==2){
+														$ecomomic .= '<input type="radio" name="6" value="2" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="6" value="2">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[5]['clave_impacto_financiero_multa']==3){
+														$ecomomic .= '<input type="radio" name="6" value="3" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="6" value="3">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[5]['clave_impacto_financiero_multa']==4){
+														$ecomomic .= '<input type="radio" name="6" value="4" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="6" value="4">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[5]['clave_impacto_financiero_multa']==5){
+														$ecomomic .= '<input type="radio" name="6" value="5" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="6" value="5">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[5]['clave_impacto_financiero_multa']==6){
+														$ecomomic .= '<input type="radio" name="6" value="6" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="6" value="6">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[5]['clave_impacto_financiero_multa']==7){
+														$ecomomic .= '<input type="radio" name="6" value="7" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="6" value="7">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('7') ?></th>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[6]['clave_impacto_financiero_multa']==1){
+														$ecomomic .= '<input type="radio" name="7" value="1" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="7" value="1">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[6]['clave_impacto_financiero_multa']==2){
+														$ecomomic .= '<input type="radio" name="7" value="2" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="7" value="2">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[6]['clave_impacto_financiero_multa']==3){
+														$ecomomic .= '<input type="radio" name="7" value="3" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="7" value="3">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[6]['clave_impacto_financiero_multa']==4){
+														$ecomomic .= '<input type="radio" name="7" value="4" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="7" value="4">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[6]['clave_impacto_financiero_multa']==5){
+														$ecomomic .= '<input type="radio" name="7" value="5" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="7" value="5">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[6]['clave_impacto_financiero_multa']==6){
+														$ecomomic .= '<input type="radio" name="7" value="6" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="7" value="6">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[6]['clave_impacto_financiero_multa']==7){
+														$ecomomic .= '<input type="radio" name="7" value="7" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="7" value="7">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								        	</tr>
+								        	<tr>
+								        		<th scope="row"><?= getTimeAffectation('8') ?></th>
+								          		<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[7]['clave_impacto_financiero_multa']==1){
+														$ecomomic .= '<input type="radio" name="8" value="1" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="8" value="1">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[7]['clave_impacto_financiero_multa']==2){
+														$ecomomic .= '<input type="radio" name="8" value="2" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="8" value="2">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[7]['clave_impacto_financiero_multa']==3){
+														$ecomomic .= '<input type="radio" name="8" value="3" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="8" value="3">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[7]['clave_impacto_financiero_multa']==4){
+														$ecomomic .= '<input type="radio" name="8" value="4" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="8" value="4">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[7]['clave_impacto_financiero_multa']==5){
+														$ecomomic .= '<input type="radio" name="8" value="5" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="8" value="5">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[7]['clave_impacto_financiero_multa']==6){
+														$ecomomic .= '<input type="radio" name="8" value="6" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="8" value="6">';
+													}
+												}
+												echo $ecomomic; ?></td>
+												<td>
+								          		<?php
+												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$result = $conn->query($economic_data);
+												$ecomomic= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[7]['clave_impacto_financiero_multa']==7){
+														$ecomomic .= '<input type="radio" name="8" value="7" checked>';
+													}else{
+														$ecomomic .= '<input type="radio" name="8" value="7">';
+													}
+												}
+												echo $ecomomic; ?></td>
+								        	</tr>
 									      	</tbody>
 									    </table>
 								    </div>
