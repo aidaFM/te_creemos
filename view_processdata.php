@@ -710,9 +710,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['enero']==3){
-														$cyclical_charge .= '<input type="radio" name="1" value="3" checked>';
+														$cyclical_charge .= '<input type="radio" name="1a" value="3" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="1" value="3">';
+														$cyclical_charge .= '<input type="radio" name="1a" value="3">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -723,9 +723,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['febrero']==3){
-														$cyclical_charge .= '<input type="radio" name="2" value="3" checked>';
+														$cyclical_charge .= '<input type="radio" name="2a" value="3" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="2" value="3">';
+														$cyclical_charge .= '<input type="radio" name="2a" value="3">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -736,9 +736,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['marzo']==3){
-														$cyclical_charge .= '<input type="radio" name="3" value="3" checked>';
+														$cyclical_charge .= '<input type="radio" name="3a" value="3" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="3" value="3">';
+														$cyclical_charge .= '<input type="radio" name="3a" value="3">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -749,9 +749,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['abril']==3){
-														$cyclical_charge .= '<input type="radio" name="4" value="3" checked>';
+														$cyclical_charge .= '<input type="radio" name="4a" value="3" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="4" value="3">';
+														$cyclical_charge .= '<input type="radio" name="4a" value="3">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -762,9 +762,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['mayo']==3){
-														$cyclical_charge .= '<input type="radio" name="5" value="3" checked>';
+														$cyclical_charge .= '<input type="radio" name="5a" value="3" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="5" value="3">';
+														$cyclical_charge .= '<input type="radio" name="5a" value="3">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -775,9 +775,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['junio']==3){
-														$cyclical_charge .= '<input type="radio" name="6" value="3" checked>';
+														$cyclical_charge .= '<input type="radio" name="6a" value="3" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="6" value="3">';
+														$cyclical_charge .= '<input type="radio" name="6a" value="3">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -788,9 +788,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['julio']==3){
-														$cyclical_charge .= '<input type="radio" name="7" value="3" checked>';
+														$cyclical_charge .= '<input type="radio" name="7a" value="3" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="7" value="3">';
+														$cyclical_charge .= '<input type="radio" name="7a" value="3">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -801,9 +801,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['agosto']==3){
-														$cyclical_charge .= '<input type="radio" name="8" value="3" checked>';
+														$cyclical_charge .= '<input type="radio" name="8a" value="3" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="8" value="3">';
+														$cyclical_charge .= '<input type="radio" name="8a" value="3">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -814,9 +814,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['septiembre']==3){
-														$cyclical_charge .= '<input type="radio" name="9" value="3" checked>';
+														$cyclical_charge .= '<input type="radio" name="9a" value="3" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="9" value="3">';
+														$cyclical_charge .= '<input type="radio" name="9a" value="3">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -827,9 +827,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['octubre']==3){
-														$cyclical_charge .= '<input type="radio" name="10" value="3" checked>';
+														$cyclical_charge .= '<input type="radio" name="10a" value="3" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="10" value="3">';
+														$cyclical_charge .= '<input type="radio" name="10a" value="3">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -840,9 +840,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['noviembre']==3){
-														$cyclical_charge .= '<input type="radio" name="11" value="3" checked>';
+														$cyclical_charge .= '<input type="radio" name="11a" value="3" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="11" value="3">';
+														$cyclical_charge .= '<input type="radio" name="11a" value="3">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -853,9 +853,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['diciembre']==3){
-														$cyclical_charge .= '<input type="radio" name="12" value="3" checked>';
+														$cyclical_charge .= '<input type="radio" name="12a" value="3" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="12" value="3">';
+														$cyclical_charge .= '<input type="radio" name="12a" value="3">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -869,9 +869,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['enero']==2){
-														$cyclical_charge .= '<input type="radio" name="1" value="2" checked>';
+														$cyclical_charge .= '<input type="radio" name="1a" value="2" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="1" value="2">';
+														$cyclical_charge .= '<input type="radio" name="1a" value="2">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -882,9 +882,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['febrero']==2){
-														$cyclical_charge .= '<input type="radio" name="2" value="2" checked>';
+														$cyclical_charge .= '<input type="radio" name="2a" value="2" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="2" value="2">';
+														$cyclical_charge .= '<input type="radio" name="2a" value="2">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -895,9 +895,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['marzo']==2){
-														$cyclical_charge .= '<input type="radio" name="3" value="2" checked>';
+														$cyclical_charge .= '<input type="radio" name="3a" value="2" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="3" value="2">';
+														$cyclical_charge .= '<input type="radio" name="3a" value="2">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -908,9 +908,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['abril']==2){
-														$cyclical_charge .= '<input type="radio" name="4" value="2" checked>';
+														$cyclical_charge .= '<input type="radio" name="4a" value="2" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="4" value="2">';
+														$cyclical_charge .= '<input type="radio" name="4a" value="2">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -921,9 +921,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['mayo']==2){
-														$cyclical_charge .= '<input type="radio" name="5" value="2" checked>';
+														$cyclical_charge .= '<input type="radio" name="5a" value="2" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="5" value="2">';
+														$cyclical_charge .= '<input type="radio" name="5a" value="2">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -934,9 +934,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['junio']==2){
-														$cyclical_charge .= '<input type="radio" name="6" value="2" checked>';
+														$cyclical_charge .= '<input type="radio" name="6a" value="2" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="6" value="2">';
+														$cyclical_charge .= '<input type="radio" name="6a" value="2">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -947,9 +947,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['julio']==2){
-														$cyclical_charge .= '<input type="radio" name="7" value="2" checked>';
+														$cyclical_charge .= '<input type="radio" name="7a" value="2" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="7" value="2">';
+														$cyclical_charge .= '<input type="radio" name="7a" value="2">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -960,9 +960,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['agosto']==2){
-														$cyclical_charge .= '<input type="radio" name="8" value="2" checked>';
+														$cyclical_charge .= '<input type="radio" name="8a" value="2" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="8" value="2">';
+														$cyclical_charge .= '<input type="radio" name="8a" value="2">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -973,9 +973,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['septiembre']==2){
-														$cyclical_charge .= '<input type="radio" name="9" value="2" checked>';
+														$cyclical_charge .= '<input type="radio" name="9a" value="2" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="9" value="2">';
+														$cyclical_charge .= '<input type="radio" name="9a" value="2">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -986,9 +986,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['octubre']==2){
-														$cyclical_charge .= '<input type="radio" name="10" value="2" checked>';
+														$cyclical_charge .= '<input type="radio" name="10a" value="2" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="10" value="2">';
+														$cyclical_charge .= '<input type="radio" name="10a" value="2">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -999,9 +999,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['noviembre']==2){
-														$cyclical_charge .= '<input type="radio" name="11" value="2" checked>';
+														$cyclical_charge .= '<input type="radio" name="11a" value="2" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="11" value="2">';
+														$cyclical_charge .= '<input type="radio" name="11a" value="2">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1012,9 +1012,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['diciembre']==2){
-														$cyclical_charge .= '<input type="radio" name="12" value="2" checked>';
+														$cyclical_charge .= '<input type="radio" name="12a" value="2" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="12" value="2">';
+														$cyclical_charge .= '<input type="radio" name="12a" value="2">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1028,9 +1028,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['enero']==1){
-														$cyclical_charge .= '<input type="radio" name="1" value="1" checked>';
+														$cyclical_charge .= '<input type="radio" name="1a" value="1" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="1" value="1">';
+														$cyclical_charge .= '<input type="radio" name="1a" value="1">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1041,9 +1041,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['febrero']==1){
-														$cyclical_charge .= '<input type="radio" name="2" value="1" checked>';
+														$cyclical_charge .= '<input type="radio" name="2a" value="1" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="2" value="1">';
+														$cyclical_charge .= '<input type="radio" name="2a" value="1">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1054,9 +1054,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['marzo']==1){
-														$cyclical_charge .= '<input type="radio" name="3" value="1" checked>';
+														$cyclical_charge .= '<input type="radio" name="3a" value="1" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="3" value="1">';
+														$cyclical_charge .= '<input type="radio" name="3a" value="1">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1067,9 +1067,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['abril']==1){
-														$cyclical_charge .= '<input type="radio" name="4" value="1" checked>';
+														$cyclical_charge .= '<input type="radio" name="4a" value="1" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="4" value="1">';
+														$cyclical_charge .= '<input type="radio" name="4a" value="1">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1080,9 +1080,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['mayo']==1){
-														$cyclical_charge .= '<input type="radio" name="5" value="1" checked>';
+														$cyclical_charge .= '<input type="radio" name="5a" value="1" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="5" value="1">';
+														$cyclical_charge .= '<input type="radio" name="5a" value="1">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1093,9 +1093,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['junio']==1){
-														$cyclical_charge .= '<input type="radio" name="6" value="1" checked>';
+														$cyclical_charge .= '<input type="radio" name="6a" value="1" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="6" value="1">';
+														$cyclical_charge .= '<input type="radio" name="6a" value="1">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1106,9 +1106,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['julio']==1){
-														$cyclical_charge .= '<input type="radio" name="7" value="1" checked>';
+														$cyclical_charge .= '<input type="radio" name="7a" value="1" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="7" value="1">';
+														$cyclical_charge .= '<input type="radio" name="7a" value="1">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1119,9 +1119,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['agosto']==1){
-														$cyclical_charge .= '<input type="radio" name="8" value="1" checked>';
+														$cyclical_charge .= '<input type="radio" name="8a" value="1" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="8" value="1">';
+														$cyclical_charge .= '<input type="radio" name="8a" value="1">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1132,9 +1132,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['septiembre']==1){
-														$cyclical_charge .= '<input type="radio" name="9" value="1" checked>';
+														$cyclical_charge .= '<input type="radio" name="9a" value="1" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="9" value="1">';
+														$cyclical_charge .= '<input type="radio" name="9a" value="1">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1145,9 +1145,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['octubre']==1){
-														$cyclical_charge .= '<input type="radio" name="10" value="1" checked>';
+														$cyclical_charge .= '<input type="radio" name="10a" value="1" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="10" value="1">';
+														$cyclical_charge .= '<input type="radio" name="10a" value="1">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1158,9 +1158,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['noviembre']==1){
-														$cyclical_charge .= '<input type="radio" name="11" value="1" checked>';
+														$cyclical_charge .= '<input type="radio" name="11a" value="1" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="11" value="1">';
+														$cyclical_charge .= '<input type="radio" name="11a" value="1">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1171,9 +1171,9 @@ show_navbar();
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['diciembre']==1){
-														$cyclical_charge .= '<input type="radio" name="12" value="1" checked>';
+														$cyclical_charge .= '<input type="radio" name="12a" value="1" checked>';
 													}else{
-														$cyclical_charge .= '<input type="radio" name="12" value="1">';
+														$cyclical_charge .= '<input type="radio" name="12a" value="1">';
 													}
 												}
 												echo $cyclical_charge; ?></td>
@@ -1223,9 +1223,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==1 && $financial_impacts[0]['clave_impacto_financiero']==1){
-														$financial .= '<input type="radio" name="1f" value="1" checked>';
+														$financial .= '<input type="radio" name="1b" value="1" checked>';
 													}else{
-														$financial .= '<input type="radio" name="1f" value="1">';
+														$financial .= '<input type="radio" name="1b" value="1">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1236,9 +1236,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==2 && $financial_impacts[0]['clave_impacto_financiero']==2){
-														$financial .= '<input type="radio" name="1f" value="2" checked>';
+														$financial .= '<input type="radio" name="1b" value="2" checked>';
 													}else{
-														$financial .= '<input type="radio" name="1f" value="2">';
+														$financial .= '<input type="radio" name="1b" value="2">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1249,9 +1249,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==3 && $financial_impacts[0]['clave_impacto_financiero']==3){
-														$financial .= '<input type="radio" name="1f" value="3" checked>';
+														$financial .= '<input type="radio" name="1b" value="3" checked>';
 													}else{
-														$financial .= '<input type="radio" name="1f" value="3">';
+														$financial .= '<input type="radio" name="1b" value="3">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1262,9 +1262,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==4 && $financial_impacts[0]['clave_impacto_financiero']==4){
-														$financial .= '<input type="radio" name="1f" value="4" checked>';
+														$financial .= '<input type="radio" name="1b" value="4" checked>';
 													}else{
-														$financial .= '<input type="radio" name="1f" value="4">';
+														$financial .= '<input type="radio" name="1b" value="4">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1275,9 +1275,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==5 && $financial_impacts[0]['clave_impacto_financiero']==5){
-														$financial .= '<input type="radio" name="1f" value="5" checked>';
+														$financial .= '<input type="radio" name="1b" value="5" checked>';
 													}else{
-														$financial .= '<input type="radio" name="1f" value="5">';
+														$financial .= '<input type="radio" name="1b" value="5">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1288,9 +1288,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==6 && $financial_impacts[0]['clave_impacto_financiero']==6){
-														$financial .= '<input type="radio" name="1f" value="6" checked>';
+														$financial .= '<input type="radio" name="1b" value="6" checked>';
 													}else{
-														$financial .= '<input type="radio" name="1f" value="6">';
+														$financial .= '<input type="radio" name="1b" value="6">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1301,9 +1301,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==1 && $financial_impacts[0]['clave_tiempo_afectacion']==1 && $row['clave_impacto_financiero']==7 && $financial_impacts[0]['clave_impacto_financiero']==7){
-														$financial .= '<input type="radio" name="1f" value="7" checked>';
+														$financial .= '<input type="radio" name="1b" value="7" checked>';
 													}else{
-														$financial .= '<input type="radio" name="1f" value="7">';
+														$financial .= '<input type="radio" name="1b" value="7">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1317,9 +1317,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==1 && $financial_impacts[1]['clave_impacto_financiero']==1){
-														$financial .= '<input type="radio" name="2f" value="1" checked>';
+														$financial .= '<input type="radio" name="2b" value="1" checked>';
 													}else{
-														$financial .= '<input type="radio" name="2f" value="1">';
+														$financial .= '<input type="radio" name="2b" value="1">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1330,9 +1330,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==2 && $financial_impacts[1]['clave_impacto_financiero']==2){
-														$financial .= '<input type="radio" name="2f" value="2" checked>';
+														$financial .= '<input type="radio" name="2b" value="2" checked>';
 													}else{
-														$financial .= '<input type="radio" name="2f" value="2">';
+														$financial .= '<input type="radio" name="2b" value="2">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1343,9 +1343,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==3 && $financial_impacts[1]['clave_impacto_financiero']==3){
-														$financial .= '<input type="radio" name="2f" value="3" checked>';
+														$financial .= '<input type="radio" name="2b" value="3" checked>';
 													}else{
-														$financial .= '<input type="radio" name="2f" value="3">';
+														$financial .= '<input type="radio" name="2b" value="3">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1356,9 +1356,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==4 && $financial_impacts[1]['clave_impacto_financiero']==4){
-														$financial .= '<input type="radio" name="2f" value="4" checked>';
+														$financial .= '<input type="radio" name="2b" value="4" checked>';
 													}else{
-														$financial .= '<input type="radio" name="2f" value="4">';
+														$financial .= '<input type="radio" name="2b" value="4">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1369,9 +1369,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==5 && $financial_impacts[1]['clave_impacto_financiero']==5){
-														$financial .= '<input type="radio" name="2f" value="5" checked>';
+														$financial .= '<input type="radio" name="2b" value="5" checked>';
 													}else{
-														$financial .= '<input type="radio" name="2f" value="5">';
+														$financial .= '<input type="radio" name="2b" value="5">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1382,9 +1382,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==6 && $financial_impacts[1]['clave_impacto_financiero']==6){
-														$financial .= '<input type="radio" name="2f" value="6" checked>';
+														$financial .= '<input type="radio" name="2b" value="6" checked>';
 													}else{
-														$financial .= '<input type="radio" name="2f" value="6">';
+														$financial .= '<input type="radio" name="2b" value="6">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1395,9 +1395,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==2 && $financial_impacts[1]['clave_tiempo_afectacion']==2 && $row['clave_impacto_financiero']==7 && $financial_impacts[1]['clave_impacto_financiero']==7){
-														$financial .= '<input type="radio" name="2f" value="7" checked>';
+														$financial .= '<input type="radio" name="2b" value="7" checked>';
 													}else{
-														$financial .= '<input type="radio" name="2f" value="7">';
+														$financial .= '<input type="radio" name="2b" value="7">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1411,9 +1411,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==1 && $financial_impacts[2]['clave_impacto_financiero']==1){
-														$financial .= '<input type="radio" name="3f" value="1" checked>';
+														$financial .= '<input type="radio" name="3b" value="1" checked>';
 													}else{
-														$financial .= '<input type="radio" name="3f" value="1">';
+														$financial .= '<input type="radio" name="3b" value="1">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1424,9 +1424,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==2 && $financial_impacts[2]['clave_impacto_financiero']==2){
-														$financial .= '<input type="radio" name="3f" value="2" checked>';
+														$financial .= '<input type="radio" name="3b" value="2" checked>';
 													}else{
-														$financial .= '<input type="radio" name="3f" value="2">';
+														$financial .= '<input type="radio" name="3b" value="2">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1437,9 +1437,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==3 && $financial_impacts[2]['clave_impacto_financiero']==3){
-														$financial .= '<input type="radio" name="3f" value="3" checked>';
+														$financial .= '<input type="radio" name="3b" value="3" checked>';
 													}else{
-														$financial .= '<input type="radio" name="3f" value="3">';
+														$financial .= '<input type="radio" name="3b" value="3">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1450,9 +1450,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==4 && $financial_impacts[2]['clave_impacto_financiero']==4){
-														$financial .= '<input type="radio" name="3f" value="4" checked>';
+														$financial .= '<input type="radio" name="3b" value="4" checked>';
 													}else{
-														$financial .= '<input type="radio" name="3f" value="4">';
+														$financial .= '<input type="radio" name="3b" value="4">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1463,9 +1463,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==5 && $financial_impacts[2]['clave_impacto_financiero']==5){
-														$financial .= '<input type="radio" name="3f" value="5" checked>';
+														$financial .= '<input type="radio" name="3b" value="5" checked>';
 													}else{
-														$financial .= '<input type="radio" name="3f" value="5">';
+														$financial .= '<input type="radio" name="3b" value="5">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1476,9 +1476,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==6 && $financial_impacts[2]['clave_impacto_financiero']==6){
-														$financial .= '<input type="radio" name="3f" value="6" checked>';
+														$financial .= '<input type="radio" name="3b" value="6" checked>';
 													}else{
-														$financial .= '<input type="radio" name="3f" value="6">';
+														$financial .= '<input type="radio" name="3b" value="6">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1489,9 +1489,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==3 && $financial_impacts[2]['clave_tiempo_afectacion']==3 && $row['clave_impacto_financiero']==7 && $financial_impacts[2]['clave_impacto_financiero']==7){
-														$financial .= '<input type="radio" name="3f" value="7" checked>';
+														$financial .= '<input type="radio" name="3b" value="7" checked>';
 													}else{
-														$financial .= '<input type="radio" name="3f" value="7">';
+														$financial .= '<input type="radio" name="3b" value="7">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1505,9 +1505,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==1 && $financial_impacts[3]['clave_impacto_financiero']==1){
-														$financial .= '<input type="radio" name="4f" value="1" checked>';
+														$financial .= '<input type="radio" name="4b" value="1" checked>';
 													}else{
-														$financial .= '<input type="radio" name="4f" value="1">';
+														$financial .= '<input type="radio" name="4b" value="1">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1518,9 +1518,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==2 && $financial_impacts[3]['clave_impacto_financiero']==2){
-														$financial .= '<input type="radio" name="4f" value="2" checked>';
+														$financial .= '<input type="radio" name="4b" value="2" checked>';
 													}else{
-														$financial .= '<input type="radio" name="4f" value="2">';
+														$financial .= '<input type="radio" name="4b" value="2">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1531,9 +1531,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==3 && $financial_impacts[3]['clave_impacto_financiero']==3){
-														$financial .= '<input type="radio" name="4f" value="3" checked>';
+														$financial .= '<input type="radio" name="4b" value="3" checked>';
 													}else{
-														$financial .= '<input type="radio" name="4f" value="3">';
+														$financial .= '<input type="radio" name="4b" value="3">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1544,9 +1544,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==4 && $financial_impacts[3]['clave_impacto_financiero']==4){
-														$financial .= '<input type="radio" name="4f" value="4" checked>';
+														$financial .= '<input type="radio" name="4b" value="4" checked>';
 													}else{
-														$financial .= '<input type="radio" name="4f" value="4">';
+														$financial .= '<input type="radio" name="4b" value="4">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1557,9 +1557,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==5 && $financial_impacts[3]['clave_impacto_financiero']==5){
-														$financial .= '<input type="radio" name="4f" value="5" checked>';
+														$financial .= '<input type="radio" name="4b" value="5" checked>';
 													}else{
-														$financial .= '<input type="radio" name="4f" value="5">';
+														$financial .= '<input type="radio" name="4b" value="5">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1570,9 +1570,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==6 && $financial_impacts[3]['clave_impacto_financiero']==6){
-														$financial .= '<input type="radio" name="4f" value="6" checked>';
+														$financial .= '<input type="radio" name="4b" value="6" checked>';
 													}else{
-														$financial .= '<input type="radio" name="4f" value="6">';
+														$financial .= '<input type="radio" name="4b" value="6">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1583,9 +1583,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==4 && $financial_impacts[3]['clave_tiempo_afectacion']==4 && $row['clave_impacto_financiero']==7 && $financial_impacts[3]['clave_impacto_financiero']==7){
-														$financial .= '<input type="radio" name="4f" value="7" checked>';
+														$financial .= '<input type="radio" name="4b" value="7" checked>';
 													}else{
-														$financial .= '<input type="radio" name="4f" value="7">';
+														$financial .= '<input type="radio" name="4b" value="7">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1599,9 +1599,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==1 && $financial_impacts[4]['clave_impacto_financiero']==1){
-														$financial .= '<input type="radio" name="5f" value="1" checked>';
+														$financial .= '<input type="radio" name="5b" value="1" checked>';
 													}else{
-														$financial .= '<input type="radio" name="5f" value="1">';
+														$financial .= '<input type="radio" name="5b" value="1">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1612,9 +1612,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==2 && $financial_impacts[4]['clave_impacto_financiero']==2){
-														$financial .= '<input type="radio" name="5f" value="2" checked>';
+														$financial .= '<input type="radio" name="5b" value="2" checked>';
 													}else{
-														$financial .= '<input type="radio" name="5f" value="2">';
+														$financial .= '<input type="radio" name="5b" value="2">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1625,9 +1625,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==3 && $financial_impacts[4]['clave_impacto_financiero']==3){
-														$financial .= '<input type="radio" name="5f" value="3" checked>';
+														$financial .= '<input type="radio" name="5b" value="3" checked>';
 													}else{
-														$financial .= '<input type="radio" name="5f" value="3">';
+														$financial .= '<input type="radio" name="5b" value="3">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1638,9 +1638,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==4 && $financial_impacts[4]['clave_impacto_financiero']==4){
-														$financial .= '<input type="radio" name="5f" value="4" checked>';
+														$financial .= '<input type="radio" name="5b" value="4" checked>';
 													}else{
-														$financial .= '<input type="radio" name="5f" value="4">';
+														$financial .= '<input type="radio" name="5b" value="4">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1651,9 +1651,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==5 && $financial_impacts[4]['clave_impacto_financiero']==5){
-														$financial .= '<input type="radio" name="5f" value="5" checked>';
+														$financial .= '<input type="radio" name="5b" value="5" checked>';
 													}else{
-														$financial .= '<input type="radio" name="5f" value="5">';
+														$financial .= '<input type="radio" name="5b" value="5">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1664,9 +1664,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==6 && $financial_impacts[4]['clave_impacto_financiero']==6){
-														$financial .= '<input type="radio" name="5f" value="6" checked>';
+														$financial .= '<input type="radio" name="5b" value="6" checked>';
 													}else{
-														$financial .= '<input type="radio" name="5f" value="6">';
+														$financial .= '<input type="radio" name="5b" value="6">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1677,9 +1677,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==5 && $financial_impacts[4]['clave_tiempo_afectacion']==5 && $row['clave_impacto_financiero']==7 && $financial_impacts[4]['clave_impacto_financiero']==7){
-														$financial .= '<input type="radio" name="5f" value="7" checked>';
+														$financial .= '<input type="radio" name="5b" value="7" checked>';
 													}else{
-														$financial .= '<input type="radio" name="5f" value="7">';
+														$financial .= '<input type="radio" name="5b" value="7">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1693,9 +1693,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==1 && $financial_impacts[5]['clave_impacto_financiero']==1){
-														$financial .= '<input type="radio" name="6f" value="1" checked>';
+														$financial .= '<input type="radio" name="6b" value="1" checked>';
 													}else{
-														$financial .= '<input type="radio" name="6f" value="1">';
+														$financial .= '<input type="radio" name="6b" value="1">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1706,9 +1706,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==2 && $financial_impacts[5]['clave_impacto_financiero']==2){
-														$financial .= '<input type="radio" name="6f" value="2" checked>';
+														$financial .= '<input type="radio" name="6b" value="2" checked>';
 													}else{
-														$financial .= '<input type="radio" name="6f" value="2">';
+														$financial .= '<input type="radio" name="6b" value="2">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1719,9 +1719,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==3 && $financial_impacts[5]['clave_impacto_financiero']==3){
-														$financial .= '<input type="radio" name="6f" value="3" checked>';
+														$financial .= '<input type="radio" name="6b" value="3" checked>';
 													}else{
-														$financial .= '<input type="radio" name="6f" value="3">';
+														$financial .= '<input type="radio" name="6b" value="3">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1732,9 +1732,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==4 && $financial_impacts[5]['clave_impacto_financiero']==4){
-														$financial .= '<input type="radio" name="6f" value="4" checked>';
+														$financial .= '<input type="radio" name="6b" value="4" checked>';
 													}else{
-														$financial .= '<input type="radio" name="6f" value="4">';
+														$financial .= '<input type="radio" name="6b" value="4">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1745,9 +1745,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==5 && $financial_impacts[5]['clave_impacto_financiero']==5){
-														$financial .= '<input type="radio" name="6f" value="5" checked>';
+														$financial .= '<input type="radio" name="6b" value="5" checked>';
 													}else{
-														$financial .= '<input type="radio" name="6f" value="5">';
+														$financial .= '<input type="radio" name="6b" value="5">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1758,9 +1758,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==6 && $financial_impacts[5]['clave_impacto_financiero']==6){
-														$financial .= '<input type="radio" name="6f" value="6" checked>';
+														$financial .= '<input type="radio" name="6b" value="6" checked>';
 													}else{
-														$financial .= '<input type="radio" name="6f" value="6">';
+														$financial .= '<input type="radio" name="6b" value="6">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1771,9 +1771,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==6 && $financial_impacts[5]['clave_tiempo_afectacion']==6 && $row['clave_impacto_financiero']==7 && $financial_impacts[5]['clave_impacto_financiero']==7){
-														$financial .= '<input type="radio" name="6f" value="7" checked>';
+														$financial .= '<input type="radio" name="6b" value="7" checked>';
 													}else{
-														$financial .= '<input type="radio" name="6f" value="7">';
+														$financial .= '<input type="radio" name="6b" value="7">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1787,9 +1787,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==1 && $financial_impacts[6]['clave_impacto_financiero']==1){
-														$financial .= '<input type="radio" name="7f" value="1" checked>';
+														$financial .= '<input type="radio" name="7b" value="1" checked>';
 													}else{
-														$financial .= '<input type="radio" name="7f" value="1">';
+														$financial .= '<input type="radio" name="7b" value="1">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1800,9 +1800,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==2 && $financial_impacts[6]['clave_impacto_financiero']==2){
-														$financial .= '<input type="radio" name="7f" value="2" checked>';
+														$financial .= '<input type="radio" name="7b" value="2" checked>';
 													}else{
-														$financial .= '<input type="radio" name="7f" value="2">';
+														$financial .= '<input type="radio" name="7b" value="2">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1813,9 +1813,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==3 && $financial_impacts[6]['clave_impacto_financiero']==3){
-														$financial .= '<input type="radio" name="7f" value="3" checked>';
+														$financial .= '<input type="radio" name="7b" value="3" checked>';
 													}else{
-														$financial .= '<input type="radio" name="7f" value="3">';
+														$financial .= '<input type="radio" name="7b" value="3">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1826,9 +1826,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==4 && $financial_impacts[6]['clave_impacto_financiero']==4){
-														$financial .= '<input type="radio" name="7f" value="4" checked>';
+														$financial .= '<input type="radio" name="7b" value="4" checked>';
 													}else{
-														$financial .= '<input type="radio" name="7f" value="4">';
+														$financial .= '<input type="radio" name="7b" value="4">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1839,9 +1839,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==5 && $financial_impacts[6]['clave_impacto_financiero']==5){
-														$financial .= '<input type="radio" name="7f" value="5" checked>';
+														$financial .= '<input type="radio" name="7b" value="5" checked>';
 													}else{
-														$financial .= '<input type="radio" name="7f" value="5">';
+														$financial .= '<input type="radio" name="7b" value="5">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1852,9 +1852,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==6 && $financial_impacts[6]['clave_impacto_financiero']==6){
-														$financial .= '<input type="radio" name="7f" value="6" checked>';
+														$financial .= '<input type="radio" name="7b" value="6" checked>';
 													}else{
-														$financial .= '<input type="radio" name="7f" value="6">';
+														$financial .= '<input type="radio" name="7b" value="6">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1865,9 +1865,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==7 && $financial_impacts[6]['clave_tiempo_afectacion']==7 && $row['clave_impacto_financiero']==7 && $financial_impacts[6]['clave_impacto_financiero']==7){
-														$financial .= '<input type="radio" name="7f" value="7" checked>';
+														$financial .= '<input type="radio" name="7b" value="7" checked>';
 													}else{
-														$financial .= '<input type="radio" name="7f" value="7">';
+														$financial .= '<input type="radio" name="7b" value="7">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1881,9 +1881,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==1 && $financial_impacts[7]['clave_impacto_financiero']==1){
-														$financial .= '<input type="radio" name="8f" value="1" checked>';
+														$financial .= '<input type="radio" name="8b" value="1" checked>';
 													}else{
-														$financial .= '<input type="radio" name="8f" value="1">';
+														$financial .= '<input type="radio" name="8b" value="1">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1894,9 +1894,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==2 && $financial_impacts[7]['clave_impacto_financiero']==2){
-														$financial .= '<input type="radio" name="8f" value="2" checked>';
+														$financial .= '<input type="radio" name="8b" value="2" checked>';
 													}else{
-														$financial .= '<input type="radio" name="8f" value="2">';
+														$financial .= '<input type="radio" name="8b" value="2">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1907,9 +1907,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==3 && $financial_impacts[7]['clave_impacto_financiero']==3){
-														$financial .= '<input type="radio" name="8f" value="3" checked>';
+														$financial .= '<input type="radio" name="8b" value="3" checked>';
 													}else{
-														$financial .= '<input type="radio" name="8f" value="3">';
+														$financial .= '<input type="radio" name="8b" value="3">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1920,9 +1920,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==4 && $financial_impacts[7]['clave_impacto_financiero']==4){
-														$financial .= '<input type="radio" name="8f" value="4" checked>';
+														$financial .= '<input type="radio" name="8b" value="4" checked>';
 													}else{
-														$financial .= '<input type="radio" name="8f" value="4">';
+														$financial .= '<input type="radio" name="8b" value="4">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1933,9 +1933,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==5 && $financial_impacts[7]['clave_impacto_financiero']==5){
-														$financial .= '<input type="radio" name="8f" value="5" checked>';
+														$financial .= '<input type="radio" name="8b" value="5" checked>';
 													}else{
-														$financial .= '<input type="radio" name="8f" value="5">';
+														$financial .= '<input type="radio" name="8b" value="5">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1946,9 +1946,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==6 && $financial_impacts[7]['clave_impacto_financiero']==6){
-														$financial .= '<input type="radio" name="8f" value="6" checked>';
+														$financial .= '<input type="radio" name="8b" value="6" checked>';
 													}else{
-														$financial .= '<input type="radio" name="8f" value="6">';
+														$financial .= '<input type="radio" name="8b" value="6">';
 													}
 												}
 												echo $financial; ?></td>
@@ -1959,9 +1959,9 @@ show_navbar();
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion']==8 && $financial_impacts[7]['clave_tiempo_afectacion']==8 && $row['clave_impacto_financiero']==7 && $financial_impacts[7]['clave_impacto_financiero']==7){
-														$financial .= '<input type="radio" name="8f" value="7" checked>';
+														$financial .= '<input type="radio" name="8b" value="7" checked>';
 													}else{
-														$financial .= '<input type="radio" name="8f" value="7">';
+														$financial .= '<input type="radio" name="8b" value="7">';
 													}
 												}
 												echo $financial; ?></td>

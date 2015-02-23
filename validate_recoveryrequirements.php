@@ -25,7 +25,7 @@ try{
 	}else{
 		show_header('Guardar requerimientos de recuperación');
 		save_recoveryrequirements($id,$var0,$var1,$var2,$var3,$var4,$var5,$var6,$var7,$var8,$var9,$var10,$var11,$var12,$var13);
-		header("refresh:0; url=index.php");
+		header("refresh:0; url=\"view_processdata.php?id=$id\"");
 		show_footer();
 	}
 }catch(Exception $e){

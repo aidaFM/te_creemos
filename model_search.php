@@ -50,7 +50,7 @@ function getSystemId($var)
 function getNumberOfSystems($var)
 {
 	$conn = home_connection();
-	$searchdata = $conn->query("SELECT clave_sistemas FROM proceso_sistemas WHERE clave_proceso = '".$var."'");
+	$searchdata = $conn->query("SELECT clave_sistema FROM proceso_sistemas WHERE clave_proceso = '".$var."'");
 	$find=FALSE;
 	if(!$searchdata){
 		throw new Exception('Error en la consulta getNumberOfSystems.');
