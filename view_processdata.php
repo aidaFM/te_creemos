@@ -131,13 +131,13 @@ show_navbar();
 			<div class="col-md-12">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
-						<h3>Proceso en blanco</h3>
+						<h3>Proceso</h3>
 					</div>
 					<div class="panel-body">
-						<p class="lead">Ingresa la información del <strong>processo</strong>.</p>
+						<p class="lead"></p>
 						<div class="row">
 							<div class="col-md-12">	
-								<form id="new" action="validate_process.php" method="post">
+								<form id="new" action="validate_processdata.php" method="post">
 								<div class="form-group">
 									<label for="process_name">Nombre del proceso:</label>
 									<input class="form-control" type="text" name="process_name" id="process_name" value="<?= $process['nombre_proceso'] ?>" maxlength="100" size="50" required/>						
@@ -196,11 +196,11 @@ show_navbar();
 							<div class="col-md-12">	
 								<div class="form-group">
 									<label for="critycality">Objetivo tiempo de recuperación:</label>
-									<select class="form-control" name="rto" value="<?= $process['clave_rto'] ?>"><?php echo utf8_encode($rto_option); ?></select>
+									<select class="form-control" name="rto" value="<?= $process['clave_rto'] ?>"><?php echo $rto_option; ?></select>
 								</div>
 								<div class="form-group">
 									<label for="critycality">Objetivo punto de recuperación:</label>
-									<select class="form-control" name="rpo" value="<?= $process['clave_rpo'] ?>"><?php echo utf8_encode($rpo_option); ?></select>							
+									<select class="form-control" name="rpo" value="<?= $process['clave_rpo'] ?>"><?php echo $rpo_option; ?></select>							
 								</div>
 							</div>
 						</div>
@@ -224,7 +224,7 @@ show_navbar();
 								</div>
 								<div class="form-group">
 									<label for="critical_period">Periodos críticos:</label>
-									<select class="form-control" name="critical_period"><?php echo utf8_encode($critical_period); ?></select>
+									<select class="form-control" name="critical_period"><?php echo $critical_period; ?></select>
 								</div>
 							</div>
 						</div>

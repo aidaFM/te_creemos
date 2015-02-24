@@ -1329,5 +1329,16 @@ $resultado = mysqli_query($datos_de_conexion, $consulta);
 	}else{
 		echo mysqli_error($datos_de_conexion);
 	}
+
+$datos_de_conexion = mysqli_connect("localhost", "root", "");
+
+$consulta = "ALTER SCHEMA `te_creemos`  DEFAULT CHARACTER SET utf8  DEFAULT COLLATE utf8_spanish_ci ;";
+
+$resultado = mysqli_query($datos_de_conexion, $consulta);
+	if ($resultado){
+		echo "Registro insertado. </br>";
+	}else{
+		echo mysqli_error($datos_de_conexion);
+	}
 header("refresh:5; url=index.php");
 ?>
