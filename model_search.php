@@ -252,3 +252,18 @@ function getEconomicImpacts($id)
 	$getdata->free();
 	$getdata->close();
 }
+
+function getBackupData($id)
+{
+	$conn = home_connection();
+	$getdata = $conn->query("SELECT * FROM operacion_proceso WHERE clave_proceso = $id");
+	if(!$getdata){
+		throw new Exception('Error en la consulta getWindowOperationData.');
+	}else{
+		while($data = $getdata->fetch_array()){
+			return $data;
+		}
+	}
+	$getdata->free();
+	$getdata->close();
+}

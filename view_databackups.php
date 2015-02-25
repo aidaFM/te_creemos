@@ -20,7 +20,7 @@ while ($row = $result->fetch_assoc()) {
 	$backup_storage .= "<option value='$row[clave_medio_respaldo]'>$row[descripcion_medio_respaldo]</option>";
 }
 
-show_header('Dependencias tecnologicas');
+show_header('Respaldos de información');
 show_navbar();
 ?>
 	<div class="container">

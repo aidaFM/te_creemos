@@ -1,19 +1,20 @@
 function objetoAjax(){
- var xmlhttp=false;
-  try{
-   xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-  }catch(e){
-   try {
-    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-   }catch(E){
-    xmlhttp = false;
-   }
-  }
-  if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
-   xmlhttp = new XMLHttpRequest();
-  }
-  return xmlhttp;
-}
+var objetoAjax;
+ try{
+ objetoAjax = new XMLHttpRequest();
+ }catch(err1){
+ try{
+ objetoAjax = new ActiveXObject("Msxm12.XMLHTTP");
+ }catch(err2){
+ try{
+ objetoAjax = new ActiveXObject("Microsoft.XMLHTTP");
+ }catch(err3){
+ objetoAjax = false;
+ }
+ }
+ }
+ return objetoAjax;
+ }
 
 function Pagina(nropagina){
  //donde se mostrará los registros
