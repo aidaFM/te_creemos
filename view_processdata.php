@@ -705,7 +705,7 @@ show_navbar();
 								        		<th scope="row">Alto</th>
 								        		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -718,7 +718,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -731,7 +731,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -744,7 +744,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -757,7 +757,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -770,7 +770,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -783,7 +783,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -796,7 +796,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -809,7 +809,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -822,7 +822,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -835,7 +835,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -848,7 +848,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 												<td>
 								          		<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -864,7 +864,7 @@ show_navbar();
 								        		<th scope="row">Medio</th>
 								        		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -877,7 +877,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -890,7 +890,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -903,7 +903,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -916,7 +916,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -929,7 +929,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -942,7 +942,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -955,7 +955,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -968,7 +968,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -981,7 +981,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -994,7 +994,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1007,7 +1007,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 												<td>
 								          		<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1023,7 +1023,7 @@ show_navbar();
 								        		<th scope="row">Bajo</th>
 								        		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1036,7 +1036,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1049,7 +1049,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1062,7 +1062,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1075,7 +1075,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1088,7 +1088,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1101,7 +1101,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1114,7 +1114,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1127,7 +1127,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1140,7 +1140,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1153,7 +1153,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 								          		<td>
 												<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1166,7 +1166,7 @@ show_navbar();
 												echo $cyclical_charge; ?></td>
 												<td>
 								          		<?php
-												$cyclical_charges = "select * from procesa_ciclico";
+												$cyclical_charges = "select * from procesa_ciclico where clave_proceso = $id";
 												$result = $conn->query($cyclical_charges);
 												$cyclical_charge= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1218,7 +1218,7 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('1') ?></th>
 								        		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=1";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1231,7 +1231,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=1";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1244,7 +1244,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=1";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1257,7 +1257,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=1";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1270,7 +1270,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=1";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1283,7 +1283,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=1";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1296,7 +1296,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=1";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=1";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1312,7 +1312,7 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('2') ?></th>
 								        		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=2";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1325,7 +1325,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=2";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1338,7 +1338,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=2";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1351,7 +1351,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=2";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1364,7 +1364,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=2";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1377,7 +1377,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=2";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1390,7 +1390,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=2";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=2";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1406,7 +1406,7 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('3') ?></th>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=3";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1419,7 +1419,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=3";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1432,7 +1432,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=3";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1445,7 +1445,7 @@ show_navbar();
 												echo $financial; ?></td>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=3";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1458,7 +1458,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=3";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1471,7 +1471,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=3";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1484,7 +1484,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=3";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=3";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1500,7 +1500,7 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('4') ?></th>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=4";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1513,7 +1513,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=4";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1526,7 +1526,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=4";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1539,7 +1539,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=4";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1552,7 +1552,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=4";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1565,7 +1565,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=4";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1578,7 +1578,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=4";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=4";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1594,7 +1594,7 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('5') ?></th>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=5";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1607,7 +1607,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=5";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1620,7 +1620,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=5";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1633,7 +1633,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=5";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1646,7 +1646,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=5";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1659,7 +1659,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=5";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1672,7 +1672,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=5";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=5";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1688,7 +1688,7 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('6') ?></th>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=6";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1701,7 +1701,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=6";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1714,7 +1714,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=6";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1727,7 +1727,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=6";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1740,7 +1740,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=6";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1753,7 +1753,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=6";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1766,7 +1766,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=6";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=6";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1782,7 +1782,7 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('7') ?></th>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=7";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1795,7 +1795,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=7";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1808,7 +1808,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=7";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1821,7 +1821,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=7";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1834,7 +1834,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=7";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1847,7 +1847,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=7";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1860,7 +1860,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=7";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=7";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1876,7 +1876,7 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('8') ?></th>
 								          		<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=8";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1889,7 +1889,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=8";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1902,7 +1902,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=8";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1915,7 +1915,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=8";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1928,7 +1928,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=8";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1941,7 +1941,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=8";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -1954,7 +1954,7 @@ show_navbar();
 												echo $financial; ?></td>
 												<td>
 								          		<?php
-												$financial_data = "select * from impactos_financiero where consecutivo_impacto_financiero=8";
+												$financial_data = "select * from impactos_financiero where clave_proceso=$id and consecutivo_impacto_financiero=8";
 												$result = $conn->query($financial_data);
 												$financial= "";
 												while ($row = $result->fetch_assoc()) {
@@ -2006,92 +2006,92 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('1') ?></th>
 								        		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=1";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[0]['clave_impacto_financiero_multa']==1){
-														$ecomomic .= '<input type="radio" name="1" value="1" checked>';
+														$ecomomic .= '<input type="radio" name="1c" value="1" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="1" value="1">';
+														$ecomomic .= '<input type="radio" name="1c" value="1">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=1";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[0]['clave_impacto_financiero_multa']==2){
-														$ecomomic .= '<input type="radio" name="1" value="2" checked>';
+														$ecomomic .= '<input type="radio" name="1c" value="2" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="1" value="2">';
+														$ecomomic .= '<input type="radio" name="1c" value="2">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=1";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[0]['clave_impacto_financiero_multa']==3){
-														$ecomomic .= '<input type="radio" name="1" value="3" checked>';
+														$ecomomic .= '<input type="radio" name="1c" value="3" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="1" value="3">';
+														$ecomomic .= '<input type="radio" name="1c" value="3">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=1";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[0]['clave_impacto_financiero_multa']==4){
-														$ecomomic .= '<input type="radio" name="1" value="4" checked>';
+														$ecomomic .= '<input type="radio" name="1c" value="4" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="1" value="4">';
+														$ecomomic .= '<input type="radio" name="1c" value="4">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=1";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[0]['clave_impacto_financiero_multa']==5){
-														$ecomomic .= '<input type="radio" name="1" value="5" checked>';
+														$ecomomic .= '<input type="radio" name="1c" value="5" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="1" value="5">';
+														$ecomomic .= '<input type="radio" name="1c" value="5">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=1";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[0]['clave_impacto_financiero_multa']==6){
-														$ecomomic .= '<input type="radio" name="1" value="6" checked>';
+														$ecomomic .= '<input type="radio" name="1cc" value="6" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="1" value="6">';
+														$ecomomic .= '<input type="radio" name="1c" value="6">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=1";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=1";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==1 && $economic_impacts[0]['clave_tiempo_afectacion_multa']==1 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[0]['clave_impacto_financiero_multa']==7){
-														$ecomomic .= '<input type="radio" name="1" value="7" checked>';
+														$ecomomic .= '<input type="radio" name="1c" value="7" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="1" value="7">';
+														$ecomomic .= '<input type="radio" name="1c" value="7">';
 													}
 												}
 												echo $ecomomic; ?></td>
@@ -2100,92 +2100,92 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('2') ?></th>
 								        		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=2";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[1]['clave_impacto_financiero_multa']==1){
-														$ecomomic .= '<input type="radio" name="2" value="1" checked>';
+														$ecomomic .= '<input type="radio" name="2c" value="1" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="2" value="1">';
+														$ecomomic .= '<input type="radio" name="2c" value="1">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=2";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[1]['clave_impacto_financiero_multa']==2){
-														$ecomomic .= '<input type="radio" name="2" value="2" checked>';
+														$ecomomic .= '<input type="radio" name="2c" value="2" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="2" value="2">';
+														$ecomomic .= '<input type="radio" name="2c" value="2">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=2";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[1]['clave_impacto_financiero_multa']==3){
-														$ecomomic .= '<input type="radio" name="2" value="3" checked>';
+														$ecomomic .= '<input type="radio" name="2c" value="3" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="2" value="3">';
+														$ecomomic .= '<input type="radio" name="2c" value="3">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=2";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[1]['clave_impacto_financiero_multa']==4){
-														$ecomomic .= '<input type="radio" name="2" value="4" checked>';
+														$ecomomic .= '<input type="radio" name="2c" value="4" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="2" value="4">';
+														$ecomomic .= '<input type="radio" name="2c" value="4">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=2";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[1]['clave_impacto_financiero_multa']==5){
-														$ecomomic .= '<input type="radio" name="2" value="5" checked>';
+														$ecomomic .= '<input type="radio" name="2c" value="5" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="2" value="5">';
+														$ecomomic .= '<input type="radio" name="2c" value="5">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=2";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[1]['clave_impacto_financiero_multa']==6){
-														$ecomomic .= '<input type="radio" name="2" value="6" checked>';
+														$ecomomic .= '<input type="radio" name="2c" value="6" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="2" value="6">';
+														$ecomomic .= '<input type="radio" name="2c" value="6">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=2";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=2";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==2 && $economic_impacts[1]['clave_tiempo_afectacion_multa']==2 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[1]['clave_impacto_financiero_multa']==7){
-														$ecomomic .= '<input type="radio" name="2" value="7" checked>';
+														$ecomomic .= '<input type="radio" name="2c" value="7" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="2" value="7">';
+														$ecomomic .= '<input type="radio" name="2c" value="7">';
 													}
 												}
 												echo $ecomomic; ?></td>
@@ -2194,92 +2194,92 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('3') ?></th>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=3";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[2]['clave_impacto_financiero_multa']==1){
-														$ecomomic .= '<input type="radio" name="3" value="1" checked>';
+														$ecomomic .= '<input type="radio" name="3c" value="1" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="3" value="1">';
+														$ecomomic .= '<input type="radio" name="3c" value="1">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=3";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[2]['clave_impacto_financiero_multa']==2){
-														$ecomomic .= '<input type="radio" name="3" value="2" checked>';
+														$ecomomic .= '<input type="radio" name="3c" value="2" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="3" value="2">';
+														$ecomomic .= '<input type="radio" name="3c" value="2">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=3";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[2]['clave_impacto_financiero_multa']==3){
-														$ecomomic .= '<input type="radio" name="3" value="3" checked>';
+														$ecomomic .= '<input type="radio" name="3c" value="3" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="3" value="3">';
+														$ecomomic .= '<input type="radio" name="3c" value="3">';
 													}
 												}
 												echo $ecomomic; ?></td>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=3";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[2]['clave_impacto_financiero_multa']==4){
-														$ecomomic .= '<input type="radio" name="3" value="4" checked>';
+														$ecomomic .= '<input type="radio" name="3c" value="4" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="3" value="4">';
+														$ecomomic .= '<input type="radio" name="3c" value="4">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=3";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[2]['clave_impacto_financiero_multa']==5){
-														$ecomomic .= '<input type="radio" name="3" value="5" checked>';
+														$ecomomic .= '<input type="radio" name="3c" value="5" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="3" value="5">';
+														$ecomomic .= '<input type="radio" name="3c" value="5">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=3";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[2]['clave_impacto_financiero_multa']==6){
-														$ecomomic .= '<input type="radio" name="3" value="6" checked>';
+														$ecomomic .= '<input type="radio" name="3c" value="6" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="3" value="6">';
+														$ecomomic .= '<input type="radio" name="3c" value="6">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=3";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=3";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==3 && $economic_impacts[2]['clave_tiempo_afectacion_multa']==3 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[2]['clave_impacto_financiero_multa']==7){
-														$ecomomic .= '<input type="radio" name="3" value="7" checked>';
+														$ecomomic .= '<input type="radio" name="3c" value="7" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="3" value="7">';
+														$ecomomic .= '<input type="radio" name="3c" value="7">';
 													}
 												}
 												echo $ecomomic; ?></td>
@@ -2288,92 +2288,92 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('4') ?></th>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=4";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[3]['clave_impacto_financiero_multa']==1){
-														$ecomomic .= '<input type="radio" name="4" value="1" checked>';
+														$ecomomic .= '<input type="radio" name="4c" value="1" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="4" value="1">';
+														$ecomomic .= '<input type="radio" name="4c" value="1">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=4";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[3]['clave_impacto_financiero_multa']==2){
-														$ecomomic .= '<input type="radio" name="4" value="2" checked>';
+														$ecomomic .= '<input type="radio" name="4c" value="2" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="4" value="2">';
+														$ecomomic .= '<input type="radio" name="4c" value="2">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=4";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[3]['clave_impacto_financiero_multa']==3){
-														$ecomomic .= '<input type="radio" name="4" value="3" checked>';
+														$ecomomic .= '<input type="radio" name="4c" value="3" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="4" value="3">';
+														$ecomomic .= '<input type="radio" name="4c" value="3">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=4";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[3]['clave_impacto_financiero_multa']==4){
-														$ecomomic .= '<input type="radio" name="4" value="4" checked>';
+														$ecomomic .= '<input type="radio" name="4c" value="4" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="4" value="4">';
+														$ecomomic .= '<input type="radio" name="4c" value="4">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=4";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[3]['clave_impacto_financiero_multa']==5){
-														$ecomomic .= '<input type="radio" name="4" value="5" checked>';
+														$ecomomic .= '<input type="radio" name="4c" value="5" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="4" value="5">';
+														$ecomomic .= '<input type="radio" name="4c" value="5">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=4";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[3]['clave_impacto_financiero_multa']==6){
-														$ecomomic .= '<input type="radio" name="4" value="6" checked>';
+														$ecomomic .= '<input type="radio" name="4c" value="6" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="4" value="6">';
+														$ecomomic .= '<input type="radio" name="4c" value="6">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=4";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=4";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==4 && $economic_impacts[3]['clave_tiempo_afectacion_multa']==4 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[3]['clave_impacto_financiero_multa']==7){
-														$ecomomic .= '<input type="radio" name="4" value="7" checked>';
+														$ecomomic .= '<input type="radio" name="4c" value="7" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="4" value="7">';
+														$ecomomic .= '<input type="radio" name="4c" value="7">';
 													}
 												}
 												echo $ecomomic; ?></td>
@@ -2382,92 +2382,92 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('5') ?></th>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=5";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[4]['clave_impacto_financiero_multa']==1){
-														$ecomomic .= '<input type="radio" name="5" value="1" checked>';
+														$ecomomic .= '<input type="radio" name="5c" value="1" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="5" value="1">';
+														$ecomomic .= '<input type="radio" name="5c" value="1">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=5";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[4]['clave_impacto_financiero_multa']==2){
-														$ecomomic .= '<input type="radio" name="5" value="2" checked>';
+														$ecomomic .= '<input type="radio" name="5c" value="2" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="5" value="2">';
+														$ecomomic .= '<input type="radio" name="5c" value="2">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=5";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[4]['clave_impacto_financiero_multa']==3){
-														$ecomomic .= '<input type="radio" name="5" value="3" checked>';
+														$ecomomic .= '<input type="radio" name="5c" value="3" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="5" value="3">';
+														$ecomomic .= '<input type="radio" name="5c" value="3">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=5";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[4]['clave_impacto_financiero_multa']==4){
-														$ecomomic .= '<input type="radio" name="5" value="4" checked>';
+														$ecomomic .= '<input type="radio" name="5c" value="4" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="5" value="4">';
+														$ecomomic .= '<input type="radio" name="5c" value="4">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=5";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[4]['clave_impacto_financiero_multa']==5){
-														$ecomomic .= '<input type="radio" name="5" value="5" checked>';
+														$ecomomic .= '<input type="radio" name="5c" value="5" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="5" value="5">';
+														$ecomomic .= '<input type="radio" name="5c" value="5">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=5";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[4]['clave_impacto_financiero_multa']==6){
-														$ecomomic .= '<input type="radio" name="5" value="6" checked>';
+														$ecomomic .= '<input type="radio" name="5c" value="6" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="5" value="6">';
+														$ecomomic .= '<input type="radio" name="5c" value="6">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=5";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=5";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==5 && $economic_impacts[4]['clave_tiempo_afectacion_multa']==5 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[4]['clave_impacto_financiero_multa']==7){
-														$ecomomic .= '<input type="radio" name="5" value="7" checked>';
+														$ecomomic .= '<input type="radio" name="5c" value="7" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="5" value="7">';
+														$ecomomic .= '<input type="radio" name="5c" value="7">';
 													}
 												}
 												echo $ecomomic; ?></td>
@@ -2476,92 +2476,92 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('6') ?></th>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=6";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[5]['clave_impacto_financiero_multa']==1){
-														$ecomomic .= '<input type="radio" name="6" value="1" checked>';
+														$ecomomic .= '<input type="radio" name="6c" value="1" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="6" value="1">';
+														$ecomomic .= '<input type="radio" name="6c" value="1">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=6";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[5]['clave_impacto_financiero_multa']==2){
-														$ecomomic .= '<input type="radio" name="6" value="2" checked>';
+														$ecomomic .= '<input type="radio" name="6c" value="2" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="6" value="2">';
+														$ecomomic .= '<input type="radio" name="6c" value="2">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=6";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[5]['clave_impacto_financiero_multa']==3){
-														$ecomomic .= '<input type="radio" name="6" value="3" checked>';
+														$ecomomic .= '<input type="radio" name="6c" value="3" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="6" value="3">';
+														$ecomomic .= '<input type="radio" name="6c" value="3">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=6";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[5]['clave_impacto_financiero_multa']==4){
-														$ecomomic .= '<input type="radio" name="6" value="4" checked>';
+														$ecomomic .= '<input type="radio" name="6c" value="4" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="6" value="4">';
+														$ecomomic .= '<input type="radio" name="6c" value="4">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=6";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[5]['clave_impacto_financiero_multa']==5){
-														$ecomomic .= '<input type="radio" name="6" value="5" checked>';
+														$ecomomic .= '<input type="radio" name="6c" value="5" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="6" value="5">';
+														$ecomomic .= '<input type="radio" name="6c" value="5">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=6";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[5]['clave_impacto_financiero_multa']==6){
-														$ecomomic .= '<input type="radio" name="6" value="6" checked>';
+														$ecomomic .= '<input type="radio" name="6c" value="6" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="6" value="6">';
+														$ecomomic .= '<input type="radio" name="6c" value="6">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=6";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=6";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==6 && $economic_impacts[5]['clave_tiempo_afectacion_multa']==6 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[5]['clave_impacto_financiero_multa']==7){
-														$ecomomic .= '<input type="radio" name="6" value="7" checked>';
+														$ecomomic .= '<input type="radio" name="6c" value="7" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="6" value="7">';
+														$ecomomic .= '<input type="radio" name="6c" value="7">';
 													}
 												}
 												echo $ecomomic; ?></td>
@@ -2570,92 +2570,92 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('7') ?></th>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=7";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[6]['clave_impacto_financiero_multa']==1){
-														$ecomomic .= '<input type="radio" name="7" value="1" checked>';
+														$ecomomic .= '<input type="radio" name="7c" value="1" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="7" value="1">';
+														$ecomomic .= '<input type="radio" name="7c" value="1">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=7";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[6]['clave_impacto_financiero_multa']==2){
-														$ecomomic .= '<input type="radio" name="7" value="2" checked>';
+														$ecomomic .= '<input type="radio" name="7c" value="2" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="7" value="2">';
+														$ecomomic .= '<input type="radio" name="7c" value="2">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=7";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[6]['clave_impacto_financiero_multa']==3){
-														$ecomomic .= '<input type="radio" name="7" value="3" checked>';
+														$ecomomic .= '<input type="radio" name="7c" value="3" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="7" value="3">';
+														$ecomomic .= '<input type="radio" name="7c" value="3">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=7";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[6]['clave_impacto_financiero_multa']==4){
-														$ecomomic .= '<input type="radio" name="7" value="4" checked>';
+														$ecomomic .= '<input type="radio" name="7c" value="4" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="7" value="4">';
+														$ecomomic .= '<input type="radio" name="7c" value="4">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=7";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[6]['clave_impacto_financiero_multa']==5){
-														$ecomomic .= '<input type="radio" name="7" value="5" checked>';
+														$ecomomic .= '<input type="radio" name="7c" value="5" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="7" value="5">';
+														$ecomomic .= '<input type="radio" name="7c" value="5">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=7";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[6]['clave_impacto_financiero_multa']==6){
-														$ecomomic .= '<input type="radio" name="7" value="6" checked>';
+														$ecomomic .= '<input type="radio" name="7c" value="6" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="7" value="6">';
+														$ecomomic .= '<input type="radio" name="7c" value="6">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=7";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=7";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==7 && $economic_impacts[6]['clave_tiempo_afectacion_multa']==7 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[6]['clave_impacto_financiero_multa']==7){
-														$ecomomic .= '<input type="radio" name="7" value="7" checked>';
+														$ecomomic .= '<input type="radio" name="7c" value="7" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="7" value="7">';
+														$ecomomic .= '<input type="radio" name="7c" value="7">';
 													}
 												}
 												echo $ecomomic; ?></td>
@@ -2664,92 +2664,92 @@ show_navbar();
 								        		<th scope="row"><?= getTimeAffectation('8') ?></th>
 								          		<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=8";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==1 && $economic_impacts[7]['clave_impacto_financiero_multa']==1){
-														$ecomomic .= '<input type="radio" name="8" value="1" checked>';
+														$ecomomic .= '<input type="radio" name="8c" value="1" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="8" value="1">';
+														$ecomomic .= '<input type="radio" name="8c" value="1">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=8";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==2 && $economic_impacts[7]['clave_impacto_financiero_multa']==2){
-														$ecomomic .= '<input type="radio" name="8" value="2" checked>';
+														$ecomomic .= '<input type="radio" name="8c" value="2" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="8" value="2">';
+														$ecomomic .= '<input type="radio" name="8c" value="2">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=8";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==3 && $economic_impacts[7]['clave_impacto_financiero_multa']==3){
-														$ecomomic .= '<input type="radio" name="8" value="3" checked>';
+														$ecomomic .= '<input type="radio" name="8c" value="3" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="8" value="3">';
+														$ecomomic .= '<input type="radio" name="8c" value="3">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=8";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==4 && $economic_impacts[7]['clave_impacto_financiero_multa']==4){
-														$ecomomic .= '<input type="radio" name="8" value="4" checked>';
+														$ecomomic .= '<input type="radio" name="8c" value="4" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="8" value="4">';
+														$ecomomic .= '<input type="radio" name="8c" value="4">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=8";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==5 && $economic_impacts[7]['clave_impacto_financiero_multa']==5){
-														$ecomomic .= '<input type="radio" name="8" value="5" checked>';
+														$ecomomic .= '<input type="radio" name="8c" value="5" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="8" value="5">';
+														$ecomomic .= '<input type="radio" name="8c" value="5">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=8";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==6 && $economic_impacts[7]['clave_impacto_financiero_multa']==6){
-														$ecomomic .= '<input type="radio" name="8" value="6" checked>';
+														$ecomomic .= '<input type="radio" name="8c" value="6" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="8" value="6">';
+														$ecomomic .= '<input type="radio" name="8c" value="6">';
 													}
 												}
 												echo $ecomomic; ?></td>
 												<td>
 								          		<?php
-												$economic_data = "select * from multas_penalizaciones where consecutivo_tiempo_afectacion_multa=8";
+												$economic_data = "select * from multas_penalizaciones where clave_proceso=$id and consecutivo_tiempo_afectacion_multa=8";
 												$result = $conn->query($economic_data);
 												$ecomomic= "";
 												while ($row = $result->fetch_assoc()) {
 													if($row['clave_tiempo_afectacion_multa']==8 && $economic_impacts[7]['clave_tiempo_afectacion_multa']==8 && $row['clave_impacto_financiero_multa']==7 && $economic_impacts[7]['clave_impacto_financiero_multa']==7){
-														$ecomomic .= '<input type="radio" name="8" value="7" checked>';
+														$ecomomic .= '<input type="radio" name="8c" value="7" checked>';
 													}else{
-														$ecomomic .= '<input type="radio" name="8" value="7">';
+														$ecomomic .= '<input type="radio" name="8c" value="7">';
 													}
 												}
 												echo $ecomomic; ?></td>
@@ -2789,31 +2789,223 @@ show_navbar();
 								    	<tbody>
 								    		<tr>
 								        		<th scope="row"><?= getNoneFinancialImpact('1') ?></th>
-								          		<td><input type="radio" name="1" value="1"></td>
-								          		<td><input type="radio" name="1" value="2"></td>
-								          		<td><input type="radio" name="1" value="3"></td>
-								          		<td><input type="radio" name="1" value="4"></td>
-								        	</tr>
+								        		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=1";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==1){
+														$nonfinancial .= '<input type="radio" name="1d" value="1" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="1d" value="1">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+								          		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=1";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==2){
+														$nonfinancial .= '<input type="radio" name="1d" value="2" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="1d" value="2">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+								          		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=1";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==3){
+														$nonfinancial .= '<input type="radio" name="1d" value="3" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="1d" value="3">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+								          		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=1";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==4){
+														$nonfinancial .= '<input type="radio" name="1d" value="4" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="1d" value="4">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+											</tr>
 								        	<tr>
 								        		<th scope="row"><?= getNoneFinancialImpact('2') ?></th>
-												<td><input type="radio" name="2" value="1"></td>
-								          		<td><input type="radio" name="2" value="2"></td>
-								          		<td><input type="radio" name="2" value="3"></td>
-								          		<td><input type="radio" name="2" value="4"></td>
+								        		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=2";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==1){
+														$nonfinancial .= '<input type="radio" name="2d" value="1" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="2d" value="1">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+												<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=2";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==2){
+														$nonfinancial .= '<input type="radio" name="2d" value="2" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="2d" value="2">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+								          		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=2";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==3){
+														$nonfinancial .= '<input type="radio" name="2d" value="3" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="2d" value="3">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+								          		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=2";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==4){
+														$nonfinancial .= '<input type="radio" name="2d" value="4" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="2d" value="4">';
+													}
+												}
+												echo $nonfinancial; ?></td>
 								        	</tr>
 								        	<tr>
 								        		<th scope="row"><?= getNoneFinancialImpact('3') ?></th>
-								          		<td><input type="radio" name="3" value="1"></td>
-								          		<td><input type="radio" name="3" value="2"></td>
-								          		<td><input type="radio" name="3" value="3"></td>
-								          		<td><input type="radio" name="3" value="4"></td>
+								          		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=3";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==1){
+														$nonfinancial .= '<input type="radio" name="3d" value="1" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="3d" value="1">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+								          		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=3";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==2){
+														$nonfinancial .= '<input type="radio" name="3d" value="2" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="3d" value="2">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+								          		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=3";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==3){
+														$nonfinancial .= '<input type="radio" name="3d" value="3" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="3d" value="3">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+								          		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=3";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==4){
+														$nonfinancial .= '<input type="radio" name="3d" value="4" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="3d" value="4">';
+													}
+												}
+												echo $nonfinancial; ?></td>
 								        	</tr>
 								        	<tr>
 								        		<th scope="row"><?= getNoneFinancialImpact('4') ?></th>
-								          		<td><input type="radio" name="4" value="1"></td>
-								          		<td><input type="radio" name="4" value="2"></td>
-								          		<td><input type="radio" name="4" value="3"></td>
-								          		<td><input type="radio" name="4" value="4"></td>
+								          		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=4";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==1){
+														$nonfinancial .= '<input type="radio" name="4d" value="1" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="4d" value="1">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+								          		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=4";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==2){
+														$nonfinancial .= '<input type="radio" name="4d" value="2" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="4d" value="2">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+								          		<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=4";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==3){
+														$nonfinancial .= '<input type="radio" name="4d" value="3" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="4d" value="3">';
+													}
+												}
+												echo $nonfinancial; ?></td>
+												<td>
+								          		<?php
+												$nonfinancial_data = "select clave_nivel_imp_no_fin from impactos_no_financieros where clave_proceso = $id and clave_impacto_no_fin=4";
+												$result = $conn->query($nonfinancial_data);
+												$nonfinancial= "";
+												while ($row = $result->fetch_assoc()) {
+													if($row['clave_nivel_imp_no_fin']==4){
+														$nonfinancial .= '<input type="radio" name="4d" value="4" checked>';
+													}else{
+														$nonfinancial .= '<input type="radio" name="4d" value="4">';
+													}
+												}
+												echo $nonfinancial; ?></td>
 								        	</tr>								        	
 								      	</tbody>
 								    </table>
@@ -2834,51 +3026,8 @@ show_navbar();
 					<div class="panel-body">
 						<p class="lead"></p>
 						<div class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-									<label for="staff_type">Personal requerido:</label>
-									<select class="form-control" name="staff_type"><?php echo $stafftype; ?></select>
-								</div>
-								<div class="form-group">
-									<label for="name">Nombre:</label>
-									<input class="form-control" type="text" name="name" id="name" maxlength="100" size="50" />						
-								</div>
-								<div class="form-group">
-									<label for="employee_number">Numero de empleado:</label>
-									<input class="form-control" type="text" name="employee_number" id="employee_number" maxlength="100" size="50" />																			
-								</div>
-								<div class="form-group">
-									<label for="extension">Extension:</label>
-									<input class="form-control" type="text" name="extension" id="extension" maxlength="100" size="50" />						
-								</div>
-								<div class="form-group">
-									<label for="workstation">Puesto</label>
-									<input class="form-control" type="text" name="workstation" id="workstation" maxlength="100" size="50" />													
-								</div>
-								<div class="form-group">
-									<label for="contingency_role">Rol en contingencia:</label>
-									<input class="form-control" type="text" name="contingency_role" id="contingency_role" maxlength="100" size="50" />														
-								</div>
-								<div class="form-group">
-									<label for="home_phone">Tel. casa:</label>
-									<input class="form-control" type="text" name="home_phone" id="home_phone" maxlength="100" size="50" />
-								</div>
-								<div class="form-group">
-									<label for="cell_phone">Tel. celular:</label>
-									<input class="form-control" type="text" name="cell_phone" id="cell_phone" maxlength="100" size="50" />					
-								</div>
-								<div class="form-group">
-									<label>Dirección</label>
-									<input class="form-control" type="text" name="address" id="address" maxlength="100" size="50" />						
-								</div>
-								<div class="form-group">
-									<label for="internal_email">Correo electrónico interno:</label>
-									<input class="form-control" type="text" name="internal_email" id="internal_email" maxlength="100" size="50" />
-								</div>
-								<div class="form-group">
-									<label for="external_email">Correo electrónico externo:</label>
-									<input class="form-control" type="text" name="external_email" id="external_email" maxlength="100" size="50" />						
-								</div>
+							<div id="criticalstaff" class="col-md-12">
+								<?php include('pagination_criticalstaff.php') ?>
 							</div>
 						</div>
 					</div>
@@ -2894,42 +3043,8 @@ show_navbar();
 					<div class="panel-body">
 						<p class="lead"></p>
 						<div class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-									<label for="area">Área que proporciona el servicio (considerar a proveedores):</label>
-									<input class="form-control" type="text" name="area" id="area" maxlength="100" size="50" />
-								</div>
-								<div class="form-group">
-									<label for="service">Servicio / Equipos / Otros:</label>
-									<input class="form-control" type="text" name="service" id="service" maxlength="100" size="50" />						
-								</div>
-								<div class="form-group">
-									<label for="employee_number">Tipo de dependencia:</label>
-									<div class="table-responsive">
-										<table class="table table-bordered">
-											<thead>
-												<tr>
-										        	<th>Interna</th>
-										        	<th>Externa</th>
-										        	<th>Entrada</th>
-										        	<th>Salida</th>
-									        	</tr>
-									      	</thead>
-									    	<tbody>
-									    		<tr>
-									          		<td><input type="checkbox" name="internal_dependency"></td>
-									          		<td><input type="checkbox" name="external_dependency"></td>
-									          		<td><input type="checkbox" name="input_dependency"></td>
-									          		<td><input type="checkbox" name="output_dependency"></td>
-									        	</tr>
-									      	</tbody>
-									    </table>																			
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="dependency_level">Nivel de dependencia:</label>
-									<select class="form-control" name="dependency_level"><?php echo $dependency_level; ?></select>
-								</div>
+							<div id="technologicaldependencies" class="col-md-12">
+								<?php include('pagination_technologicaldependencies.php') ?>
 							</div>
 						</div>
 					</div>
@@ -2981,19 +3096,8 @@ show_navbar();
 					<div class="panel-body">
 						<p class="lead"></p>
 						<div class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-									<label for="area">Nombre del área:</label>
-									<input class="form-control" type="text" name="area" id="area" maxlength="100" size="50" />	
-								</div>
-								<div class="form-group">
-									<label for="input_data">Información requerida (entrada):</label>
-									<input class="form-control" type="text" name="input_data" id="input_data" maxlength="100" size="50" />
-								</div>
-								<div class="form-group">
-									<label for="output_data">Información comprometida (salida):</label>
-									<input class="form-control" type="text" name="output_data" id="output_data" maxlength="100" size="50" />
-								</div>
+							<div id="internaldependencies" class="col-md-12">
+								<?php include('pagination_internaldependencies.php') ?>
 							</div>
 						</div>
 					</div>
@@ -3009,19 +3113,8 @@ show_navbar();
 					<div class="panel-body">
 						<p class="lead"></p>
 						<div class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-									<label for="member">Nombre del proveedor / socio:</label>
-									<input class="form-control" type="text" name="member" id="member" maxlength="100" size="50" />	
-								</div>
-								<div class="form-group">
-									<label for="input_data">Información requerida (entrada):</label>
-									<input class="form-control" type="text" name="input_data" id="input_data" maxlength="100" size="50" />
-								</div>
-								<div class="form-group">
-									<label for="output_data">Información comprometida (salida):</label>
-									<input class="form-control" type="text" name="output_data" id="output_data" maxlength="100" size="50" />
-								</div>
+							<div id="externaldependencies" class="col-md-12">
+								<?php include('pagination_externaldependencies.php') ?>
 							</div>
 						</div>
 					</div>

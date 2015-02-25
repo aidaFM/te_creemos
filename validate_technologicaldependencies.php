@@ -32,8 +32,15 @@ try{
 	}
 }catch(Exception $e){
 	show_header('Errores');
+	echo '<div class="container">';
+	echo '<div class="row">';
+	echo '<div class="col-md-12">';
+	echo '<p></p>';
 	echo '<div class="alert alert-danger">';
 	echo $e->getMessage();
+	echo '</div>';
+	echo '</div>';
+	echo '</div>';
 	echo '</div>';
 	show_footer();
 	exit;
