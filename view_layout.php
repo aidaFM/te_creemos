@@ -71,6 +71,15 @@ function show_navbar()
               <li><a href="view_backupsource.php">Medios de respaldo</a></li>
             </ul>
           </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Base de datos<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="clear_tables.php">Borrar toda la información</a></li>
+              <!--<li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li class="divider"></li>
+              <li><a href="#">One more separated link</a></li>-->
+            </ul>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
