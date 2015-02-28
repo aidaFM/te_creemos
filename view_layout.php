@@ -94,6 +94,19 @@ function show_footer(){
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#results").load("fetch_pages.php");
+        $("#results").on("click","pagination a",function(e){
+          e.preventDefault();
+          $(".loading-div").show();
+          var page = $(this).attr("data-page");
+          $("#results").load("fetch_pages.php",{"page":page},finction(){
+            $(".loading-div").hide();
+          });
+        });
+      });
+    </script>
   </body>
 </html>
 <?php
