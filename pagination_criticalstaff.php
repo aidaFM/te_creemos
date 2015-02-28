@@ -1,5 +1,6 @@
 <?php
 require_once('conn2.php');
+
 $RegistrosAMostrar=1;
 
 //estos valores los recibo por GET
