@@ -7,8 +7,11 @@ $id = $_GET['id'];
 $process = getProcessData($id);
 $window_operation = getWindowOperationData($id);
 $cyclical_processing = getCyclicalProcessing($id);
-$financial_impacts=getFinancialImpacts($id);
-$economic_impacts=getEconomicImpacts($id);
+$financial_impacts = getFinancialImpacts($id);
+$economic_impacts = getEconomicImpacts($id);
+$process_backup = getBackupData($id);
+$provider_data = getProviderData($id);
+$recovery_requeriments = getRecoveryRequeriments($id);
 
 $conn = home_connection();
 
@@ -120,6 +123,28 @@ while ($row = $result->fetch_assoc()) {
 		$charge_level .= "<option value='$row[clave_nivel_carga]' selected>$row[descripcion_nivel_carga]</option>";
 	}else{
 		$charge_level .= "<option value='$row[clave_nivel_carga]'>$row[descripcion_nivel_carga]</option>";
+	}
+}
+
+$backup_types = "select * from cat_tipo_respaldos";
+$result = $conn->query($backup_types);
+$backup_type= "";
+while ($row = $result->fetch_assoc()) {
+	if($row['clave_tipo_respaldo']==$process_backup['clave_tipo_respaldo']){
+		$backup_type .= "<option value='$row[clave_tipo_respaldo]' selected>$row[descripcion_tipo_respaldo]</option>";
+	}else{
+		$backup_type .= "<option value='$row[clave_tipo_respaldo]'>$row[descripcion_tipo_respaldo]</option>";
+	}
+}
+
+$backup_storages = "select * from cat_medio_respaldo";
+$result = $conn->query($backup_storages);
+$backup_storage= "";
+while ($row = $result->fetch_assoc()) {
+	if($row['clave_medio_respaldo']==$process_backup['clave_medio_respaldo']){
+		$backup_storage .= "<option value='$row[clave_medio_respaldo]' selected>$row[descripcion_medio_respaldo]</option>";
+	}else{
+		$backup_storage .= "<option value='$row[clave_medio_respaldo]'>$row[descripcion_medio_respaldo]</option>";
 	}
 }
 
@@ -3071,15 +3096,15 @@ show_navbar();
 								</div>
 								<div class="form-group">
 									<label for="place">Lugar donde se realizan los respaldos:</label>
-									<input class="form-control" type="text" name="place" id="place" maxlength="100" size="50" />						
+									<input class="form-control" type="text" name="place" id="place" maxlength="100" value="<?= $process_backup['lugar_donde_respaldan'] ?>" size="50" />						
 								</div>
 								<div class="form-group">
 									<label for="zone">Lugar donde se almacenan los respaldos:</label>
-									<input class="form-control" type="text" name="zone" id="zone" maxlength="100" size="50" />						
+									<input class="form-control" type="text" name="zone" id="zone" maxlength="100" value="<?= $process_backup['lugar_almacenamiento_respaldo'] ?>" size="50" />						
 								</div>
 								<div class="form-group">
 									<label for="name">Persona que realiza los respaldos:</label>
-									<input class="form-control" type="text" name="name" id="name" maxlength="100" size="50" />						
+									<input class="form-control" type="text" name="name" id="name" maxlength="100" value="<?= $process_backup['personal_realiza_respaldo'] ?>" size="50" />						
 								</div>
 							</div>
 						</div>
@@ -3133,7 +3158,7 @@ show_navbar();
 							<div class="col-md-12">
 								<div class="form-group">
 									<label for="name">Nombre del proveedor:</label>
-									<input class="form-control" type="text" name="name" id="name" maxlength="100" size="50" />
+									<input class="form-control" type="text" name="name" id="name" value="<?= $provider_data['nombre_provedor'] ?>" maxlength="100" size="50" />
 								</div>
 								<div class="form-group">
 									<label for="name">Tipo de proveedor:</label>
@@ -3156,23 +3181,23 @@ show_navbar();
 								</div>
 								<div class="form-group">
 									<label for="area">Área, empresa a la que pertenece:</label>
-									<input class="form-control" type="text" name="area" id="area" maxlength="100" size="50" />																			
+									<input class="form-control" type="text" name="area" id="area" value="<?= $provider_data['empresa_provedor'] ?>" maxlength="100" size="50" />																			
 								</div>
 								<div class="form-group">
 									<label for="home_phone">Tel. oficina:</label>
-									<input class="form-control" type="text" name="home_phone" id="home_phone" maxlength="100" size="50" />						
+									<input class="form-control" type="text" name="home_phone" id="home_phone" value="<?= $provider_data['numero_telefono_oficina'] ?>" maxlength="100" size="50" />						
 								</div>
 								<div class="form-group">
 									<label for="cell_phone">Tel. celular</label>
-									<input class="form-control" type="text" name="cell_phone" id="cell_phone" maxlength="100" size="50" />													
+									<input class="form-control" type="text" name="cell_phone" id="cell_phone" value="<?= $provider_data['numero_telefono_celular'] ?>" maxlength="100" size="50" />													
 								</div>
 								<div class="form-group">
 									<label for="email">Correo electronico:</label>
-									<input class="form-control" type="text" name="email" id="email" maxlength="100" size="50" />														
+									<input class="form-control" type="text" name="email" id="email" value="<?= $provider_data['mail_provedor'] ?>" maxlength="100" size="50" />														
 								</div>
 								<div class="form-group">
 									<label for="address">Domicilio:</label>
-									<input class="form-control" type="text" name="address" id="address" maxlength="100" size="50" />
+									<input class="form-control" type="text" name="address" id="address" value="<?= $provider_data['domicilio_provedor'] ?>" maxlength="100" size="50" />
 								</div>
 							</div>
 						</div>
@@ -3202,8 +3227,8 @@ show_navbar();
 									      	</thead>
 									    	<tbody>
 									    		<tr>
-									          		<td><input class="form-control" type="text" name="pc_on" id="pc_on" maxlength="100" size="50" /></td>
-									          		<td><input class="form-control" type="text" name="pc_oc" id="pc_oc" maxlength="100" size="50" /></td>
+									          		<td><input class="form-control" type="text" name="pc_on" id="pc_on" value="<?= $recovery_requeriments['pc_on'] ?>"  maxlength="100" size="50" /></td>
+									          		<td><input class="form-control" type="text" name="pc_oc" id="pc_oc" value="<?= $recovery_requeriments['pc_oc'] ?>"  maxlength="100" size="50" /></td>
 									        	</tr>
 									      	</tbody>
 									    </table>																			
@@ -3221,8 +3246,8 @@ show_navbar();
 									      	</thead>
 									    	<tbody>
 									    		<tr>
-									          		<td><input class="form-control" type="text" name="phone_on" id="phone_on" maxlength="100" size="50" /></td>
-									          		<td><input class="form-control" type="text" name="phone_oc" id="phone_oc" maxlength="100" size="50" /></td>
+									          		<td><input class="form-control" type="text" name="phone_on" id="phone_on" value="<?= $recovery_requeriments['telefono_on'] ?>"  maxlength="100" size="50" /></td>
+									          		<td><input class="form-control" type="text" name="phone_oc" id="phone_oc" value="<?= $recovery_requeriments['telefono_oc'] ?>"  maxlength="100" size="50" /></td>
 									        	</tr>
 									      	</tbody>
 									    </table>																			
@@ -3240,8 +3265,8 @@ show_navbar();
 									      	</thead>
 									    	<tbody>
 									    		<tr>
-									          		<td><input class="form-control" type="text" name="printer_on" id="printer_on" maxlength="100" size="50" /></td>
-									          		<td><input class="form-control" type="text" name="printer_oc" id="printer_oc" maxlength="100" size="50" /></td>
+									          		<td><input class="form-control" type="text" name="printer_on" id="printer_on" value="<?= $recovery_requeriments['impresora_on'] ?>"  maxlength="100" size="50" /></td>
+									          		<td><input class="form-control" type="text" name="printer_oc" id="printer_oc" value="<?= $recovery_requeriments['impresora_oc'] ?>"  maxlength="100" size="50" /></td>
 									        	</tr>
 									      	</tbody>
 									    </table>																			
@@ -3259,8 +3284,8 @@ show_navbar();
 									      	</thead>
 									    	<tbody>
 									    		<tr>
-									          		<td><input class="form-control" type="text" name="lap_on" id="lap_on" maxlength="100" size="50" /></td>
-									          		<td><input class="form-control" type="text" name="lap_oc" id="lap_oc" maxlength="100" size="50" /></td>
+									          		<td><input class="form-control" type="text" name="lap_on" id="lap_on" value="<?= $recovery_requeriments['laptop_on'] ?>"  maxlength="100" size="50" /></td>
+									          		<td><input class="form-control" type="text" name="lap_oc" id="lap_oc" value="<?= $recovery_requeriments['laptop_oc'] ?>"  maxlength="100" size="50" /></td>
 									        	</tr>
 									      	</tbody>
 									    </table>																			
@@ -3278,8 +3303,8 @@ show_navbar();
 									      	</thead>
 									    	<tbody>
 									    		<tr>
-									          		<td><input class="form-control" type="text" name="vpn_on" id="vpn_on" maxlength="100" size="50" /></td>
-									          		<td><input class="form-control" type="text" name="vpn_oc" id="vpn_oc" maxlength="100" size="50" /></td>
+									          		<td><input class="form-control" type="text" name="vpn_on" id="vpn_on" value="<?= $recovery_requeriments['vpninternet_on'] ?>"  maxlength="100" size="50" /></td>
+									          		<td><input class="form-control" type="text" name="vpn_oc" id="vpn_oc" value="<?= $recovery_requeriments['vpninternet_oc'] ?>"  maxlength="100" size="50" /></td>
 									        	</tr>
 									      	</tbody>
 									    </table>																			
@@ -3297,8 +3322,8 @@ show_navbar();
 									      	</thead>
 									    	<tbody>
 									    		<tr>
-									          		<td><input class="form-control" type="text" name="desktop_on" id="desktop_on" maxlength="100" size="50" /></td>
-									          		<td><input class="form-control" type="text" name="desktop_oc" id="desktop_oc" maxlength="100" size="50" /></td>
+									          		<td><input class="form-control" type="text" name="desktop_on" id="desktop_on" value="<?= $recovery_requeriments['escritorio_on'] ?>"  maxlength="100" size="50" /></td>
+									          		<td><input class="form-control" type="text" name="desktop_oc" id="desktop_oc" value="<?= $recovery_requeriments['escritorio_oc'] ?>"  maxlength="100" size="50" /></td>
 									        	</tr>
 									      	</tbody>
 									    </table>																			
@@ -3306,11 +3331,11 @@ show_navbar();
 								</div>
 								<div class="form-group">
 									<label for="formats">Papeleria / formatos:</label>
-									<input class="form-control" type="text" name="formats" id="formats" maxlength="100" size="50" />
+									<input class="form-control" type="text" name="formats" id="formats" value="<?= $recovery_requeriments['papeleria'] ?>"  maxlength="100" size="50" />
 								</div>
 								<div class="form-group">
 									<label for="others">Otros requerimientos:</label>
-									<input class="form-control" type="text" name="others" id="others" maxlength="100" size="50" />					
+									<input class="form-control" type="text" name="others" id="others" value="<?= $recovery_requeriments['otros'] ?>"  maxlength="100" size="50" />					
 								</div>
 							</div>
 						</div>

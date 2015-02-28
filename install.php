@@ -257,7 +257,7 @@ function setCharacterCollate($host,$user,$pass,$database,$query){
 	$table = $table = "create table if not exists proceso_proveedor(
 	clave_proceso int(10),
 	consecutivo_proveedor int(10),
-	clave_proveedor int(10)
+	clave_provedor int(10)
 	);";
 
 	createTable("localhost","root","","te_creemos",$table);

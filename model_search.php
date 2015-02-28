@@ -256,9 +256,39 @@ function getEconomicImpacts($id)
 function getBackupData($id)
 {
 	$conn = home_connection();
-	$getdata = $conn->query("SELECT * FROM operacion_proceso WHERE clave_proceso = $id");
+	$getdata = $conn->query("SELECT * FROM respaldos_proceso WHERE clave_proceso = $id");
 	if(!$getdata){
-		throw new Exception('Error en la consulta getWindowOperationData.');
+		throw new Exception('Error en la consulta getBackupData.');
+	}else{
+		while($data = $getdata->fetch_array()){
+			return $data;
+		}
+	}
+	$getdata->free();
+	$getdata->close();
+}
+
+function getProviderData($id)
+{
+	$conn = home_connection();
+	$getdata = $conn->query("SELECT * FROM cat_directorio_proveedores JOIN proceso_proveedor ON cat_directorio_proveedores.clave_provedor=proceso_proveedor.clave_provedor WHERE clave_proceso =$id");
+	if(!$getdata){
+		throw new Exception('Error en la consulta getProviderData.');
+	}else{
+		while($data = $getdata->fetch_array()){
+			return $data;
+		}
+	}
+	$getdata->free();
+	$getdata->close();
+}
+
+function getRecoveryRequeriments($id)
+{
+	$conn = home_connection();
+	$getdata = $conn->query("SELECT * FROM requerimientos_bcp WHERE clave_proceso =$id");
+	if(!$getdata){
+		throw new Exception('Error en la consulta getRecoveryRequeriments.');
 	}else{
 		while($data = $getdata->fetch_array()){
 			return $data;
