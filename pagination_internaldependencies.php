@@ -1,7 +1,7 @@
 <?php
 require_once('conn2.php');
 
-//session_start();
+@session_start();
 $id = $_SESSION['id'];
 
 $RegistrosAMostrar=1;
