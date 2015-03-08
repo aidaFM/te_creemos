@@ -1,8 +1,9 @@
 <?php
 
 require_once('basic_files.php');
-
-$id = $_GET['id'];
+session_start();
+$_SESSION['id'] = $_GET['id'];
+$id=$_SESSION['id'];
 
 $process = getProcessData($id);
 $window_operation = getWindowOperationData($id);
