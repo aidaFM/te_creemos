@@ -1,4 +1,6 @@
 <?php
+require_once('drop_db.php');
+
 function createDataBase($host,$user,$pass,$database){
 	$conn = mysqli_connect($host,$user,$pass);
 	$query = "create database if not exists $database;";
@@ -39,6 +41,10 @@ function setCharacterCollate($host,$user,$pass,$database,$query){
 		return mysql_errno()." ".mysql_error();
 	}
 }
+
+	$drop = 'drop database if exists te_creemos;';
+
+	dropDataBase("localhost","root","",$drop);
 
 	createDataBase("localhost","root","","te_creemos");
 
