@@ -1,8 +1,10 @@
 <?php
 require_once('conn2.php');
-
-@session_start();
-$id = $_SESSION['id'];
+if isset($_SESSION){
+    $id = $_SESSION['id'];
+}else{
+    session_start();
+}
 
 $RegistrosAMostrar=1;
 

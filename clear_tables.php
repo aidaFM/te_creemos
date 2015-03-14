@@ -1,6 +1,8 @@
 <?php
 require_once('basic_files.php');
 
+//clear all the data in tables
+
 function clearTable($host,$user,$pass,$database,$table){
 	$conn = mysqli_connect($host,$user,$pass,$database);
 	$result = mysqli_query($conn,$table);
