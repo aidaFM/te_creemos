@@ -13,7 +13,7 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower ($_SE
 		$page_number = 1;
 	}
 
-	$results = mysqli_conn->query('SELECT COUNT(*) FROM interdependencias_externas'),
+	$results = mysqli_query($home_connection, 'SELECT COUNT(*) FROM interdependencias_externas');
 	//hold total records in variable
 	$get_total_rows = $results->fetch_row();
 	$total_pages = ceil($get_total_rows[0]/$item_per_page);
@@ -21,8 +21,8 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower ($_SE
 	$page_position = (($page_number -1)*$item_per_page);
 
 	//SQL query that will fetch group of records depending on starting position and item per page. See the limit clause
-	$results = mysqli_conn->query("SELECT * FROM interdependencias_externas where clave_proceso = 1 ORDER BY clave_interdependencia_externa asc LIMIT $page_position, $item_per_page");
-	while($data=$results->fetch_assoc()){
+	$results = mysqli_query($home_connection, 'SELECT * FROM intedependencias_externas where clave_proceso = 1 ORDER BY clave_interdependencia_externa asc LIMIT $page_position, $item_per_page');
+        while($data=$results->fetch_assoc()){
     ?>
 	    <div class="form-group">
 	        <label for="member">Nombre del proveedor / socio:</label>
@@ -43,7 +43,7 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower ($_SE
 }
 
 function paginate_function($item_per_page,$current_page,$total_records,$total_pages){
-	$pagination = '',
+	$pagination = '';
 	//verify total pages and current page number
 	if($total_pages>0 && $total_pages != 1 && $current_page <= $total_pages){
 		$rigth_links = $current_page + 3;
@@ -52,7 +52,7 @@ function paginate_function($item_per_page,$current_page,$total_records,$total_pa
 		$first_link = true;
 
 		if(current_page > 1){
-			$previous_link = ($previos == 0)?1:$previous
+			$previous_link = ($previos == 0)?1:$previous;
 			$pagination .= '<a href="#" data-page="1" title="First">&laquo;</a>';
 			$pagination .= '<a href="#" data-page="'.$previous_link.'" title="Previous">&alt;</a>';
 			for($i=($current_page - 2); $i < $current_page; $i++){

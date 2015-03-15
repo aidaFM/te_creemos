@@ -45,7 +45,6 @@ function backup_tables($host,$user,$pass,$name,$tables = '*')
 		}
 		$return.="\n\n\n";
 	}
-	echo $return;
    
    //save file
    $handle = fopen('db-backup-'.time().'-'.(md5(implode(',',$tables))).'.sql','w+');

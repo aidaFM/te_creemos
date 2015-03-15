@@ -1,6 +1,6 @@
 <?php
 require_once('conn2.php');
-if isset($_SESSION){
+if(isset($_SESSION)){
     $id = $_SESSION['id'];
 }else{
     session_start();
