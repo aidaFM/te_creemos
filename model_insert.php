@@ -182,10 +182,10 @@ function save_nonfinancialimpacts($id,$var0,$var1,$var2,$var3)
 	$savedata = $conn->query("INSERT INTO impactos_no_financieros VALUES('".$id."',4,'".$var3."')");
 }
 
-function save_staffdirectory($var1,$var2,$var3,$var4,$var6,$var7,$var8,$var9,$var10)
+function save_staffdirectory($nextNumber,$var1,$var2,$var3,$var4,$var6,$var7,$var8,$var9,$var10)
 {
 	$conn = home_connection();
-	$savedata = $conn->query("INSERT INTO cat_directorio_personal_critico VALUES(null,'".$var1."','".$var2."','".$var3."','".$var4."','".$var6."','".$var7."','".$var8."','".$var9."','".$var10."')"); 
+	$savedata = $conn->query("INSERT INTO cat_directorio_personal_critico VALUES('".$nextNumber."','".$var1."','".$var2."','".$var3."','".$var4."','".$var6."','".$var7."','".$var8."','".$var9."','".$var10."')"); 
 }
 
 function save_processstaff($id,$staff_id,$var0)

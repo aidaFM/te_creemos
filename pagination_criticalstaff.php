@@ -1,5 +1,7 @@
 <?php
-require_once('conn2.php');
+
+require_once 'conn2.php';
+require_once 'model_search.php';
 
 $RegistrosAMostrar=1;
 
@@ -13,14 +15,28 @@ if(isset($_GET['pag'])){
     $PagAct=1;
 }
 
-
 $query="SELECT * FROM cat_directorio_personal_critico ORDER BY clave_personal ASC LIMIT $RegistrosAEmpezar, $RegistrosAMostrar";
 $res =mysql_query($query, $con);
 while($data=mysql_fetch_array($res)){
+    $staffId = getStaffId($data['nombre_personal']);
+    $staffType = getStaffType($staffId);
+    $conn = home_connection();
+
+    $stafftypes = "select * from cat_tipo_personal";
+    $result = $conn->query($stafftypes);
+    $stafftype = "";
+    while ($row = $result->fetch_assoc()) {
+        if($row['clave_tipo_personal'] == $staffType){
+            $stafftype .= "<option value='$row[clave_tipo_personal]' selected>$row[descripcion_tipo_personal]</option>";         
+        } else {
+            $stafftype .= "<option value='$row[clave_tipo_personal]'>$row[descripcion_tipo_personal]</option>";
+        }
+        
+    }
     ?>
     <div class="form-group">
         <label for="staff_type">Personal requerido:</label>
-        <select class="form-control" name="staff_type"></select>
+        <select class="form-control" name="staff_type"><?php echo $stafftype ?></select>
     </div>
     <div class="form-group">
         <label for="name">Nombre:</label>
