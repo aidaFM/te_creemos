@@ -1,5 +1,9 @@
 <?php
 require_once('conn2.php');
+
+@session_start();
+$id = $_SESSION['id'];
+
 $RegistrosAMostrar=1;
 
 //estos valores los recibo por GET
@@ -13,7 +17,7 @@ if(isset($_GET['pag'])){
 }
 
 
-$query="SELECT * FROM interdependencias_externas where clave_proceso = 1 ORDER BY clave_interdependencia_externa desc LIMIT $RegistrosAEmpezar, $RegistrosAMostrar";
+$query="SELECT * FROM interdependencias_externas where clave_proceso = $id ORDER BY clave_interdependencia_externa desc LIMIT $RegistrosAEmpezar, $RegistrosAMostrar";
 $res =mysql_query($query, $con);
 while($data=mysql_fetch_array($res)){
     ?>

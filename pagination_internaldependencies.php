@@ -1,10 +1,7 @@
 <?php
 require_once('conn2.php');
-if(isset($_SESSION)){
-    $id = $_SESSION['id'];
-}else{
-    session_start();
-}
+@session_start();
+$id = $_SESSION['id'];
 
 $RegistrosAMostrar=1;
 
@@ -20,7 +17,7 @@ if(isset($_GET['pag'])){
 
 
 $query="SELECT * FROM interdependencias_internas where clave_proceso = $id ORDER BY clave_interdependencia_interna desc LIMIT $RegistrosAEmpezar, $RegistrosAMostrar";
-$res =mysql_query($query, $con);
+$res = mysql_query($query, $con);
 while($data=mysql_fetch_array($res)){
     ?>
     <div class="form-group">

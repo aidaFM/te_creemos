@@ -1,23 +1,24 @@
 <?php
-
 require_once 'conn2.php';
 require_once 'model_search.php';
+@session_start();
+$id = $_SESSION['id'];
 
-$RegistrosAMostrar=1;
+$RegistrosAMostrar = 1;
 
 //estos valores los recibo por GET
-if(isset($_GET['pag'])){
-    $RegistrosAEmpezar=($_GET['pag']-1)*$RegistrosAMostrar;
-    $PagAct=$_GET['pag'];
+if (isset($_GET['pag'])) {
+    $RegistrosAEmpezar = ($_GET['pag'] - 1) * $RegistrosAMostrar;
+    $PagAct = $_GET['pag'];
     //caso contrario los iniciamos
-}else{
-    $RegistrosAEmpezar=0;
-    $PagAct=1;
+} else {
+    $RegistrosAEmpezar = 0;
+    $PagAct = 1;
 }
 
-$query="SELECT * FROM cat_directorio_personal_critico ORDER BY clave_personal ASC LIMIT $RegistrosAEmpezar, $RegistrosAMostrar";
-$res =mysql_query($query, $con);
-while($data=mysql_fetch_array($res)){
+$query = "SELECT * FROM cat_directorio_personal_critico JOIN proceso_personal_tipopersonal ON cat_directorio_personal_critico.clave_personal = proceso_personal_tipopersonal.clave_personal where proceso_personal_tipopersonal.clave_proceso = $id ORDER BY proceso_personal_tipopersonal.clave_personal ASC LIMIT $RegistrosAEmpezar, $RegistrosAMostrar";
+$res = mysql_query($query, $con);
+while ($data = mysql_fetch_array($res)) {
     $staffId = getStaffId($data['nombre_personal']);
     $staffType = getStaffType($staffId);
     $conn = home_connection();
@@ -26,12 +27,11 @@ while($data=mysql_fetch_array($res)){
     $result = $conn->query($stafftypes);
     $stafftype = "";
     while ($row = $result->fetch_assoc()) {
-        if($row['clave_tipo_personal'] == $staffType){
-            $stafftype .= "<option value='$row[clave_tipo_personal]' selected>$row[descripcion_tipo_personal]</option>";         
+        if ($row['clave_tipo_personal'] == $staffType) {
+            $stafftype .= "<option value='$row[clave_tipo_personal]' selected>$row[descripcion_tipo_personal]</option>";
         } else {
             $stafftype .= "<option value='$row[clave_tipo_personal]'>$row[descripcion_tipo_personal]</option>";
         }
-        
     }
     ?>
     <div class="form-group">
@@ -81,22 +81,25 @@ while($data=mysql_fetch_array($res)){
     <?php
 }
 
-$NroRegistros=mysql_num_rows(mysql_query("SELECT * FROM cat_directorio_personal_critico",$con));
-$PagAnt=$PagAct-1;
-$PagSig=$PagAct+1;
-$PagUlt=$NroRegistros/$RegistrosAMostrar;
+$NroRegistros = mysql_num_rows(mysql_query("SELECT * FROM cat_directorio_personal_critico JOIN proceso_personal_tipopersonal ON cat_directorio_personal_critico.clave_personal = proceso_personal_tipopersonal.clave_personal where proceso_personal_tipopersonal.clave_proceso = $id", $con));
+$PagAnt = $PagAct - 1;
+$PagSig = $PagAct + 1;
+$PagUlt = $NroRegistros / $RegistrosAMostrar;
 
 //verificamos residuo para ver si llevará decimales
-$Res=$NroRegistros%$RegistrosAMostrar;
+$Res = $NroRegistros % $RegistrosAMostrar;
 // si hay residuo usamos funcion floor para que me
 // devuelva la parte entera, SIN REDONDEAR, y le sumamos
 // una unidad para obtener la ultima pagina
-if($Res>0) $PagUlt=floor($PagUlt)+1;
+if ($Res > 0)
+    $PagUlt = floor($PagUlt) + 1;
 
 //desplazamiento
 echo "<a href=\"#\" onclick=\"Pagina('1')\"><span class=\"glyphicon glyphicon-step-backward\" aria-hidden=\"true\"></span></a> ";
-if($PagAct>1) echo "<a href=\"#\" onclick=\"Pagina('$PagAnt')\"><span class=\"glyphicon glyphicon-backward\" aria-hidden=\"true\"></a> ";
-echo "<strong>Registro ".$PagAct."/".$PagUlt."</strong>";
-if($PagAct<$PagUlt)  echo " <a href=\"#\" onclick=\"Pagina('$PagSig')\"><span class=\"glyphicon glyphicon-forward\" aria-hidden=\"true\"></a> ";
+if ($PagAct > 1)
+    echo "<a href=\"#\" onclick=\"Pagina('$PagAnt')\"><span class=\"glyphicon glyphicon-backward\" aria-hidden=\"true\"></a> ";
+echo "<strong>Registro " . $PagAct . "/" . $PagUlt . "</strong>";
+if ($PagAct < $PagUlt)
+    echo " <a href=\"#\" onclick=\"Pagina('$PagSig')\"><span class=\"glyphicon glyphicon-forward\" aria-hidden=\"true\"></a> ";
 echo "<a href=\"#\" onclick=\"Pagina('$PagUlt')\"><span class=\"glyphicon glyphicon-step-forward\" aria-hidden=\"true\"></a>";
 ?>

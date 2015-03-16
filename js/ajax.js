@@ -103,3 +103,25 @@ function Pagina4(nropagina){
  //el valor por la url ?pag=nropagina
  ajax.send(null)
 }
+
+function Pagina5(nropagina){
+ //donde se mostrará los registros
+ divContenido = document.getElementById('providers');
+
+ ajax=objetoAjax();
+ //uso del medoto GET
+ //indicamos el archivo que realizará el proceso de paginar
+ //junto con un valor que representa el nro de pagina
+ ajax.open("GET", "pagination_providers.php?pag="+nropagina);
+ divContenido.innerHTML= '<img src="anim.gif">';
+ ajax.onreadystatechange=function() {
+  if (ajax.readyState==4) {
+   //mostrar resultados en esta capa
+   divContenido.innerHTML = ajax.responseText
+  }
+ }
+ //como hacemos uso del metodo GET
+ //colocamos null ya que enviamos
+ //el valor por la url ?pag=nropagina
+ ajax.send(null)
+}
