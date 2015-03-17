@@ -13,77 +13,77 @@ function clearTable($host,$user,$pass,$database,$table){
 	}
 }
 
-	$table = 'truncate cat_procesos;';
+	$tables = 'truncate cat_procesos;';
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate inventario_procesos;";
+	$tables = "truncate inventario_procesos;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate cat_sistemas;";
+	$tables = "truncate cat_sistemas;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate proceso_sistemas;";
+	$tables = "truncate proceso_sistemas;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate operacion_proceso;";
+	$tables = "truncate operacion_proceso;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate procesa_ciclico;";
+	$tables = "truncate procesa_ciclico;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate impactos_financieros";
+	$tables = "truncate impactos_financieros";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate multas_penalizaciones;";
+	$tables = "truncate multas_penalizaciones;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate impactos_no_financieros;";
+	$tables = "truncate impactos_no_financieros;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate cat_directorio_personal_critico;";
+	$tables = "truncate cat_directorio_personal_critico;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate proceso_personal_tipopersonal;";
+	$tables = "truncate proceso_personal_tipopersonal;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate dependencia_tecnologicas;";
+	$tables = "truncate dependencia_tecnologicas;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate respaldos_proceso;";
+	$tables = "truncate respaldos_proceso;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate interdependencias_internas;";
+	$tables = "truncate interdependencias_internas;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate interdependencias_externas;";
+	$tables = "truncate interdependencias_externas;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate cat_directorio_proveedores;";
+	$tables = "truncate cat_directorio_proveedores;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate proceso_proveedores;";
+	$tables = "truncate proceso_proveedores;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
-	$table = "truncate requerimientos_bcp;";
+	$tables = "truncate requerimientos_bcp;";
 
-	clearTable("localhost","root","","te_creemos",$table);
+	clearTable("localhost","root","","te_creemos",$tables);
 
 	header("refresh:5; url=index.php");
 
