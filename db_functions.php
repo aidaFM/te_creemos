@@ -8,6 +8,7 @@ function dropDataBase($host,$user,$pass,$drop){
 	}else{
 		return mysql_errno()." ".mysql_error();
 	}
+	set_time_limit(0);
 }
 
 function createDataBase($host,$user,$pass,$database){
@@ -19,6 +20,7 @@ function createDataBase($host,$user,$pass,$database){
 	}else{
 		return mysql_errno()." ".mysql_error();
 	}
+	set_time_limit(0);
 }
 
 function createTable($host,$user,$pass,$database,$table){
@@ -29,6 +31,7 @@ function createTable($host,$user,$pass,$database,$table){
 	}else{
 		return mysql_errno()." ".mysql_error();
 	}
+	set_time_limit(0);
 }
 
 function insertRecord($host,$user,$pass,$database,$insert){
@@ -39,6 +42,7 @@ function insertRecord($host,$user,$pass,$database,$insert){
 	}else{
 		return mysql_errno()." ".mysql_error();
 	}
+	set_time_limit(0);
 }
 
 function setCharacterCollate($host,$user,$pass,$database,$query){
@@ -49,4 +53,5 @@ function setCharacterCollate($host,$user,$pass,$database,$query){
     }else{
         return mysql_errno()." ".mysql_error();
     }
+    set_time_limit(0);
 }
