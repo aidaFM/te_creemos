@@ -262,9 +262,9 @@ insertRecord("localhost","root","","te_creemos",$insert);
 openAlertContainer();
 alertType('success');
 alertMessage(3);
+closeAlertContainer();
 @flush_buffers();
 sleep(3);
-closeAlertContainer();
 
 openAlertContainer();
 alertType('info');
