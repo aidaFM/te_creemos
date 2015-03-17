@@ -13,7 +13,7 @@ function install($tables){
     alertType('success');
     alertMessage(1);
     @flush_buffers();
-	sleep(2);
+    sleep(3);
     closeAlertContainer();
 }
 
@@ -47,7 +47,7 @@ alertType('warning');
 alertMessage(2);
 closeAlertContainer();
 @flush_buffers();
-sleep(1);
+sleep(3);
 
 $insert = "insert ignore into cat_criticidad_procesos set clave_criticidad_proceso = 1, descripcion_criticidad_proceso = 'Media.';";
 insertRecord("localhost","root","","te_creemos",$insert);
@@ -163,7 +163,7 @@ insertRecord("localhost", "root", "", "te_creemos", $insert);
 $insert = "insert ignore into cat_objetivo_tiempo_recuperacion set clave_rto=2, nombre_rto='RTO-02', descripcion_rto='Mayor a 3 hrs. y menor ó igual a 6 hrs.';";
 insertRecord("localhost", "root", "", "te_creemos", $insert);
 
-$insert = $insert = "insert ignore into cat_objetivo_tiempo_recuperacion set clave_rto=3, nombre_rto='RTO-03', descripcion_rto='Mayor a 6 hrs. y menor ó igual a 12 hrs.';";
+$insert = "insert ignore into cat_objetivo_tiempo_recuperacion set clave_rto=3, nombre_rto='RTO-03', descripcion_rto='Mayor a 6 hrs. y menor ó igual a 12 hrs.';";
 insertRecord("localhost", "root", "", "te_creemos", $insert);
 
 $insert = "insert ignore into cat_objetivo_tiempo_recuperacion set clave_rto=4, nombre_rto='RTO-04', descripcion_rto='Mayor a 12 hrs. y menor ó igual a 24 hrs.';";
@@ -262,12 +262,13 @@ insertRecord("localhost","root","","te_creemos",$insert);
 openAlertContainer();
 alertType('success');
 alertMessage(3);
+@flush_buffers();
+sleep(3);
 closeAlertContainer();
 
 openAlertContainer();
 alertType('info');
 alertMessage(4);
 closeAlertContainer();
-
 
 show_footer();
