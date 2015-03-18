@@ -14,6 +14,7 @@ function install($tables){
     alertMessage(1);
     @flush_buffers();
 	sleep(2);
+    sleep(3);
     closeAlertContainer();
 }
 
@@ -166,6 +167,7 @@ $insert = "insert ignore into cat_objetivo_tiempo_recuperacion set clave_rto=2, 
 insertRecord("localhost", "root", "", "te_creemos", $insert);
 
 $insert = $insert = "insert ignore into cat_objetivo_tiempo_recuperacion set clave_rto=3, nombre_rto='RTO-03', descripcion_rto='Mayor a 6 hrs. y menor ó igual a 12 hrs.';";
+$insert = "insert ignore into cat_objetivo_tiempo_recuperacion set clave_rto=3, nombre_rto='RTO-03', descripcion_rto='Mayor a 6 hrs. y menor ó igual a 12 hrs.';";
 insertRecord("localhost", "root", "", "te_creemos", $insert);
 
 $insert = "insert ignore into cat_objetivo_tiempo_recuperacion set clave_rto=4, nombre_rto='RTO-04', descripcion_rto='Mayor a 12 hrs. y menor ó igual a 24 hrs.';";
