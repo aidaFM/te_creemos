@@ -19,8 +19,10 @@ function install($tables){
 
 show_header('');
 
-header("refresh:5; url=index.php");
+header("refresh:6; url=index.php");
 
+echo '<p></p>';
+echo '<center><img src="img/loading.gif" width="32" height="32" alt=""></center>';
 echo '<p></p>';
 
 openAlertContainer();
@@ -47,12 +49,12 @@ alertType('warning');
 alertMessage(2);
 closeAlertContainer();
 @flush_buffers();
-sleep(1);
+sleep(4);
 
-$insert = "insert ignore into cat_criticidad_procesos set clave_criticidad_proceso = 1, descripcion_criticidad_proceso = 'Media.';";
+$insert = 'insert ignore into cat_criticidad_procesos set clave_criticidad_proceso = 1, descripcion_criticidad_proceso = "Media.";';
 insertRecord("localhost","root","","te_creemos",$insert);
 
-$insert = "insert ignore into cat_criticidad_procesos set clave_criticidad_proceso = 2, descripcion_criticidad_proceso = 'Alta.';";
+$insert = 'insert ignore into cat_criticidad_procesos set clave_criticidad_proceso = 2, descripcion_criticidad_proceso = "Alta.";';
 insertRecord("localhost","root","","te_creemos",$insert);
 
 $insert = "insert ignore into cat_criticidad_procesos set clave_criticidad_proceso=3, descripcion_criticidad_proceso='Baja.';";
@@ -263,11 +265,12 @@ openAlertContainer();
 alertType('success');
 alertMessage(3);
 closeAlertContainer();
+@flush_buffers();
+sleep(2);
 
 openAlertContainer();
 alertType('info');
 alertMessage(4);
 closeAlertContainer();
-
 
 show_footer();

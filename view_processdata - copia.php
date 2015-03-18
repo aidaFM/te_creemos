@@ -165,7 +165,7 @@ show_navbar();
                             <form id="new" action="validate_processdata.php" method="post">
                                 <div class="form-group">
                                     <label for="process_name">Nombre del proceso:</label>
-                                    <label><?= $process['nombre_proceso'] ?><label>
+                                    <input class="form-control" type="text" name="process_name" id="process_name" value="<?= $process['nombre_proceso'] ?>" maxlength="100" size="50" required/>						
                                 </div>
                                 <div class="form-group">
                                     <label for="area">Área del proceso:</label>
@@ -177,11 +177,11 @@ show_navbar();
                                 </div>
                                 <div class="form-group">
                                     <label for="process_target">Objetivo del proceso:</label>
-                                    <label><?= $process['objetivo_proceso'] ?></label>				
+                                    <input class="form-control" type="text" name="process_target" id="process_target" value="<?= $process['objetivo_proceso'] ?>" maxlength="100" size="50" />						
                                 </div>
                                 <div class="form-group">
                                     <label for="process_description">Descripción del proceso</label>
-                                    <label><?= $process['descripcion_proceso'] ?></label>												
+                                    <textarea class="form-control" name="process_description" id="process_description" rows="8" ><?= $process['descripcion_proceso'] ?></textarea>														
                                 </div>
                                 <div class="form-group">
                                     <label for="boss_name">Nombre y puesto del Jefe inmediato:</label>
